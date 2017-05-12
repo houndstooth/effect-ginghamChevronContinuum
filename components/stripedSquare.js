@@ -1,9 +1,9 @@
-import { SQUARE_SIZE } from '../../shared/common/customize'
+import { COLOR_A, COLOR_B, SQUARE_SIZE } from '../../shared/common/customize'
 import render from '../../shared/render/render'
 
 export default ({ x, y, thisDiagonalsStripeEdgeModuli, originColor }) => {
 	thisDiagonalsStripeEdgeModuli.forEach((curModulus, index) => {
-		const otherColor = originColor == "BLACK" ? "WHITE" : "BLACK"
+		const otherColor = originColor == COLOR_A ? COLOR_B : COLOR_A
 		// this seems like the opposite of what it should be
 		// but maybe that's because the moduli array always starts with a 0 in it?
 		const color = index % 2 == 1 ? originColor : otherColor

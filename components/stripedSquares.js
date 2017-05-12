@@ -3,7 +3,7 @@ import layer from '../components/layer'
 import iterator from '../../shared/utilities/iterator'
 import triangularNumber from '../utilities/triangularNumber'
 import maybeSwitchOriginColor from '../utilities/maybeSwitchOriginColor'
-import { GRID_SIZE } from '../../shared/common/customize'
+import { GRID_SIZE, COLOR_A } from '../../shared/common/customize'
 import { THINNING_RATE } from '../common/customize'
 
 const NEEDED_STRIPE_COUNT = triangularNumber(GRID_SIZE + 1)
@@ -16,7 +16,7 @@ export default () => {
 	// start out with just the top left corner
 	let thisDiagonalsStripeEdgeModuli = [ 0 ]
 
-	let originColor = "BLACK"
+	let originColor = COLOR_A
 
 	// clearly each next diagonal has 2 more squares than the previous one,
 	// but what does this have to do with the cut-off in drawing a new layer,
