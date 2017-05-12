@@ -11,6 +11,7 @@ const NEEDED_STRIPE_COUNT = triangularNumber(GRID_SIZE + 1)
 export default () => {
 	const stripes = iterator(NEEDED_STRIPE_COUNT).map(n => inverseTriangularNumber(n) / THINNING_RATE)
 
+	// won't this make it always even, although it's actually always odd?
 	let countOfSquaresInThisLayer = 0
 
 	// start out with just the top left corner
