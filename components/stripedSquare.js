@@ -1,14 +1,13 @@
 import { SQUARE_SIZE } from '../../shared/common/customize'
 import render from '../../shared/render/render'
 
-let color = "BLACK";
-const switchColor = () => {
-	color = color == "BLACK" ? "WHITE" : "BLACK";
-}
-
-export default ({ x, y, thisDiagonalsStripeEdgeModuli }) => {
+export default ({ x, y, thisDiagonalsStripeEdgeModuli, originColor }) => {
 	thisDiagonalsStripeEdgeModuli.forEach((curModulus, index) => {
-		switchColor();
+		const otherColor = originColor == "BLACK" ? "WHITE" : "BLACK"
+		// this seems like the opposite of what it should be
+		// but maybe that's because the moduli array always starts with a 0 in it?
+		const color = index % 2 == 1 ? originColor : otherColor
+
 		const nextModulus = thisDiagonalsStripeEdgeModuli[ index + 1 ] || 2;
 
 		const coordinates = [
@@ -31,8 +30,5 @@ export default ({ x, y, thisDiagonalsStripeEdgeModuli }) => {
 		]
 
 		render({ color, coordinates })
-
 	})
-
-	if (thisDiagonalsStripeEdgeModuli.length % 2 == 0) switchColor();
 }
