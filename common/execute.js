@@ -1,95 +1,26 @@
-import ctx from '../../shared/render/ctx'
+import triangularNumber from '../utilities/triangularNumber'
+import inverseTriangularNumber from '../utilities/inverseTriangularNumber'
+import layer from '../components/layer'
+import iterator from '../../shared/utilities/iterator'
+import solidSquare from '../components/solidSquare'
+import { GRID_SIZE } from '../../shared/common/customize'
 
-//user settings
-
-ctx.lineWidth = 1;
-const SCALE = 25;
-const DIMENSION = 32;
-// WIDTH = HEIGHT = canvas.width = canvas.height = SCALE * DIMENSION;
-const STRIPE_COUNT = triangularNumber(DIMENSION + 1);
-const COLOR_A = "#000";
-const COLOR_B = "#fff";
-const THINNING_RATE = 1 / 2;
-
-function triangularNumber(n) {
-	return n * (n + 1) / 2;
-}
-
-function inverseTriangularNumber(n) {
-	return 0.5 * Math.sqrt(8 * n + 1) - 0.5;
-}
-
-//for a given diagonal, draw each of its striped squares
-
-function drawStripedSquareDiagonal(thisDiagonalsStripeEdgeModuli, diagonal) {
-	for (var x = diagonal; x >= 0; x--) {
-		var y = diagonal - x;
-		drawStripedSquare(x, y, thisDiagonalsStripeEdgeModuli)
-	}
-}
-
-
-//draw a single striped square
-
-var color = COLOR_A;
-function switchColor() {
-	color = color === COLOR_A ? COLOR_B : COLOR_A;
-}
-
-function drawStripedSquare(x, y, thisDiagonalsStripeEdgeModuli) {
-	thisDiagonalsStripeEdgeModuli.forEach(function(curModulus, index) {
-		switchColor();
-		ctx.fillStyle = color;
-		var nextModulus = thisDiagonalsStripeEdgeModuli[index + 1] || 2;
-		ctx.beginPath();
-		ctx.moveTo((x + curModulus) * SCALE, y * SCALE);
-		ctx.lineTo((x + nextModulus) * SCALE, y * SCALE);
-		ctx.lineTo(x * SCALE, (y + nextModulus) * SCALE)
-		ctx.lineTo(x * SCALE, (y + curModulus) * SCALE);
-		ctx.closePath();
-		ctx.fill();
-	})
-	if (thisDiagonalsStripeEdgeModuli.length % 2 === 0) switchColor();
-}
-
-
-
-
-function solidSquare(color, x, y) {
-	ctx.fillStyle = color;
-	ctx.beginPath();
-	ctx.rect(x * SCALE, y * SCALE, SCALE, SCALE);
-	ctx.fill();
-}
+const STRIPE_COUNT = triangularNumber(GRID_SIZE + 1)
+const THINNING_RATE = 1 / 2
 
 export default () => {
+	const stripes = iterator(STRIPE_COUNT).map(n => inverseTriangularNumber(n) / THINNING_RATE)
 
-	//populate stripes
-
-	var stripes = [];
-	for (var n = 0; n < STRIPE_COUNT; n++) {
-		stripes.push(inverseTriangularNumber(n) / THINNING_RATE);
-	}
-
-	//from the master stripes, build and kick off each diagonal of striped squares
-
-	var i = 0;
-	var thisDiagonalsStripeEdgeModuli = [0];
-	stripes.forEach(function(stripe) {
-		if (stripe >= i + 2) {
-			drawStripedSquareDiagonal(thisDiagonalsStripeEdgeModuli, i);
-			thisDiagonalsStripeEdgeModuli = [0];
-			i += 2;
+	let diagonal = 0
+	let thisDiagonalsStripeEdgeModuli = [ 0 ]
+	stripes.forEach(stripe => {
+		if (stripe >= diagonal + 2) {
+			layer({ thisDiagonalsStripeEdgeModuli, diagonal })
+			thisDiagonalsStripeEdgeModuli = [ 0 ]
+			diagonal += 2
 		}
-		thisDiagonalsStripeEdgeModuli.push(stripe % 2);
-	});
+		thisDiagonalsStripeEdgeModuli.push(stripe % 2)
+	})
 
-	//draw the solid squares
-
-	for (var x = 0; x < DIMENSION; x++) {
-		for (var y = 0; y < DIMENSION; y++) {
-			if (x % 2 !== 0 && y % 2 === 0) solidSquare(COLOR_A, x, y);
-			if (x % 2 === 0 && y % 2 !== 0) solidSquare(COLOR_B, x, y);
-		}
-	}
+	iterator(GRID_SIZE).forEach(x => iterator(GRID_SIZE).forEach(y => solidSquare({x, y})))
 }
