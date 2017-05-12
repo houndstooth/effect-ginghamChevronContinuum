@@ -1,7 +1,11 @@
-import { COLOR_A, COLOR_B, SQUARE_SIZE } from '../../shared/common/customize'
+import { COLOR_A, COLOR_B, UNIT } from '../../shared/common/customize'
 import render from '../../shared/render/render'
+import scaleOrigin from '../../shared/utilities/scaleOrigin'
 
-export default ({ x, y, thisDiagonalsStripeEdgeModuli, originColor }) => {
+export default ({ origin, size, thisDiagonalsStripeEdgeModuli, originColor }) => {
+	origin = scaleOrigin({ origin })
+	const sizedUnit = size * UNIT
+
 	thisDiagonalsStripeEdgeModuli.forEach((curModulus, index) => {
 		const otherColor = originColor == COLOR_A ? COLOR_B : COLOR_A
 		// this seems like the opposite of what it should be
@@ -12,20 +16,20 @@ export default ({ x, y, thisDiagonalsStripeEdgeModuli, originColor }) => {
 
 		const coordinates = [
 			[
-				(x + curModulus) * SQUARE_SIZE,
-				y * SQUARE_SIZE
+				origin[ 0 ] + curModulus * sizedUnit,
+				origin[ 1 ]
 			],
 			[
-				(x + nextModulus) * SQUARE_SIZE,
-				y * SQUARE_SIZE
+				origin[ 0 ] + nextModulus * sizedUnit,
+				origin[ 1 ]
 			],
 			[
-				x * SQUARE_SIZE,
-				(y + nextModulus) * SQUARE_SIZE
+				origin[ 0 ],
+				origin[ 1 ] + nextModulus * sizedUnit
 			],
 			[
-				x * SQUARE_SIZE,
-				(y + curModulus) * SQUARE_SIZE
+				origin[ 0 ],
+				origin[ 1 ] + curModulus * sizedUnit
 			]
 		]
 
