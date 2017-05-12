@@ -34,5 +34,5 @@ export default ({ x, y, thisDiagonalsStripeEdgeModuli }) => {
 
 	})
 
-	if (thisDiagonalsStripeEdgeModuli.length % 2 === 0) switchColor();
+	if (thisDiagonalsStripeEdgeModuli.length % 2 == 0) switchColor();
 }
