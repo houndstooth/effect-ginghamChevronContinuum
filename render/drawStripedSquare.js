@@ -1,9 +1,9 @@
 import { COLOR_A, COLOR_B, UNIT } from '../../shared/common/customize'
 import render from '../../shared/render/render'
-import scaleOrigin from '../../shared/utilities/scaleOrigin'
+import scalePoint from '../../shared/utilities/scalePoint'
 
 export default ({ origin, size, thisDiagonalsStripeEdgeModuli, originColor }) => {
-	origin = scaleOrigin({ origin })
+	origin = scalePoint({ point: origin })
 	const sizedUnit = size * UNIT
 
 	thisDiagonalsStripeEdgeModuli.forEach((curModulus, index) => {
