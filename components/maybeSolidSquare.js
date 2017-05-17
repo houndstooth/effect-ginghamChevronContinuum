@@ -1,18 +1,20 @@
 import { COLOR_A, COLOR_B, SQUARE_SIZE } from '../../shared/common/customize'
-import drawSolidSquare from '../../shared/render/drawSolidSquare'
+import drawStripedSquare from '../../shared/render/drawStripedSquare'
 
 export default ({x, y}) => {
 	if (x % 2 == 1 && y % 2 == 0) {
-		drawSolidSquare({
+		drawStripedSquare({
 			origin: [ x * SQUARE_SIZE, y * SQUARE_SIZE ],
 			size: SQUARE_SIZE,
-			color: COLOR_A
+			originColor: COLOR_A,
+			otherColor: COLOR_A
 		})
 	} else if (x % 2 == 0 && y % 2 == 1) {
-		drawSolidSquare({
+		drawStripedSquare({
 			origin: [ x * SQUARE_SIZE, y * SQUARE_SIZE ],
 			size: SQUARE_SIZE,
-			color: COLOR_B
+			originColor: COLOR_B,
+			otherColor: COLOR_B
 		})
 	}
 }
