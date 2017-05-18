@@ -2,9 +2,9 @@ import render from '../../shared/render/render'
 import calculateHarmonicShrinkingStripeCoordinates from '../utilities/calculateHarmonicShrinkingStripeCoordinates'
 import maybeRotateStripe from '../../shared/utilities/maybeRotateStripe'
 
-export default ({ sizedUnit, center, origin, rotationAboutCenter, rotationAboutOrigin, originColor, otherColor, harmonicShrinkingStripes }) => {
+export default ({ sizedUnit, center, origin, rotationAboutCenter, rotationAboutOrigin, colors, harmonicShrinkingStripes }) => {
 	harmonicShrinkingStripes.forEach((curModulus, index) => {
-		const color = index % 2 === 0 ? originColor : otherColor
+		const color = colors[ index % 2 ]
 
 		let nextModulus = harmonicShrinkingStripes[ index + 1 ] || 2
 
