@@ -2,6 +2,8 @@ import { COLOR_A, COLOR_B, UNIT } from '../../shared/common/customize'
 import render from '../../shared/render/render'
 import scalePoint from '../../shared/utilities/scalePoint'
 
+// what is up with this file ??????????????????????????
+
 export default ({ origin, size, thisDiagonalsStripeEdgeModuli, originColor }) => {
 	origin = scalePoint({ point: origin })
 	const sizedUnit = size * UNIT

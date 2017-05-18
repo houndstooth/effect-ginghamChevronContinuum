@@ -2,9 +2,10 @@ import layer from '../components/layer'
 import calculateStripes from '../utilities/calculateStripes'
 import maybeSwitchOriginColor from '../utilities/maybeSwitchOriginColor'
 import { COLOR_A } from '../../shared/common/customize'
+import grid from '../../shared/components/grid'
+import gccMaybeSolidTile from '../components/gccMaybeSolidTile'
 
-
-export default ({thinningRate}) => {
+export default ({ thinningRate }) => {
 	// won't this make it always even, although it's actually always odd?
 	let countOfSquaresInThisLayer = 0
 
@@ -18,14 +19,16 @@ export default ({thinningRate}) => {
 	// or the modulus?
 	// maybe it has something to do with going along the top side, then the right,
 	// until you reach the opposite corner?
-	calculateStripes({thinningRate}).forEach(stripe => {
+	calculateStripes({ thinningRate }).forEach(stripe => {
 		if (stripe >= countOfSquaresInThisLayer + 2) {
 			layer({ thisDiagonalsStripeEdgeModuli, countOfSquaresInThisLayer, originColor })
-			originColor = maybeSwitchOriginColor({originColor, thisDiagonalsStripeEdgeModuli})
+			originColor = maybeSwitchOriginColor({ originColor, thisDiagonalsStripeEdgeModuli })
 			thisDiagonalsStripeEdgeModuli = [ 0 ]
 			countOfSquaresInThisLayer += 2
 		}
 
 		thisDiagonalsStripeEdgeModuli.push(stripe % 2)
 	})
+
+	grid({ tile: gccMaybeSolidTile })
 }
