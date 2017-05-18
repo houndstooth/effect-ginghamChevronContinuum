@@ -8,7 +8,7 @@ import { THINNING_RATE, EACH_SQUARE_IS_ITS_OWN_CONTINUUM } from '../common/custo
 import { GRID_SIZE } from '../../shared/common/customize'
 
 export default (options = {thinningRate: THINNING_RATE}) => {
-	const {thinningRate} = options;
+	const {thinningRate} = options
 	if (EACH_SQUARE_IS_ITS_OWN_CONTINUUM) {
 		let stripes = calculateStripes({thinningRate})
 		iterator(GRID_SIZE).forEach(x => {

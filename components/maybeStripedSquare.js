@@ -2,9 +2,9 @@ import ctx from '../../shared/render/ctx'
 import { COLOR_A, COLOR_B, SQUARE_SIZE } from '../../shared/common/customize'
 
 export default ({x, y, stripes}) => {
-	if (x % 2 == 0 && y % 2 == 0) {
+	if (x % 2 === 0 && y % 2 === 0) {
 		stripedSquare(stripes, COLOR_A, x, y)
-	} else if (x % 2 == 1 && y % 2 == 1) {
+	} else if (x % 2 === 1 && y % 2 === 1) {
 		stripedSquare(stripes, COLOR_B, x, y)
 	}
 }
