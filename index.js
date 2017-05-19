@@ -1,4 +1,5 @@
-import ginghamChevronContinuum from './common/execute'
-import ginghamChevronContinuumAnimated from './common/animate'
+import execute from './common/execute'
 
-export { ginghamChevronContinuum, ginghamChevronContinuumAnimated }
+const ginghamChevronContinuum = execute
+
+export { ginghamChevronContinuum }
