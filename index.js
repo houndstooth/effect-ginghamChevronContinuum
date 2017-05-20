@@ -1,5 +1,4 @@
-import execute from './common/execute'
+import grid from '../shared/components/grid'
+import ginghamChevronContinuumTile from './components/ginghamChevronContinuumTile'
 
-const ginghamChevronContinuum = execute
-
-export { ginghamChevronContinuum }
+export default () => grid({ tile: ginghamChevronContinuumTile })
