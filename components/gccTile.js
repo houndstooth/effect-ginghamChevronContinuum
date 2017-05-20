@@ -1,10 +1,11 @@
 import tile from '../../shared/components/tile'
-import { CONTINUUM_STARTS_AT_STRIPE_COUNT, STRIPE_COUNT_INCREASES_BY_X_EACH_DIAGONAL } from '../common/customize'
+import state from '../../state'
 
 export default ({ origin }) => {
+    const { continuumStartsAtStripeCount, stripeCountIncreasePerDiagonal } = state.ginghamChevronContinuum
 	const stripeCount = Math.floor(
-		((origin[ 0 ] + origin[ 1 ] + (CONTINUUM_STARTS_AT_STRIPE_COUNT * 2)) * STRIPE_COUNT_INCREASES_BY_X_EACH_DIAGONAL / 2)
-		- (CONTINUUM_STARTS_AT_STRIPE_COUNT * (STRIPE_COUNT_INCREASES_BY_X_EACH_DIAGONAL - 1))
+		((origin[ 0 ] + origin[ 1 ] + (continuumStartsAtStripeCount * 2)) * stripeCountIncreasePerDiagonal / 2)
+		- (continuumStartsAtStripeCount * (stripeCountIncreasePerDiagonal - 1))
 	)
 
 	tile({ origin, stripeCount })
