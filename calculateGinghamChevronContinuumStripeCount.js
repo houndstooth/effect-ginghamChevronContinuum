@@ -1,4 +1,4 @@
-import state from '../../shared/application/state'
+import state from '../shared/state/state'
 
 export default ({ origin }) => {
 	const { continuumStartsAtStripeCount, stripeCountIncreasePerDiagonal } = state.shared.stripeCount.ginghamChevronContinuum.aligning
@@ -7,4 +7,3 @@ export default ({ origin }) => {
 		- (continuumStartsAtStripeCount * (stripeCountIncreasePerDiagonal - 1))
 	)
 }
-    
