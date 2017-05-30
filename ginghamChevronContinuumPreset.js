@@ -4,8 +4,8 @@ export default {
 			stripeCount: {
 				ginghamChevronContinuum: {
 					on: true,
-					stripeCountIncreasePerDiagonal: 1,
-					continuumStartsAtStripeCount: 1
+					delta: 1,
+					initial: 1
 				}
 			}
 		}
@@ -15,8 +15,8 @@ export default {
 		shared: {
 			stripeCount: {
 				ginghamChevronContinuum: {
-					continuumStartsAtStripeCount: p => p * 1.005,
-					stripeCountIncreasePerDiagonal: p => p * 1.005
+					initial: p => p * 1.005,
+					delta: p => p * 1.005
 				}
 			}
 		}

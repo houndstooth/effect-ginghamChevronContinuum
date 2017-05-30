@@ -1,14 +1,8 @@
 import state from '../shared/state/state'
-import calculateTrapezoidalNumber from './calculateTrapezoidalNumber'
+import trapezoidalNumbers from './trapezoidalNumbers'
 
 export default () => {
     const { gridSize, stripeCount } = state.shared
-    const { continuumStartsAtStripeCount, stripeCountIncreasePerDiagonal } = stripeCount.ginghamChevronContinuum
-    const n = gridSize * 2
-
-    return calculateTrapezoidalNumber({ 
-        continuumStartsAtStripeCount,
-        stripeCountIncreasePerDiagonal,
-        n
-    }) 
+    const { initial, delta } = stripeCount.ginghamChevronContinuum
+    return trapezoidalNumbers.trapezoidalNumber({ initial, delta, n: gridSize })
 }
