@@ -2,19 +2,19 @@ import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
 import state from '../shared/state/state'
 import trapezoidalNumbers from './trapezoidalNumbers'
 
-export default ({ origin }) => {
+export default ({ address }) => {
 	const { initial, delta } = state.shared.stripeCount.ginghamChevronContinuum
-	let theseStripes = [ 0 ]
+	let stripes = [ 0 ]
 
 	for (let n = 0; n < neededStripeCountToCoverGrid(); n++) {
-		const thisStripe = trapezoidalNumbers.trapezoidalRoot({ initial, delta, n }) * 2
-		if (thisStripe >= origin[ 0 ] + origin[ 1 ]  + 2) {
-			return theseStripes
+		const stripe = trapezoidalNumbers.trapezoidalRoot({ initial, delta, n }) * 2
+		if (stripe >= address[ 0 ] + address[ 1 ] + 2) {
+			return stripes
 		}
-		if (thisStripe > origin[ 0 ] + origin[ 1 ] ) {
-			theseStripes.push((thisStripe - (origin[ 0 ] + origin[ 1 ] )) % 2)
+		if (stripe > address[ 0 ] + address[ 1 ]) {
+			stripes.push((stripe - (address[ 0 ] + address[ 1 ] )) % 2)
 		}
 	}
 
-	return theseStripes
+	return stripes
 }
