@@ -2,8 +2,8 @@ export default {
 	state: {
 		shared: {
 			stripeCount: {
+				mode: 'GINGHAM_CHEVRON_CONTINUUM',
 				ginghamChevronContinuum: {
-					on: true,
 					delta: 1,
 					initial: 1
 				}
