@@ -1,7 +1,7 @@
 export default {
 	state: {
 		shared: {
-			stripeCount: {
+			stripeCountConfig: {
 				mode: 'GINGHAM_CHEVRON_CONTINUUM',
 				ginghamChevronContinuum: {
 					delta: 1,
@@ -13,7 +13,7 @@ export default {
 	iterations: {},
 	animations: {
 		shared: {
-			stripeCount: {
+			stripeCountConfig: {
 				ginghamChevronContinuum: {
 					initial: p => p * 1.005,
 					delta: p => p * 1.005

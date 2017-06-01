@@ -3,7 +3,7 @@ import state from '../shared/state/state'
 import trapezoidalNumbers from './trapezoidalNumbers'
 
 export default ({ address }) => {
-	const { initial, delta } = state.shared.stripeCount.ginghamChevronContinuum
+	const { initial, delta } = state.shared.stripeCountConfig.ginghamChevronContinuum
 	let stripes = [ 0 ]
 
 	for (let n = 0; n < neededStripeCountToCoverGrid(); n++) {
