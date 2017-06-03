@@ -10,7 +10,6 @@ export default {
 			}
 		}
 	},
-	iterations: {},
 	animations: {
 		stripeCountConfig: {
 			ginghamChevronContinuum: {
