@@ -1,8 +1,8 @@
 import state from '../shared/state/state'
-import trapezoidalNumbers from './trapezoidalNumbers'
+import mathUtilities from '../shared/utilities/mathUtilities'
 
 export default () => {
     const { gridSize, stripeCountConfig } = state
     const { initial, delta } = stripeCountConfig.ginghamChevronContinuum
-    return trapezoidalNumbers.trapezoidalNumber({ initial, delta, n: gridSize })
+    return initial + delta * mathUtilities.triangularNumber(gridSize)
 }
