@@ -1,3 +1,5 @@
+import { ANIMATION_RATE } from '../shared/application/constants'
+
 export default {
 	state: {
 		stripeCountConfig: {
@@ -12,8 +14,8 @@ export default {
 	animations: {
 		stripeCountConfig: {
 			ginghamChevronContinuum: {
-				initial: p => p * 1.005,
-				delta: p => p * 1.005
+				initial: p => p * ANIMATION_RATE,
+				delta: p => p * ANIMATION_RATE
 			}
 		}
 	}
