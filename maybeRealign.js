@@ -1,6 +1,6 @@
 import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
-import state from '../shared/state/state'
-import mathUtilities from '../shared/utilities/mathUtilities'
+import state from '../../state/state'
+import mathUtilities from '../../utilities/mathUtilities'
 
 export default ({ setForTile, address }) => {
 	const { initial, delta } = state.stripeCountConfig.ginghamChevronContinuum

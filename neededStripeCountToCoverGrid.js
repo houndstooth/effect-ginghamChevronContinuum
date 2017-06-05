@@ -1,5 +1,5 @@
-import state from '../shared/state/state'
-import mathUtilities from '../shared/utilities/mathUtilities'
+import state from '../../state/state'
+import mathUtilities from '../../utilities/mathUtilities'
 
 export default () => {
     const { gridSize, stripeCountConfig } = state

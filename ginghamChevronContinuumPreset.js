@@ -1,4 +1,4 @@
-import { ANIMATION_RATE } from '../shared/application/constants'
+import { ANIMATION_RATE } from '../../application/constants'
 
 export default {
 	state: {
