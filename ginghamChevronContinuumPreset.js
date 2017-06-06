@@ -1,5 +1,6 @@
 import { ANIMATION_RATE } from '../../application/constants'
 import realignSetForTileToMaintainGinghamChevronContinuumAcrossGrid from './realignSetForTileToMaintainGinghamChevronContinuumAcrossGrid'
+import getGinghamChevronContinuumStripePositions from './getGinghamChevronContinuumStripePositions'
 
 export default {
 	state: {
@@ -14,7 +15,8 @@ export default {
 			assignment: {
 				transformAssignedSet: realignSetForTileToMaintainGinghamChevronContinuumAcrossGrid
 			}
-		}
+		},
+		getStripePositions: getGinghamChevronContinuumStripePositions
 	},
 	animations: {
 		stripeCountConfig: {

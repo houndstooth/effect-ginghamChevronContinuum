@@ -10,9 +10,9 @@ export default ({ setForTile, address }) => {
 const indexOfFirstGridStripeCrossingThisTile = ({ address }) => {
 	const { initial, delta } = state.stripeCountConfig.ginghamChevronContinuum
 
-	for (let n = 0; n < neededStripeCountToCoverGrid(); n++) {
-		const thisStripe = mathUtilities.termialRoot({ initial, delta, n }) * 2
-		if (thisStripe > address[ 0 ] + address[ 1 ]) return thisStripe
+	for (let stripeIndex = 0; stripeIndex < neededStripeCountToCoverGrid(); stripeIndex++) {
+		const stripePosition = mathUtilities.termialRoot({ initial, delta, n: stripeIndex }) * 2
+		if (stripePosition > address[ 0 ] + address[ 1 ]) return stripeIndex
 	}
 }
 
