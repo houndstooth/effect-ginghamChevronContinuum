@@ -1,5 +1,5 @@
 import { ANIMATION_RATE } from '../../application/constants'
-import realignSetForGinghamChevronContinuum from './realignSetForGinghamChevronContinuum'
+import realignSetForTileToMaintainGinghamChevronContinuumAcrossGrid from './realignSetForTileToMaintainGinghamChevronContinuumAcrossGrid'
 
 export default {
 	state: {
@@ -12,7 +12,7 @@ export default {
 		},
 		colorConfig: {
 			assignment: {
-				transformAssignedSet: realignSetForGinghamChevronContinuum
+				transformAssignedSet: realignSetForTileToMaintainGinghamChevronContinuumAcrossGrid
 			}
 		}
 	},
