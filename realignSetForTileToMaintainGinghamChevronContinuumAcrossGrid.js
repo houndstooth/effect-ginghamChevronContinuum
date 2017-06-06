@@ -17,4 +17,4 @@ const indexOfFirstGridStripeCrossingThisTile = ({ address }) => {
 }
 
 //yeah, but this just assumes you've only got two colors...
-// i guess i just need a similar tool which has the pattern-level set
+// i guess i just need a similar tool which has the grid-level set
