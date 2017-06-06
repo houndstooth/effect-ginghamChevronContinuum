@@ -1,4 +1,5 @@
 import { ANIMATION_RATE } from '../../application/constants'
+import realignSetForGinghamChevronContinuum from './realignSetForGinghamChevronContinuum'
 
 export default {
 	state: {
@@ -7,6 +8,11 @@ export default {
 			ginghamChevronContinuum: {
 				delta: 1,
 				initial: 1
+			}
+		},
+		colorConfig: {
+			assignment: {
+				transformAssignedSet: realignSetForGinghamChevronContinuum
 			}
 		}
 	},
