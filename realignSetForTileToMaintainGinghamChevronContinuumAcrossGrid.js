@@ -15,6 +15,3 @@ const indexOfFirstGridStripeCrossingThisTile = ({ address }) => {
 		if (stripePosition > address[ 0 ] + address[ 1 ]) return stripeIndex
 	}
 }
-
-//yeah, but this just assumes you've only got two colors...
-// i guess i just need a similar tool which has the grid-level set
