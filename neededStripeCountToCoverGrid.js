@@ -1,4 +1,3 @@
-import state from '../../state/state'
 import mathUtilities from '../../utilities/mathUtilities'
 
 export default () => {

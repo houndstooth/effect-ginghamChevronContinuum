@@ -1,5 +1,4 @@
 import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
-import state from '../../state/state'
 import mathUtilities from '../../utilities/mathUtilities'
 
 export default ({ setForTile, address }) => {
