@@ -8,22 +8,22 @@ export default {
 			mode: 'GINGHAM_CHEVRON_CONTINUUM',
 			ginghamChevronContinuum: {
 				delta: 1,
-				initial: 1
-			}
+				initial: 1,
+			},
 		},
 		colorConfig: {
 			assignment: {
-				transformAssignedSet: realignSetForTileToMaintainGinghamChevronContinuumAcrossGrid
-			}
+				transformAssignedSet: realignSetForTileToMaintainGinghamChevronContinuumAcrossGrid,
+			},
 		},
-		getStripePositions: getGinghamChevronContinuumStripePositions
+		getStripePositions: getGinghamChevronContinuumStripePositions,
 	},
 	animations: {
 		stripeCountConfig: {
 			ginghamChevronContinuum: {
 				initial: p => p * ANIMATION_RATE,
-				delta: p => p * ANIMATION_RATE
-			}
-		}
-	}
+				delta: p => p * ANIMATION_RATE,
+			},
+		},
+	},
 }
