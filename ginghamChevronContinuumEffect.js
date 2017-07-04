@@ -1,4 +1,4 @@
-import { ANIMATION_RATE } from '../../constants'
+import { ANIMATION_RATE } from '../../src/constants'
 import realignSetForTileToMaintainGinghamChevronContinuumAcrossGrid from './realignSetForTileToMaintainGinghamChevronContinuumAcrossGrid'
 import getGinghamChevronContinuumStripePositions from './getGinghamChevronContinuumStripePositions'
 
