@@ -1,5 +1,5 @@
 import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
-import mathUtilities from '../../src/utilities/mathUtilities'
+import mathUtilities from '../../../../src/utilities/mathUtilities'
 
 export default ({ setForTile, address }) => {
 	const stripeIndex = indexOfFirstGridStripeCrossingThisTile({ address })

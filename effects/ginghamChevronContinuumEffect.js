@@ -1,6 +1,6 @@
-import { ANIMATION_RATE } from '../../src/constants'
-import realignSetForTileToMaintainGinghamChevronContinuumAcrossGrid from './realignSetForTileToMaintainGinghamChevronContinuumAcrossGrid'
-import getGinghamChevronContinuumStripePositions from './getGinghamChevronContinuumStripePositions'
+import { ANIMATION_RATE } from '../../../src/constants'
+import realignSetForTileToMaintainGinghamChevronContinuumAcrossGrid from '../src/utilities/realignSetForTileToMaintainGinghamChevronContinuumAcrossGrid'
+import getGinghamChevronContinuumStripePositions from '../src/utilities/getGinghamChevronContinuumStripePositions'
 
 export default {
 	initial: {

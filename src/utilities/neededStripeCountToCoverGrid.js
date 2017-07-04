@@ -1,5 +1,5 @@
-import mathUtilities from '../../src/utilities/mathUtilities'
-import { GRID_SIZE } from '../../src/defaults'
+import mathUtilities from '../../../../src/utilities/mathUtilities'
+import { GRID_SIZE } from '../../../../src/defaults'
 
 export default () => {
 	const { gridConfig, stripeCountConfig } = settings.initial
