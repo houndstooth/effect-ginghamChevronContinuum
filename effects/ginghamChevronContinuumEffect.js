@@ -5,7 +5,7 @@ import getGinghamChevronContinuumStripePositions from '../src/utilities/getGingh
 export default {
 	initial: {
 		stripeCountSettings: {
-			mode: 'GINGHAM_CHEVRON_CONTINUUM',
+			stripeCountMode: 'GINGHAM_CHEVRON_CONTINUUM',
 			ginghamChevronContinuum: {
 				delta: 1,
 				initial: 1,
