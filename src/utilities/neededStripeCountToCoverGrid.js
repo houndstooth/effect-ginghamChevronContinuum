@@ -1,7 +1,7 @@
 import mathUtilities from '../../../../src/utilities/mathUtilities'
 
 export default () => {
-	const { stripeCountSettings, gridSettings } = current.settings.initial
-	const { initial, delta } = stripeCountSettings.ginghamChevronContinuum
-	return initial + delta * mathUtilities.triangularNumber(gridSettings.gridSize)
+	const { stripeCountSettings, gridSettings } = currentState.settings.base
+	const { initialStripeCount, deltaStripeCount } = stripeCountSettings.ginghamChevronContinuum
+	return initialStripeCount + deltaStripeCount * mathUtilities.triangularNumber(gridSettings.gridSize)
 }
