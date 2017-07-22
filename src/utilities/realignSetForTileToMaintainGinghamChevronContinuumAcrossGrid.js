@@ -1,5 +1,6 @@
 import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
 import mathUtilities from '../../../../src/utilities/mathUtilities'
+import store from '../../../../store'
 
 export default ({ setForTile, address }) => {
 	const stripeIndex = indexOfFirstGridStripeCrossingThisTile({ address })
@@ -7,7 +8,7 @@ export default ({ setForTile, address }) => {
 }
 
 const indexOfFirstGridStripeCrossingThisTile = ({ address }) => {
-	const { initialStripeCount, deltaStripeCount } = currentState.builtPattern.base.stripeCountSettings.ginghamChevronContinuum
+	const { initialStripeCount, deltaStripeCount } = store.currentState.builtPattern.base.stripeCountSettings.ginghamChevronContinuum
 
 	for (let stripeIndex = 0; stripeIndex < neededStripeCountToCoverGrid(); stripeIndex++) {
 		const stripePosition = mathUtilities.termialRoot(
