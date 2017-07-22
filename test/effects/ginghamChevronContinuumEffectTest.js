@@ -1,11 +1,11 @@
 import execute from '../../../../src/application/execute'
-import buildPattern from '../../../../src/settings/buildPattern'
+import buildPattern from '../../../../src/state/buildPattern'
 import tileSectorCenterIsColor from '../../../../test/helpers/tileSectorCenterIsColor'
 import activateTestMarkerCanvas from '../../../../test/helpers/activateTestMarkerCanvas'
 import { BLACK, TRANSPARENT } from '../../../../src/constants'
 import ginghamChevronContinuumEffect from '../../effects/ginghamChevronContinuumEffect'
 import settingsUtilities from '../../../../src/utilities/settingsUtilities'
-import settingsPaths from '../../../../src/settings/settingsPaths'
+import settingsPaths from '../../../../src/state/settingsPaths'
 
 describe('gingham chevron continuum effect', () => {
 	it('each new diagonal row has an extra stripe', () => {
