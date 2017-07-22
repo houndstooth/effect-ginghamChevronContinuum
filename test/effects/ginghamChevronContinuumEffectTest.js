@@ -1,5 +1,5 @@
 import execute from '../../../../src/application/execute'
-import setup from '../../../../src/settings/setup'
+import buildPattern from '../../../../src/settings/buildPattern'
 import tileSectorCenterIsColor from '../../../../test/helpers/tileSectorCenterIsColor'
 import activateTestMarkerCanvas from '../../../../test/helpers/activateTestMarkerCanvas'
 import { BLACK, TRANSPARENT } from '../../../../src/constants'
@@ -10,7 +10,7 @@ import settingsPaths from '../../../../src/settings/settingsPaths'
 describe('gingham chevron continuum effect', () => {
 	it('each new diagonal row has an extra stripe', () => {
 		const tileSizeInPixels = settingsUtilities.getFromSettingsOrDefault(settingsPaths.TILE_SIZE)
-		setup({ effects: [ ginghamChevronContinuumEffect ] })
+		buildPattern({ patternEffects: [ ginghamChevronContinuumEffect ] })
 		activateTestMarkerCanvas()
 
 		execute()

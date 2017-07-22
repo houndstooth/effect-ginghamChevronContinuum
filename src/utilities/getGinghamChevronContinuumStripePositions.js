@@ -2,7 +2,7 @@ import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
 import mathUtilities from '../../../../src/utilities/mathUtilities'
 
 export default ({ address }) => {
-	const { initialStripeCount, deltaStripeCount } = currentState.settings.base.stripeCountSettings.ginghamChevronContinuum
+	const { initialStripeCount, deltaStripeCount } = currentState.builtPattern.base.stripeCountSettings.ginghamChevronContinuum
 	let stripes = [ 0 ]
 	const distanceFromZeroZeroAddress = Math.abs(address[ 0 ]) + Math.abs(address[ 1 ])
 
