@@ -9,7 +9,7 @@ import settingsPaths from '../../../../src/state/settingsPaths'
 
 describe('gingham chevron continuum effect', () => {
 	it('each new diagonal row has an extra stripe', () => {
-		const tileSizeInPixels = settingsUtilities.getFromSettingsOrDefault(settingsPaths.TILE_SIZE)
+		const tileSizeInPixels = settingsUtilities.getFromBuiltPatternOrDefault(settingsPaths.TILE_SIZE)
 		buildPattern({ patternEffects: [ ginghamChevronContinuumEffect ] })
 		activateTestMarkerCanvas()
 
