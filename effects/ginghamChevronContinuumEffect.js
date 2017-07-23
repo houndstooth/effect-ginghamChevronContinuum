@@ -4,11 +4,14 @@ import getGinghamChevronContinuumStripePositions from '../src/utilities/getGingh
 
 export default {
 	basePattern: {
-		stripeCountSettings: {
-			stripeCountMode: 'GINGHAM_CHEVRON_CONTINUUM',
-			ginghamChevronContinuum: {
-				deltaStripeCount: 1,
-				initialStripeCount: 1,
+		stripeSettings: {
+			stripePositionSettings: {
+				stripeCountMode: 'GINGHAM_CHEVRON_CONTINUUM',
+				ginghamChevronContinuumSettings: {
+					deltaStripeCount: 1,
+					initialStripeCount: 1,
+				},
+				getStripePositions: getGinghamChevronContinuumStripePositions,
 			},
 		},
 		colorSettings: {
@@ -16,13 +19,14 @@ export default {
 				transformAssignedSet: realignSetForTileToMaintainGinghamChevronContinuumAcrossGrid,
 			},
 		},
-		getStripePositions: getGinghamChevronContinuumStripePositions,
 	},
 	animationsPattern: {
-		stripeCountSettings: {
-			ginghamChevronContinuum: {
-				deltaStripeCount: p => p * ANIMATION_RATE,
-				initialStripeCount: p => p * ANIMATION_RATE,
+		stripeSettings: {
+			stripePositionSettings: {
+				ginghamChevronContinuumSettings: {
+					deltaStripeCount: p => p * ANIMATION_RATE,
+					initialStripeCount: p => p * ANIMATION_RATE,
+				},
 			},
 		},
 	},

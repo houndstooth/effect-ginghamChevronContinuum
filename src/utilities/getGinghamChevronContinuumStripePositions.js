@@ -4,7 +4,7 @@ import mathUtilities from '../../../../src/utilities/mathUtilities'
 import store from '../../../../store'
 
 export default ({ address }) => {
-	const { initialStripeCount, deltaStripeCount } = store.currentState.mainHoundstooth.basePattern.stripeCountSettings.ginghamChevronContinuum
+	const { initialStripeCount, deltaStripeCount } = store.currentState.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings.ginghamChevronContinuumSettings
 	let stripes = [ 0 ]
 	const distanceFromZeroZeroAddress = Math.abs(address[ 0 ]) + Math.abs(address[ 1 ])
 
