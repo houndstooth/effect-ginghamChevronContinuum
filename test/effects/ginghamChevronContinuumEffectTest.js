@@ -4,12 +4,12 @@ import tileSectorCenterIsColor from '../../../../test/integration/helpers/tileSe
 import activateTestMarkerCanvas from '../../../../test/integration/helpers/activateTestMarkerCanvas'
 import { BLACK, TRANSPARENT } from '../../../../src/constants'
 import ginghamChevronContinuumEffect from '../../effects/ginghamChevronContinuumEffect'
-import stateUtilities from '../../../../src/utilities/stateUtilities'
-import settingsPaths from '../../../../src/state/settingsPaths'
+import getFromBasePatternOrDefault from '../../../../test/helpers/getFromBasePatternOrDefault'
+import settingsPaths from '../../../../test/helpers/settingsPaths'
 
 describe('gingham chevron continuum effect', () => {
 	it('each new diagonal row has an extra stripe', () => {
-		const tileSizeInPixels = stateUtilities.getFromMainHoundstoothOrDefault(settingsPaths.TILE_SIZE)
+		const tileSizeInPixels = getFromBasePatternOrDefault(settingsPaths.TILE_SIZE)
 		composeMainHoundstooth({ houndstoothEffects: [ ginghamChevronContinuumEffect ] })
 		activateTestMarkerCanvas()
 
