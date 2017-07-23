@@ -3,7 +3,7 @@ import realignSetForTileToMaintainGinghamChevronContinuumAcrossGrid from '../src
 import getGinghamChevronContinuumStripePositions from '../src/utilities/getGinghamChevronContinuumStripePositions'
 
 export default {
-	base: {
+	basePattern: {
 		stripeCountSettings: {
 			stripeCountMode: 'GINGHAM_CHEVRON_CONTINUUM',
 			ginghamChevronContinuum: {
@@ -18,7 +18,7 @@ export default {
 		},
 		getStripePositions: getGinghamChevronContinuumStripePositions,
 	},
-	animations: {
+	animationsPattern: {
 		stripeCountSettings: {
 			ginghamChevronContinuum: {
 				deltaStripeCount: p => p * ANIMATION_RATE,
