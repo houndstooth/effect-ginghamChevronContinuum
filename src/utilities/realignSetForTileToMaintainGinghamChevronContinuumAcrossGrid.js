@@ -2,18 +2,18 @@ import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
 import mathUtilities from '../../../../src/utilities/mathUtilities'
 import store from '../../../../store'
 
-export default ({ setForTile, address }) => {
-	const stripeIndex = indexOfFirstGridStripeCrossingThisTile({ address })
+export default ({ setForTile, gridAddress }) => {
+	const stripeIndex = indexOfFirstGridStripeCrossingThisTile({ gridAddress })
 	return stripeIndex % 2 === 1 ? setForTile.reverse() : setForTile
 }
 
-const indexOfFirstGridStripeCrossingThisTile = ({ address }) => {
+const indexOfFirstGridStripeCrossingThisTile = ({ gridAddress }) => {
 	const { initialStripeCount, deltaStripeCount } = store.currentState.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings.ginghamChevronContinuumSettings
 
 	for (let stripeIndex = 0; stripeIndex < neededStripeCountToCoverGrid(); stripeIndex++) {
 		const stripePosition = mathUtilities.termialRoot(
 			{ rangeStart: initialStripeCount, rangeDelta: deltaStripeCount, n: stripeIndex }
 		) * 2
-		if (stripePosition > address[ 0 ] + address[ 1 ]) return stripeIndex
+		if (stripePosition > gridAddress[ 0 ] + gridAddress[ 1 ]) return stripeIndex
 	}
 }
