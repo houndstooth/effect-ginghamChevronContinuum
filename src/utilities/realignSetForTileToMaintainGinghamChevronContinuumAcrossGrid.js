@@ -8,7 +8,7 @@ export default ({ setForTile, gridAddress }) => {
 }
 
 const indexOfFirstGridStripeCrossingThisTile = ({ gridAddress }) => {
-	const { initialStripeCount, deltaStripeCount } = store.currentState.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings.ginghamChevronContinuumSettings
+	const { initialStripeCount, deltaStripeCount } = store.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings.ginghamChevronContinuumSettings
 
 	for (let stripeIndex = 0; stripeIndex < neededStripeCountToCoverGrid(); stripeIndex++) {
 		const stripePosition = mathUtilities.termialRoot(

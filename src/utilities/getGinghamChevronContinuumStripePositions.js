@@ -3,7 +3,7 @@ import mathUtilities from '../../../../src/utilities/mathUtilities'
 import store from '../../../../store'
 
 export default ({ gridAddress }) => {
-	const { initialStripeCount, deltaStripeCount } = store.currentState.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings.ginghamChevronContinuumSettings
+	const { initialStripeCount, deltaStripeCount } = store.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings.ginghamChevronContinuumSettings
 	let stripes = [ 0 ]
 	const distanceFromZeroZeroAddress = Math.abs(gridAddress[ 0 ]) + Math.abs(gridAddress[ 1 ])
 

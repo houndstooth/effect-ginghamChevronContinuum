@@ -1,5 +1,5 @@
 import execute from '../../../../src/application/execute'
-import composeMainHoundstooth from '../../../../src/state/composeMainHoundstooth'
+import composeMainHoundstooth from '../../../../src/store/composeMainHoundstooth'
 import tileSectorCenterIsColor from '../../../../test/integration/helpers/tileSectorCenterIsColor'
 import activateTestMarkerCanvas from '../../../../test/integration/helpers/activateTestMarkerCanvas'
 import { BLACK, TRANSPARENT } from '../../../../src/constants'
