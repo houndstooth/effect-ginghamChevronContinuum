@@ -9,8 +9,8 @@ export default ({ gridAddress }) => {
 
 	for (let n = 0; n < neededStripeCountToCoverGrid(); n++) {
 		const stripe = mathUtilities.termialRoot(
-				{ rangeStart: initialStripeCount, rangeDelta: deltaStripeCount, n },
-			) * 2
+			{ rangeStart: initialStripeCount, rangeDelta: deltaStripeCount, n }
+		) * 2
 		if (stripe >= distanceFromZeroZeroAddress + 2) {
 			return stripes
 		}
