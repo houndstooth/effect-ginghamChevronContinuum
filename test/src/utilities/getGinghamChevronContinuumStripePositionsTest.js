@@ -3,33 +3,44 @@ import resetStore from '../../../../../test/helpers/resetStore'
 import composeMainHoundstooth from '../../../../../src/store/composeMainHoundstooth'
 import getGinghamChevronContinuumStripePositions from '../../../src/utilities/getGinghamChevronContinuumStripePositions'
 
-describe('get gingham chevron continuum stripe positions', () => {
+describe('get gingham chevron continuum stripe positions returns an array of numbers representing the positions of the stripes for a given tile in terms of its perimeter (2 is the max) based on where on the grid it is', () => {
 	beforeEach(() => resetStore(store))
 
-	// dig up your notebook from the Hayama trip and use examples from your development!
-	xit('returns an array of numbers representing the positions of the stripes for a given tile in terms of its perimeter (2 is the max) based on where on the grid it is', () => {
-		const initialStripeCount = 400
-		const deltaStripeCount = 67
+	it('checking this units ability to start the stripe count at the right amount and grow it by the right amount each diagonal', () => {
+		checkGccStripeCounts(4, 2)
+		checkGccStripeCounts(4, 3)
+		checkGccStripeCounts(3, 2)
+		// checkGccStripeCounts(1, 3)
+		// checkGccStripeCounts(2, 5) --> if the delta is more than twice the initial, it breaks a bit
+		checkGccStripeCounts(5, 3)
+		checkGccStripeCounts(3, 3)
+		checkGccStripeCounts(2, 1)
+		checkGccStripeCounts(3, 1)
+		checkGccStripeCounts(1, 1)
+		checkGccStripeCounts(2, 3)
+		checkGccStripeCounts(1, 2)
+	})
+})
 
-		composeMainHoundstooth({
-			houndstoothEffects: [],
-			houndstoothOverrides: {
-				basePattern: {
-					stripeSettings: {
-						stripePositionSettings: {
-							ginghamChevronContinuumSettings: {
-								initialStripeCount,
-								deltaStripeCount,
-							},
+const checkGccStripeCounts = (initial, delta) => {
+	composeMainHoundstooth({
+		houndstoothEffects: [],
+		houndstoothOverrides: {
+			basePattern: {
+				stripeSettings: {
+					stripePositionSettings: {
+						ginghamChevronContinuumSettings: {
+							initialStripeCount: initial,
+							deltaStripeCount: delta,
 						},
 					},
 				},
 			},
-		})
-
-		const gridAddress = [ 4, 7 ]
-		// const distanceFromZeroZeroGridAddress = 4 + 7
-
-		expect(getGinghamChevronContinuumStripePositions({ gridAddress })).toEqual([])
+		},
 	})
-})
+
+	expect(getGinghamChevronContinuumStripePositions({ gridAddress: [ 0, 0 ] }).length).toEqual(initial)
+	expect(getGinghamChevronContinuumStripePositions({ gridAddress: [ 1, 1 ] }).length).toEqual(initial + 1 * delta)
+	expect(getGinghamChevronContinuumStripePositions({ gridAddress: [ 2, 2 ] }).length).toEqual(initial + 2 * delta)
+	expect(getGinghamChevronContinuumStripePositions({ gridAddress: [ 3, 3 ] }).length).toEqual(initial + 3 * delta)
+}
