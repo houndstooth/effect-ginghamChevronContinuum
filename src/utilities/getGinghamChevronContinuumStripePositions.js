@@ -1,11 +1,12 @@
 import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
 import mathUtilities from '../../../../src/utilities/mathUtilities'
 import store from '../../../../store'
+import componentUtilities from '../../../../src/utilities/componentUtilities'
 
 export default ({ gridAddress }) => {
 	const { initialStripeCount, deltaStripeCount } = store.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings.ginghamChevronContinuumSettings
 	let stripes = [ 0 ]
-	const distanceFromZeroZeroAddress = Math.abs(gridAddress[ 0 ]) + Math.abs(gridAddress[ 1 ])
+	const distanceFromZeroZeroAddress = componentUtilities.distanceFromZeroZeroAddress({ gridAddress })
 
 	for (let n = 0; n < neededStripeCountToCoverGrid(); n++) {
 		const stripe = mathUtilities.termialRoot(

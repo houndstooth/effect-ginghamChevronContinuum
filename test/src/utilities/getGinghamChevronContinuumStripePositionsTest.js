@@ -28,7 +28,7 @@ describe('get gingham chevron continuum stripe positions', () => {
 		})
 
 		const gridAddress = [ 4, 7 ]
-		const distanceFromZeroZeroGridAddress = 4 + 7
+		// const distanceFromZeroZeroGridAddress = 4 + 7
 
 		expect(getGinghamChevronContinuumStripePositions({ gridAddress })).toEqual([])
 	})
