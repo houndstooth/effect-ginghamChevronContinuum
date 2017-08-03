@@ -4,7 +4,7 @@ import store from '../../../../store'
 import componentUtilities from '../../../../src/utilities/componentUtilities'
 
 export default ({ gridAddress }) => {
-	const { initialStripeCount, deltaStripeCount } = store.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings.ginghamChevronContinuumSettings
+	const { initialStripeCount, deltaStripeCount } = store.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings.stripeCountContinuumSettings
 	let stripes = [ 0 ]
 	const distanceFromZeroZeroAddress = componentUtilities.distanceFromZeroZeroAddress({ gridAddress })
 

@@ -8,7 +8,7 @@ export default {
 		stripeSettings: {
 			stripePositionSettings: {
 				stripeCountMode: 'GINGHAM_CHEVRON_CONTINUUM',
-				ginghamChevronContinuumSettings: {
+				stripeCountContinuumSettings: {
 					deltaStripeCount: 1,
 					initialStripeCount: 1,
 				},
@@ -24,7 +24,7 @@ export default {
 	animationsPattern: {
 		stripeSettings: {
 			stripePositionSettings: {
-				ginghamChevronContinuumSettings: {
+				stripeCountContinuumSettings: {
 					deltaStripeCount: standardAnimation,
 					initialStripeCount: standardAnimation,
 				},

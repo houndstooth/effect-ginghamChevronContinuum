@@ -29,7 +29,7 @@ const checkGccStripeCounts = (initial, delta) => {
 			basePattern: {
 				stripeSettings: {
 					stripePositionSettings: {
-						ginghamChevronContinuumSettings: {
+						stripeCountContinuumSettings: {
 							initialStripeCount: initial,
 							deltaStripeCount: delta,
 						},

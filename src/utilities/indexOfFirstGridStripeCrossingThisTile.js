@@ -3,7 +3,7 @@ import mathUtilities from '../../../../src/utilities/mathUtilities'
 import store from '../../../../store'
 
 export default ({ gridAddress }) => {
-	const { initialStripeCount, deltaStripeCount } = store.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings.ginghamChevronContinuumSettings
+	const { initialStripeCount, deltaStripeCount } = store.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings.stripeCountContinuumSettings
 
 	for (let stripeIndex = 0; stripeIndex < neededStripeCountToCoverGrid(); stripeIndex++) {
 		const stripePosition = mathUtilities.termialRoot({

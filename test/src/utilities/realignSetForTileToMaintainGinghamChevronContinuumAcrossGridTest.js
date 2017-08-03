@@ -14,7 +14,7 @@ describe('realign set for tile to maintain gingham chevron continuum across grid
 				basePattern: {
 					stripeSettings: {
 						stripePositionSettings: {
-							ginghamChevronContinuumSettings: {
+							stripeCountContinuumSettings: {
 								initialStripeCount: 400,
 								deltaStripeCount: 67,
 							},

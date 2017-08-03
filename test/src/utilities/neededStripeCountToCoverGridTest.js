@@ -17,7 +17,7 @@ describe('needed stripe count to cover grid', () => {
 				basePattern: {
 					stripeSettings: {
 						stripePositionSettings: {
-							ginghamChevronContinuumSettings: {
+							stripeCountContinuumSettings: {
 								initialStripeCount,
 								deltaStripeCount,
 							},

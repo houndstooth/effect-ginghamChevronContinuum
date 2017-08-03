@@ -13,7 +13,7 @@ describe('index of first grid stripe crossing this tile', () => {
 				basePattern: {
 					stripeSettings: {
 						stripePositionSettings: {
-							ginghamChevronContinuumSettings: {
+							stripeCountContinuumSettings: {
 								initialStripeCount: 1,
 								deltaStripeCount: 1,
 							},
@@ -33,7 +33,7 @@ describe('index of first grid stripe crossing this tile', () => {
 				basePattern: {
 					stripeSettings: {
 						stripePositionSettings: {
-							ginghamChevronContinuumSettings: {
+							stripeCountContinuumSettings: {
 								initialStripeCount: 4,
 								deltaStripeCount: 7,
 							},
