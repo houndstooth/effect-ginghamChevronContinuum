@@ -138,8 +138,9 @@ describe('gingham chevron continuum effect', () => {
 			houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(0)
 			composeMainHoundstooth({ houndstoothEffects: [ ginghamChevronContinuumEffect ], houndstoothOverrides })
 			activateTestMarkerCanvas()
+			store.animating = true
 
-			execute({ animating: true })
+			execute()
 
 			expectStripedTile({ coordinate: 0, stripeCount: 1, firstColor: BLACK })
 			expectStripedTile({ coordinate: 1, stripeCount: 2, firstColor: BLACK })
@@ -152,8 +153,9 @@ describe('gingham chevron continuum effect', () => {
 			houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(525)
 			composeMainHoundstooth({ houndstoothEffects: [ ginghamChevronContinuumEffect ], houndstoothOverrides })
 			activateTestMarkerCanvas()
+			store.animating = true
 
-			execute({ animating: true })
+			execute()
 
 			expectStripedTile({ coordinate: 0, stripeCount: 2, firstColor: BLACK })
 			expectStripedTile({ coordinate: 1, stripeCount: 4, firstColor: TRANSPARENT })
@@ -166,8 +168,9 @@ describe('gingham chevron continuum effect', () => {
 			houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(666)
 			composeMainHoundstooth({ houndstoothEffects: [ ginghamChevronContinuumEffect ], houndstoothOverrides })
 			activateTestMarkerCanvas()
+			store.animating = true
 
-			execute({ animating: true })
+			execute()
 
 			expectStripedTile({ coordinate: 0, stripeCount: 3, firstColor: BLACK })
 			expectStripedTile({ coordinate: 1, stripeCount: 6, firstColor: BLACK })
