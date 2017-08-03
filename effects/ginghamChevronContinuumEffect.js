@@ -3,6 +3,7 @@ import getGinghamChevronContinuumStripePositions from '../src/utilities/getGingh
 import standardAnimation from '../../../src/application/standardAnimation'
 
 export default {
+	name: 'gingham chevron continuum',
 	basePattern: {
 		stripeSettings: {
 			stripePositionSettings: {
