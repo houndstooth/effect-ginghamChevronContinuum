@@ -1,6 +1,6 @@
-import { ANIMATION_RATE } from '../../../src/constants'
 import realignSetForTileToMaintainGinghamChevronContinuumAcrossGrid from '../src/utilities/realignSetForTileToMaintainGinghamChevronContinuumAcrossGrid'
 import getGinghamChevronContinuumStripePositions from '../src/utilities/getGinghamChevronContinuumStripePositions'
+import standardAnimation from '../../../src/application/standardAnimation'
 
 export default {
 	basePattern: {
@@ -24,8 +24,8 @@ export default {
 		stripeSettings: {
 			stripePositionSettings: {
 				ginghamChevronContinuumSettings: {
-					deltaStripeCount: p => p * ANIMATION_RATE,
-					initialStripeCount: p => p * ANIMATION_RATE,
+					deltaStripeCount: standardAnimation,
+					initialStripeCount: standardAnimation,
 				},
 			},
 		},
