@@ -1,6 +1,6 @@
 import realignSetForTileToMaintainGinghamChevronContinuumAcrossGrid from '../src/utilities/realignSetForTileToMaintainGinghamChevronContinuumAcrossGrid'
 import getGinghamChevronContinuumStripePositions from '../src/utilities/getGinghamChevronContinuumStripePositions'
-import standardAnimation from '../../../src/application/standardAnimation'
+import standardAnimation from '../../../src/animation/standardAnimation'
 
 export default {
 	name: 'gingham chevron continuum',
