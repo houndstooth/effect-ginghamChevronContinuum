@@ -8,7 +8,7 @@ import getFromBasePatternOrDefault from '../../../../test/helpers/getFromBasePat
 import settingsPaths from '../../../../test/helpers/settingsPaths'
 import thisFrameOnly from '../../../../test/integration/helpers/thisFrameOnly'
 import store from '../../../../store'
-import resetStore from '../../../../test/helpers/resetStore'
+import resetStore from '../../../../src/store/resetStore'
 import codeUtilities from '../../../../src/utilities/codeUtilities'
 
 describe('gingham chevron continuum effect', () => {

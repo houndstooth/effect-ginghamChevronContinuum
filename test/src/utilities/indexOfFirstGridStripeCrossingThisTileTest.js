@@ -1,6 +1,6 @@
 import indexOfFirstGridStripeCrossingThisTile from '../../../src/utilities/indexOfFirstGridStripeCrossingThisTile'
 import store from '../../../../../store'
-import resetStore from '../../../../../test/helpers/resetStore'
+import resetStore from '../../../../../src/store/resetStore'
 import composeMainHoundstooth from '../../../../../src/store/composeMainHoundstooth'
 
 describe('index of first grid stripe crossing this tile', () => {

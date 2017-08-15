@@ -1,5 +1,5 @@
 import store from '../../../../../store'
-import resetStore from '../../../../../test/helpers/resetStore'
+import resetStore from '../../../../../src/store/resetStore'
 import composeMainHoundstooth from '../../../../../src/store/composeMainHoundstooth'
 import getGinghamChevronContinuumStripePositions from '../../../src/utilities/getGinghamChevronContinuumStripePositions'
 
