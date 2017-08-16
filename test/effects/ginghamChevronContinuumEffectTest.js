@@ -120,7 +120,7 @@ describe('gingham chevron continuum effect', () => {
 				gridSettings: { gridSize: 4 },
 				viewSettings: { canvasSize: 200 },
 				tileSettings: { tileSizeSetting: 50 },
-			}
+			},
 		}
 
 		let thisAnimationFrameOnly
