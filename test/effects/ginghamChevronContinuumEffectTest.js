@@ -1,5 +1,4 @@
-import execute from '../../../../src/application/execute'
-import composeMainHoundstooth from '../../../../src/store/composeMainHoundstooth'
+import executeSelectedHoundstoothEffects from '../../../../src/interface/executeSelectedHoundstoothEffects'
 import tileSectorCenterIsColor from '../../../../test/integration/helpers/tileSectorCenterIsColor'
 import activateTestMarkerCanvas from '../../../../test/integration/helpers/activateTestMarkerCanvas'
 import { BLACK, TRANSPARENT } from '../../../../src/constants'
@@ -14,10 +13,10 @@ import codeUtilities from '../../../../src/utilities/codeUtilities'
 describe('gingham chevron continuum effect', () => {
 	it('each new diagonal row has an extra stripe', () => {
 		const tileSizeInPixels = getFromBasePatternOrDefault(settingsPaths.TILE_SIZE)
-		composeMainHoundstooth({ houndstoothEffects: [ ginghamChevronContinuumEffect ] })
+		store.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 		activateTestMarkerCanvas()
 
-		execute()
+		executeSelectedHoundstoothEffects()
 
 		expect(tileSectorCenterIsColor({
 			id: 1,
@@ -129,18 +128,18 @@ describe('gingham chevron continuum effect', () => {
 			const animatorSpy = jasmine.createSpy().and.callFake(({ animationFunction, stopCondition }) => {
 				while (!stopCondition()) animationFunction()
 			})
-			execute.__Rewire__('animator', animatorSpy)
+			executeSelectedHoundstoothEffects.__Rewire__('animator', animatorSpy)
 			thisAnimationFrameOnly = thisFrameOnly.thisAnimationFrameOnly
 		})
 
 		it('frame 0 looks just like the normal pattern', () => {
 			const houndstoothOverrides = codeUtilities.deepClone(ginghamChevronContinuumAnimationTestHoundstoothOverrides)
 			houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(0)
-			composeMainHoundstooth({ houndstoothEffects: [ ginghamChevronContinuumEffect ], houndstoothOverrides })
+			store.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 			activateTestMarkerCanvas()
 			store.animating = true
 
-			execute()
+			executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
 			expectStripedTile({ coordinate: 0, stripeCount: 1, firstColor: BLACK })
 			expectStripedTile({ coordinate: 1, stripeCount: 2, firstColor: BLACK })
@@ -151,11 +150,11 @@ describe('gingham chevron continuum effect', () => {
 		it('around frame 525 each tile has twice its original stripe count', () => {
 			const houndstoothOverrides = codeUtilities.deepClone(ginghamChevronContinuumAnimationTestHoundstoothOverrides)
 			houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(525)
-			composeMainHoundstooth({ houndstoothEffects: [ ginghamChevronContinuumEffect ], houndstoothOverrides })
+			store.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 			activateTestMarkerCanvas()
 			store.animating = true
 
-			execute()
+			executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
 			expectStripedTile({ coordinate: 0, stripeCount: 2, firstColor: BLACK })
 			expectStripedTile({ coordinate: 1, stripeCount: 4, firstColor: TRANSPARENT })
@@ -166,11 +165,11 @@ describe('gingham chevron continuum effect', () => {
 		it('around frame 666 each tile has thrice its original stripe count', () => {
 			const houndstoothOverrides = codeUtilities.deepClone(ginghamChevronContinuumAnimationTestHoundstoothOverrides)
 			houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(666)
-			composeMainHoundstooth({ houndstoothEffects: [ ginghamChevronContinuumEffect ], houndstoothOverrides })
+			store.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 			activateTestMarkerCanvas()
 			store.animating = true
 
-			execute()
+			executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
 			expectStripedTile({ coordinate: 0, stripeCount: 3, firstColor: BLACK })
 			expectStripedTile({ coordinate: 1, stripeCount: 6, firstColor: BLACK })
