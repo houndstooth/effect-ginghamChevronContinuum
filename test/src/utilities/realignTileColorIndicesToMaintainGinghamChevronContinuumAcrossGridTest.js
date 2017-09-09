@@ -1,6 +1,6 @@
 import store from '../../../../../store'
 import resetStore from '../../../../../src/store/resetStore'
-import composeMainHoundstooth from '../../../../../src/store/composeMainHoundstooth'
+import composeMainHoundstooth from '../../../../../src/execute/composeMainHoundstooth'
 import subject from '../../../src/utilities/realignTileColorIndicesToMaintainGinghamChevronContinuumAcrossGrid'
 
 describe('realign tile color indices to maintain gingham chevron continuum across grid, because the information about alternation of the set has been lost from individual tiles, we have to check the modulus of the overall grid stripes instead', () => {

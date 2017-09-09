@@ -1,6 +1,6 @@
 import store from '../../../../../store'
 import resetStore from '../../../../../src/store/resetStore'
-import composeMainHoundstooth from '../../../../../src/store/composeMainHoundstooth'
+import composeMainHoundstooth from '../../../../../src/execute/composeMainHoundstooth'
 import neededStripeCountToCoverGrid from '../../../src/utilities/neededStripeCountToCoverGrid'
 
 describe('needed stripe count to cover grid', () => {

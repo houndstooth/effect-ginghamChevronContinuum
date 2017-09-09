@@ -1,6 +1,6 @@
 import store from '../../../../../store'
 import resetStore from '../../../../../src/store/resetStore'
-import composeMainHoundstooth from '../../../../../src/store/composeMainHoundstooth'
+import composeMainHoundstooth from '../../../../../src/execute/composeMainHoundstooth'
 import getGinghamChevronContinuumStripePositions from '../../../src/utilities/getGinghamChevronContinuumStripePositions'
 
 describe('get gingham chevron continuum stripe positions returns an array of numbers representing the positions of the stripes for a given tile in terms of its perimeter (2 is the max) based on where on the grid it is', () => {
