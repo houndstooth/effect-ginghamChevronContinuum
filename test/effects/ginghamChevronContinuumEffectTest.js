@@ -1,4 +1,4 @@
-import executeSelectedHoundstoothEffects from '../../../../src/interface/executeSelectedHoundstoothEffects'
+import executeSelectedHoundstoothEffects from '../../../../src/controls/executeSelectedHoundstoothEffects'
 import tileSectorCenterIsColor from '../../../../test/integration/helpers/tileSectorCenterIsColor'
 import activateTestMarkerCanvas from '../../../../test/integration/helpers/activateTestMarkerCanvas'
 import { BLACK, TRANSPARENT } from '../../../../src/constants'
