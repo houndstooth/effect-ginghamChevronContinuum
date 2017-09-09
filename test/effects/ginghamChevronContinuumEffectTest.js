@@ -9,6 +9,7 @@ import thisFrameOnly from '../../../../test/integration/helpers/thisFrameOnly'
 import store from '../../../../store'
 import resetStore from '../../../../src/store/resetStore'
 import codeUtilities from '../../../../src/utilities/codeUtilities'
+import animation from '../../../../src/animation'
 
 describe('gingham chevron continuum effect', () => {
 	it('each new diagonal row has an extra stripe', () => {
@@ -125,10 +126,9 @@ describe('gingham chevron continuum effect', () => {
 		let thisAnimationFrameOnly
 		beforeEach(() => {
 			resetStore(store)
-			const animatorSpy = jasmine.createSpy().and.callFake(({ animationFunction, stopCondition }) => {
+			spyOn(animation, 'animator').and.callFake(({ animationFunction, stopCondition }) => {
 				while (!stopCondition()) animationFunction()
 			})
-			executeSelectedHoundstoothEffects.__Rewire__('animator', animatorSpy)
 			thisAnimationFrameOnly = thisFrameOnly.thisAnimationFrameOnly
 		})
 
