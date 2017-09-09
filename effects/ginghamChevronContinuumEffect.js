@@ -1,4 +1,4 @@
-import realignSetForTileToMaintainGinghamChevronContinuumAcrossGrid from '../src/utilities/realignSetForTileToMaintainGinghamChevronContinuumAcrossGrid'
+import realignTileColorIndicesToMaintainGinghamChevronContinuumAcrossGrid from '../src/utilities/realignTileColorIndicesToMaintainGinghamChevronContinuumAcrossGrid'
 import getGinghamChevronContinuumStripePositions from '../src/utilities/getGinghamChevronContinuumStripePositions'
 import standardAnimation from '../../../src/animation/standardAnimation'
 
@@ -17,7 +17,7 @@ export default {
 		},
 		colorSettings: {
 			assignment: {
-				transformAssignedSet: realignSetForTileToMaintainGinghamChevronContinuumAcrossGrid,
+				transformTileColorIndices: realignTileColorIndicesToMaintainGinghamChevronContinuumAcrossGrid,
 			},
 		},
 	},
