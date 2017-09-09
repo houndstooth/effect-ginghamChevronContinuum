@@ -1,9 +1,9 @@
 import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
 import mathUtilities from '../../../../src/utilities/mathUtilities'
-import store from '../../../../store'
+import state from '../../../../state'
 
 export default ({ gridAddress }) => {
-	const { initialStripeCount, deltaStripeCount } = store.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings.stripeCountContinuumSettings
+	const { initialStripeCount, deltaStripeCount } = state.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings.stripeCountContinuumSettings
 
 	for (let stripeIndex = 0; stripeIndex < neededStripeCountToCoverGrid(); stripeIndex++) {
 		const stripePosition = mathUtilities.termialRoot({

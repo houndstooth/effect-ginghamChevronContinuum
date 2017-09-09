@@ -1,10 +1,10 @@
 import indexOfFirstGridStripeCrossingThisTile from '../../../src/utilities/indexOfFirstGridStripeCrossingThisTile'
-import store from '../../../../../store'
-import resetStore from '../../../../../src/store/resetStore'
+import state from '../../../../../state'
+import resetState from '../../../../../src/store/resetState'
 import composeMainHoundstooth from '../../../../../src/execute/composeMainHoundstooth'
 
 describe('index of first grid stripe crossing this tile', () => {
-	beforeEach(() => resetStore(store))
+	beforeEach(() => resetState(state))
 
 	it('an example', () => {
 		composeMainHoundstooth({

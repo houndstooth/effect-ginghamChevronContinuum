@@ -1,10 +1,10 @@
-import store from '../../../../../store'
-import resetStore from '../../../../../src/store/resetStore'
+import state from '../../../../../state'
+import resetState from '../../../../../src/store/resetState'
 import composeMainHoundstooth from '../../../../../src/execute/composeMainHoundstooth'
 import getGinghamChevronContinuumStripePositions from '../../../src/utilities/getGinghamChevronContinuumStripePositions'
 
 describe('get gingham chevron continuum stripe positions returns an array of numbers representing the positions of the stripes for a given tile in terms of its perimeter (2 is the max) based on where on the grid it is', () => {
-	beforeEach(() => resetStore(store))
+	beforeEach(() => resetState(state))
 
 	it('checking this units ability to start the stripe count at the right amount and grow it by the right amount each diagonal', () => {
 		checkGccStripeCounts(4, 2)

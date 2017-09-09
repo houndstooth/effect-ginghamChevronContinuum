@@ -1,5 +1,5 @@
-import store from '../../../../../store'
-import resetStore from '../../../../../src/store/resetStore'
+import state from '../../../../../state'
+import resetState from '../../../../../src/store/resetState'
 import composeMainHoundstooth from '../../../../../src/execute/composeMainHoundstooth'
 import subject from '../../../src/utilities/realignTileColorIndicesToMaintainGinghamChevronContinuumAcrossGrid'
 
@@ -7,7 +7,7 @@ describe('realign tile color indices to maintain gingham chevron continuum acros
 	const tileColorIndices = [ 'a', 'b' ]
 	const gridAddress = [ 4, 7 ]
 	beforeEach(() => {
-		resetStore(store)
+		resetState(state)
 		composeMainHoundstooth({
 			houndstoothEffects: [],
 			houndstoothOverrides: {

@@ -1,10 +1,10 @@
-import store from '../../../../../store'
-import resetStore from '../../../../../src/store/resetStore'
+import state from '../../../../../state'
+import resetState from '../../../../../src/store/resetState'
 import composeMainHoundstooth from '../../../../../src/execute/composeMainHoundstooth'
 import neededStripeCountToCoverGrid from '../../../src/utilities/neededStripeCountToCoverGrid'
 
 describe('needed stripe count to cover grid', () => {
-	beforeEach(() => resetStore(store))
+	beforeEach(() => resetState(state))
 
 	it('makes sure just enough gcc stripes are calculated to make it across the grid', () => {
 		const initialStripeCount = 400
