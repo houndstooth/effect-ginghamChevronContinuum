@@ -1,4 +1,4 @@
-import indexOfFirstGridStripeCrossingThisTile from '../../../src/utilities/indexOfFirstGridStripeCrossingThisTile'
+import indexOfFirstGridStripeCrossingThisTile from '../../../src/components/indexOfFirstGridStripeCrossingThisTile'
 import state from '../../../../../state'
 import resetState from '../../../../../src/store/resetState'
 import composeMainHoundstooth from '../../../../../src/execute/composeMainHoundstooth'

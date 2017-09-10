@@ -1,6 +1,7 @@
-import realignTileColorIndicesToMaintainGinghamChevronContinuumAcrossGrid from '../src/utilities/realignTileColorIndicesToMaintainGinghamChevronContinuumAcrossGrid'
-import getGinghamChevronContinuumStripePositions from '../src/utilities/getGinghamChevronContinuumStripePositions'
+import ginghamChevronContinuumSrc from '../src'
 import src from '../../../src'
+
+const { getGinghamChevronContinuumStripePositions, realignTileColorIndicesToMaintainGinghamChevronContinuumAcrossGrid } = ginghamChevronContinuumSrc
 
 export default {
 	name: 'gingham chevron continuum',

@@ -1,4 +1,4 @@
-import getDistanceFromZeroZeroAddress from '../../../src/utilities/getDistanceFromZeroZeroAddress'
+import getDistanceFromZeroZeroAddress from '../../../src/components/getDistanceFromZeroZeroAddress'
 
 describe('get distance from zero-zero address', () => {
 	it('gives the distance, in address positions, from grid address 0, 0', () => {
