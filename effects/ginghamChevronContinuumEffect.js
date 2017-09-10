@@ -1,6 +1,6 @@
 import realignTileColorIndicesToMaintainGinghamChevronContinuumAcrossGrid from '../src/utilities/realignTileColorIndicesToMaintainGinghamChevronContinuumAcrossGrid'
 import getGinghamChevronContinuumStripePositions from '../src/utilities/getGinghamChevronContinuumStripePositions'
-import standardAnimation from '../../../src/animation/standardAnimation'
+import src from '../../../src'
 
 export default {
 	name: 'gingham chevron continuum',
@@ -25,8 +25,8 @@ export default {
 		stripeSettings: {
 			stripePositionSettings: {
 				stripeCountContinuumSettings: {
-					deltaStripeCount: standardAnimation,
-					initialStripeCount: standardAnimation,
+					deltaStripeCount: src.standardAnimation,
+					initialStripeCount: src.standardAnimation,
 				},
 			},
 		},
