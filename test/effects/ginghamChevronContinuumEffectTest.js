@@ -126,8 +126,8 @@ describe('gingham chevron continuum effect', () => {
 		let thisAnimationFrameOnly
 		beforeEach(() => {
 			resetState(state)
-			spyOn(animation, 'animator').and.callFake(({ animationFunction, stopCondition }) => {
-				while (!stopCondition()) animationFunction()
+			spyOn(animation, 'animator').and.callFake(({ animationFunction, stopConditionFunction }) => {
+				while (!stopConditionFunction()) animationFunction()
 			})
 			thisAnimationFrameOnly = thisFrameOnly.thisAnimationFrameOnly
 		})
