@@ -1,5 +1,5 @@
 import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
-import mathUtilities from '../../../../src/utilities/mathUtilities'
+import { termialRoot } from '../../../../src/utilities/mathUtilities'
 import state from '../../../../state'
 import getDistanceFromHomeAddress from './getDistanceFromHomeAddress'
 
@@ -9,7 +9,7 @@ export default ({ gridAddress }) => {
 	const distanceFromHomeAddress = getDistanceFromHomeAddress({ gridAddress })
 
 	for (let n = 0; n < neededStripeCountToCoverGrid(); n++) {
-		const stripe = mathUtilities.termialRoot(
+		const stripe = termialRoot(
 			{ rangeStart: initialStripeCount, rangeDelta: deltaStripeCount, n }
 		) * 2
 		if (stripe >= distanceFromHomeAddress + 2) {
