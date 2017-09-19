@@ -8,7 +8,7 @@ import settingsPaths from '../../../../test/helpers/settingsPaths'
 import thisFrameOnly from '../../../../test/integration/helpers/thisFrameOnly'
 import state from '../../../../state'
 import resetState from '../../../../src/store/resetState'
-import codeUtilities from '../../../../src/utilities/codeUtilities'
+import { deepClone, iterator } from '../../../../src/utilities/codeUtilities'
 import animation from '../../../../src/animation'
 
 describe('gingham chevron continuum effect', () => {
@@ -133,7 +133,7 @@ describe('gingham chevron continuum effect', () => {
 		})
 
 		it('frame 0 looks just like the normal pattern', () => {
-			const houndstoothOverrides = codeUtilities.deepClone(ginghamChevronContinuumAnimationTestHoundstoothOverrides)
+			const houndstoothOverrides = deepClone(ginghamChevronContinuumAnimationTestHoundstoothOverrides)
 			houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(0)
 			state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 			activateTestMarkerCanvas()
@@ -148,7 +148,7 @@ describe('gingham chevron continuum effect', () => {
 		})
 
 		it('around frame 525 each tile has twice its original stripe count', () => {
-			const houndstoothOverrides = codeUtilities.deepClone(ginghamChevronContinuumAnimationTestHoundstoothOverrides)
+			const houndstoothOverrides = deepClone(ginghamChevronContinuumAnimationTestHoundstoothOverrides)
 			houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(525)
 			state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 			activateTestMarkerCanvas()
@@ -163,7 +163,7 @@ describe('gingham chevron continuum effect', () => {
 		})
 
 		it('around frame 666 each tile has thrice its original stripe count', () => {
-			const houndstoothOverrides = codeUtilities.deepClone(ginghamChevronContinuumAnimationTestHoundstoothOverrides)
+			const houndstoothOverrides = deepClone(ginghamChevronContinuumAnimationTestHoundstoothOverrides)
 			houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(666)
 			state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 			activateTestMarkerCanvas()
@@ -181,7 +181,7 @@ describe('gingham chevron continuum effect', () => {
 
 const expectStripedTile = ({ coordinate, stripeCount, firstColor }) => {
 	const tileSizeInPixels = getFromBasePatternOrDefault(settingsPaths.TILE_SIZE)
-	codeUtilities.iterator(stripeCount).forEach(stripe => {
+	iterator(stripeCount).forEach(stripe => {
 		expect(tileSectorCenterIsColor({
 			id: 1,
 			originInPixels: [ coordinate * tileSizeInPixels, coordinate * tileSizeInPixels ],
