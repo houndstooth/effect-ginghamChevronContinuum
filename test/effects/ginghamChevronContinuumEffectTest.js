@@ -9,7 +9,7 @@ import thisFrameOnly from '../../../../test/integration/helpers/thisFrameOnly'
 import state from '../../../../state'
 import resetState from '../../../../src/store/resetState'
 import { deepClone, iterator } from '../../../../src/utilities/codeUtilities'
-import animation from '../../../../src/animation'
+import * as animation from '../../../../src/animation'
 
 describe('gingham chevron continuum effect', () => {
 	it('each new diagonal row has an extra stripe', () => {
