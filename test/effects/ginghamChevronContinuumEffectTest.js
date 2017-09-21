@@ -12,6 +12,8 @@ import { deepClone, iterator } from '../../../../src/utilities/codeUtilities'
 import * as animation from '../../../../src/animation'
 
 describe('gingham chevron continuum effect', () => {
+	beforeEach(() => resetState(state))
+	
 	it('each new diagonal row has an extra stripe', () => {
 		const tileSizeInPixels = getFromBasePatternOrDefault(settingsPaths.TILE_SIZE)
 		state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
@@ -125,7 +127,6 @@ describe('gingham chevron continuum effect', () => {
 
 		let thisAnimationFrameOnly
 		beforeEach(() => {
-			resetState(state)
 			spyOn(animation, 'animator').and.callFake(({ animationFunction, stopConditionFunction }) => {
 				while (!stopConditionFunction()) animationFunction()
 			})
