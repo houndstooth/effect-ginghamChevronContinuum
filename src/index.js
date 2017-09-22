@@ -1,8 +1,6 @@
-import components from './components'
+import { getGinghamChevronContinuumStripePositions, realignTileColorIndicesToMaintainGinghamChevronContinuumAcrossGrid } from './components'
 
-const { getGinghamChevronContinuumStripePositions, realignTileColorIndicesToMaintainGinghamChevronContinuumAcrossGrid } = components
-
-export default {
+export {
 	getGinghamChevronContinuumStripePositions,
 	realignTileColorIndicesToMaintainGinghamChevronContinuumAcrossGrid,
 }

@@ -1,7 +1,5 @@
-import effects from './effects'
+import { ginghamChevronContinuumEffect } from './effects'
 
-const { ginghamChevronContinuumEffect } = effects
-
-export default {
+export {
 	ginghamChevronContinuumEffect,
 }

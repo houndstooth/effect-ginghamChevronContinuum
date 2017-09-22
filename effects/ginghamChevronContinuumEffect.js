@@ -1,7 +1,5 @@
-import ginghamChevronContinuumSrc from '../src'
+import { getGinghamChevronContinuumStripePositions, realignTileColorIndicesToMaintainGinghamChevronContinuumAcrossGrid } from '../src'
 import { standardAnimation } from '../../../src'
-
-const { getGinghamChevronContinuumStripePositions, realignTileColorIndicesToMaintainGinghamChevronContinuumAcrossGrid } = ginghamChevronContinuumSrc
 
 export default {
 	name: 'gingham chevron continuum',

@@ -4,8 +4,8 @@ import activateTestMarkerCanvas from '../../../../test/integration/helpers/activ
 import { BLACK, TRANSPARENT } from '../../../../src/constants'
 import ginghamChevronContinuumEffect from '../../effects/ginghamChevronContinuumEffect'
 import getFromBasePatternOrDefault from '../../../../test/helpers/getFromBasePatternOrDefault'
-import settingsPaths from '../../../../test/helpers/settingsPaths'
-import thisFrameOnly from '../../../../test/integration/helpers/thisFrameOnly'
+import { TILE_SIZE } from '../../../../test/helpers/settingsPaths'
+import { thisAnimationFrameOnly } from '../../../../test/integration/helpers/thisFrameOnly'
 import state from '../../../../state'
 import resetState from '../../../../src/store/resetState'
 import { deepClone, iterator } from '../../../../src/utilities/codeUtilities'
@@ -13,9 +13,9 @@ import * as animation from '../../../../src/animation'
 
 describe('gingham chevron continuum effect', () => {
 	beforeEach(() => resetState(state))
-	
+
 	it('each new diagonal row has an extra stripe', () => {
-		const tileSizeInPixels = getFromBasePatternOrDefault(settingsPaths.TILE_SIZE)
+		const tileSizeInPixels = getFromBasePatternOrDefault(TILE_SIZE)
 		state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 		activateTestMarkerCanvas()
 
@@ -125,12 +125,10 @@ describe('gingham chevron continuum effect', () => {
 			},
 		}
 
-		let thisAnimationFrameOnly
 		beforeEach(() => {
 			spyOn(animation, 'animator').and.callFake(({ animationFunction, stopConditionFunction }) => {
 				while (!stopConditionFunction()) animationFunction()
 			})
-			thisAnimationFrameOnly = thisFrameOnly.thisAnimationFrameOnly
 		})
 
 		it('frame 0 looks just like the normal pattern', () => {
@@ -181,7 +179,7 @@ describe('gingham chevron continuum effect', () => {
 })
 
 const expectStripedTile = ({ coordinate, stripeCount, firstColor }) => {
-	const tileSizeInPixels = getFromBasePatternOrDefault(settingsPaths.TILE_SIZE)
+	const tileSizeInPixels = getFromBasePatternOrDefault(TILE_SIZE)
 	iterator(stripeCount).forEach(stripe => {
 		expect(tileSectorCenterIsColor({
 			id: 1,
