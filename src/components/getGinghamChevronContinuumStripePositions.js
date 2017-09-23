@@ -3,7 +3,7 @@ import { termialRoot } from '../../../../src/utilities/mathUtilities'
 import state from '../../../../state'
 import getDistanceFromHomeAddress from './getDistanceFromHomeAddress'
 
-export default ({ gridAddress }) => {
+const getGinghamChevronContinuumStripePositions = ({ gridAddress }) => {
 	const { initialStripeCount, deltaStripeCount } = state.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings.stripeCountContinuumSettings
 	let stripes = [ 0 ]
 	const distanceFromHomeAddress = getDistanceFromHomeAddress({ gridAddress })
@@ -22,3 +22,5 @@ export default ({ gridAddress }) => {
 
 	return stripes
 }
+
+export default getGinghamChevronContinuumStripePositions

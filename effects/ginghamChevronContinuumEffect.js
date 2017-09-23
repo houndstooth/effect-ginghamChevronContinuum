@@ -1,7 +1,7 @@
 import { getGinghamChevronContinuumStripePositions, realignTileColorIndicesToMaintainGinghamChevronContinuumAcrossGrid } from '../src'
 import { standardAnimation } from '../../../src'
 
-export default {
+const ginghamChevronContinuumEffect = {
 	name: 'gingham chevron continuum',
 	basePattern: {
 		stripeSettings: {
@@ -31,3 +31,5 @@ export default {
 		},
 	},
 }
+
+export default ginghamChevronContinuumEffect
