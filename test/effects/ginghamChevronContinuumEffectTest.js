@@ -6,7 +6,7 @@ import ginghamChevronContinuumEffect from '../../effects/ginghamChevronContinuum
 import getFromBasePatternOrDefault from '../../../../test/helpers/getFromBasePatternOrDefault'
 import { TILE_SIZE } from '../../../../test/helpers/settingsPaths'
 import { thisAnimationFrameOnly } from '../../../../test/integration/helpers/thisFrameOnly'
-import state from '../../../../state'
+import state from '../../../../src/state'
 import resetState from '../../../../src/store/resetState'
 import { deepClone, iterator } from '../../../../src/utilities/codeUtilities'
 import * as animation from '../../../../src/animation'

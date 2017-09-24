@@ -1,6 +1,6 @@
 import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
 import { termialRoot } from '../../../../src/utilities/mathUtilities'
-import state from '../../../../state'
+import { state } from '../../../../src'
 import getDistanceFromHomeAddress from './getDistanceFromHomeAddress'
 
 const getGinghamChevronContinuumStripePositions = ({ gridAddress }) => {

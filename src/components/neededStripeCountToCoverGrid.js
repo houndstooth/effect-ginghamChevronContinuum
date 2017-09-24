@@ -1,5 +1,5 @@
 import { triangularNumber } from '../../../../src/utilities/mathUtilities'
-import state from '../../../../state'
+import { state } from '../../../../src'
 
 const neededStripeCountToCoverGrid = () => {
 	const { stripeSettings, gridSettings } = state.mainHoundstooth.basePattern
