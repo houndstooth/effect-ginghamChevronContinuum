@@ -1,7 +1,7 @@
-import indexOfFirstGridStripeCrossingThisTile from '../../../src/components/indexOfFirstGridStripeCrossingThisTile'
-import state from '../../../../../src/state'
-import resetState from '../../../../../src/store/resetState'
-import composeMainHoundstooth from '../../../../../src/execute/composeMainHoundstooth'
+import indexOfFirstGridStripeCrossingThisTile from '../../../../src/components/indexOfFirstGridStripeCrossingThisTile'
+import state from '../../../../../../src/state'
+import resetState from '../../../../../../src/store/resetState'
+import composeMainHoundstooth from '../../../../../../src/execute/composeMainHoundstooth'
 
 describe('index of first grid stripe crossing this tile', () => {
 	beforeEach(() => resetState(state))

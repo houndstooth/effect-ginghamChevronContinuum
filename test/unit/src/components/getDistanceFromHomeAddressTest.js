@@ -1,4 +1,4 @@
-import getDistanceFromHomeAddress from '../../../src/components/getDistanceFromHomeAddress'
+import getDistanceFromHomeAddress from '../../../../src/components/getDistanceFromHomeAddress'
 
 describe('get distance from home address', () => {
 	it('gives the distance, in address positions, from grid address 0, 0', () => {
