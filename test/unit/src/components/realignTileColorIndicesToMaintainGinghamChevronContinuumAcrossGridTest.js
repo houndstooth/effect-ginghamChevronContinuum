@@ -1,4 +1,3 @@
-import state from '../../../../../../src/state'
 import composeMainHoundstooth from '../../../../../../src/execute/composeMainHoundstooth'
 import * as indexOfFirstGridStripeCrossingThisTile from '../../../../src/components/indexOfFirstGridStripeCrossingThisTile'
 import subject from '../../../../src/components/realignTileColorIndicesToMaintainGinghamChevronContinuumAcrossGrid'

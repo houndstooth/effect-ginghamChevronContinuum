@@ -1,4 +1,3 @@
-import state from '../../../../../../src/state'
 import composeMainHoundstooth from '../../../../../../src/execute/composeMainHoundstooth'
 import getGinghamChevronContinuumStripePositions from '../../../../src/components/getGinghamChevronContinuumStripePositions'
 
