@@ -16,7 +16,7 @@ describe('gingham chevron continuum effect', () => {
 		state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 		activateTestMarkerCanvas()
 
-		executeSelectedHoundstoothEffects()
+		executeSelectedHoundstoothEffects({ houndstoothOverrides: { basePattern: { gridSettings: { gridSize: 8 } } } })
 
 		expect(tileSectorCenterIsColor({
 			id: 1,
