@@ -8,7 +8,7 @@ import { TILE_SIZE } from '../../../../../test/helpers/settingsPaths'
 import { thisAnimationFrameOnly } from '../../../../../test/integration/helpers/thisFrameOnly'
 import state from '../../../../../src/state'
 import { deepClone, iterator } from '../../../../../src/utilities/codeUtilities'
-import * as animation from '../../../../../src/animation/index'
+import * as animator from '../../../../../src/animation/animator'
 
 describe('gingham chevron continuum effect', () => {
 	it('each new diagonal row has an extra stripe', () => {
@@ -123,7 +123,7 @@ describe('gingham chevron continuum effect', () => {
 		}
 
 		beforeEach(() => {
-			spyOn(animation, 'animator').and.callFake(({ animationFunction, stopConditionFunction }) => {
+			spyOn(animator, 'default').and.callFake(({ animationFunction, stopConditionFunction }) => {
 				while (!stopConditionFunction()) animationFunction()
 			})
 		})
