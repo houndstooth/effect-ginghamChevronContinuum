@@ -1,6 +1,6 @@
-import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
 import { termialRoot } from '../../../../src/utilities/mathUtilities'
 import { state } from '../../../../src'
+import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
 
 const indexOfFirstGridStripeCrossingThisTile = ({ gridAddress }) => {
 	const { initialStripeCount, deltaStripeCount } = state.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings.stripeCountContinuumSettings

@@ -1,7 +1,7 @@
-import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
 import { termialRoot } from '../../../../src/utilities/mathUtilities'
 import { state } from '../../../../src'
 import getDistanceFromHomeAddress from './getDistanceFromHomeAddress'
+import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
 
 const getGinghamChevronContinuumStripePositions = ({ gridAddress }) => {
 	const { initialStripeCount, deltaStripeCount } = state.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings.stripeCountContinuumSettings

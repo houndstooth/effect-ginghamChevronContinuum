@@ -1,5 +1,5 @@
-import indexOfFirstGridStripeCrossingThisTile from './indexOfFirstGridStripeCrossingThisTile'
 import { reversed } from '../../../../src/utilities/codeUtilities'
+import indexOfFirstGridStripeCrossingThisTile from './indexOfFirstGridStripeCrossingThisTile'
 
 const realignTileColorIndicesToMaintainGinghamChevronContinuumAcrossGrid = ({ tileColorIndices, gridAddress }) => {
 	const stripeIndex = indexOfFirstGridStripeCrossingThisTile({ gridAddress })
