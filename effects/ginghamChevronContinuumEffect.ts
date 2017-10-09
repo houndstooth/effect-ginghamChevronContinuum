@@ -1,4 +1,7 @@
-import { getGinghamChevronContinuumStripePositions, realignTileColorIndicesToMaintainGinghamChevronContinuumAcrossGrid } from '../src'
+import {
+	getGinghamChevronContinuumStripePositions,
+	realignTileColorIndicesForGinghamChevronContinuum,
+} from '../src'
 import { standardAnimation } from '../../../src'
 
 const ginghamChevronContinuumEffect = {
@@ -16,7 +19,7 @@ const ginghamChevronContinuumEffect = {
 		},
 		colorSettings: {
 			assignment: {
-				transformTileColorIndices: realignTileColorIndicesToMaintainGinghamChevronContinuumAcrossGrid,
+				transformTileColorIndices: realignTileColorIndicesForGinghamChevronContinuum,
 			},
 		},
 	},

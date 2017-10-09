@@ -1,4 +1,4 @@
-import indexOfFirstGridStripeCrossingThisTile from '../../../../src/components/indexOfFirstGridStripeCrossingThisTile'
+import indexOfFirstStripeCrossingThisTile from '../../../../src/components/indexOfFirstStripeCrossingThisTile'
 import composeMainHoundstooth from '../../../../../../src/execute/composeMainHoundstooth'
 
 describe('index of first grid stripe crossing this tile', () => {
@@ -19,7 +19,7 @@ describe('index of first grid stripe crossing this tile', () => {
 			},
 		})
 
-		expect(indexOfFirstGridStripeCrossingThisTile({ gridAddress: [ 1, 5 ] })).toBe(1 + 2 + 3 + 1)
+		expect(indexOfFirstStripeCrossingThisTile({ gridAddress: [ 1, 5 ] })).toBe(1 + 2 + 3 + 1)
 	})
 
 	it('another example', () => {
@@ -39,6 +39,6 @@ describe('index of first grid stripe crossing this tile', () => {
 			},
 		})
 
-		expect(indexOfFirstGridStripeCrossingThisTile({ gridAddress: [ 1, 5 ] })).toBe(4 + (4 + 7) + (4 + 7 + 7) + 1)
+		expect(indexOfFirstStripeCrossingThisTile({ gridAddress: [ 1, 5 ] })).toBe(4 + (4 + 7) + (4 + 7 + 7) + 1)
 	})
 })

@@ -2,8 +2,9 @@ import { termialRoot } from '../../../../src/utilities/mathUtilities'
 import { state } from '../../../../src'
 import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
 
-const indexOfFirstGridStripeCrossingThisTile = ({ gridAddress }) => {
-	const { initialStripeCount, deltaStripeCount } = state.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings.stripeCountContinuumSettings
+const indexOfFirstStripeCrossingThisTile = ({ gridAddress }) => {
+	const stripePositionSettings = state.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings
+	const { initialStripeCount, deltaStripeCount } = stripePositionSettings.stripeCountContinuumSettings
 
 	for (let stripeIndex = 0; stripeIndex < neededStripeCountToCoverGrid(); stripeIndex++) {
 		const stripePosition = termialRoot({
@@ -17,4 +18,4 @@ const indexOfFirstGridStripeCrossingThisTile = ({ gridAddress }) => {
 	}
 }
 
-export default indexOfFirstGridStripeCrossingThisTile
+export default indexOfFirstStripeCrossingThisTile

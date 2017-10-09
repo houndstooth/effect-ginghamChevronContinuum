@@ -1,7 +1,7 @@
 import getGinghamChevronContinuumStripePositions from './getGinghamChevronContinuumStripePositions'
-import realignTileColorIndicesToMaintainGinghamChevronContinuumAcrossGrid from './realignTileColorIndicesToMaintainGinghamChevronContinuumAcrossGrid'
+import realignTileColorIndicesForGinghamChevronContinuum from './realignTileColorIndicesForGinghamChevronContinuum'
 
 export {
 	getGinghamChevronContinuumStripePositions,
-	realignTileColorIndicesToMaintainGinghamChevronContinuumAcrossGrid,
+	realignTileColorIndicesForGinghamChevronContinuum,
 }
