@@ -5,7 +5,7 @@ import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
 
 const getGinghamChevronContinuumStripePositions = ({ gridAddress }) => {
 	const { initialStripeCount, deltaStripeCount } = state.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings.stripeCountContinuumSettings
-	let stripes = [ 0 ]
+	const stripes = [ 0 ]
 	const distanceFromHomeAddress = getDistanceFromHomeAddress({ gridAddress })
 
 	for (let n = 0; n < neededStripeCountToCoverGrid(); n++) {
