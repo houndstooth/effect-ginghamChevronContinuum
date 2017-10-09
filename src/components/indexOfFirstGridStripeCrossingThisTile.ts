@@ -11,7 +11,9 @@ const indexOfFirstGridStripeCrossingThisTile = ({ gridAddress }) => {
 			rangeDelta: deltaStripeCount,
 			n: stripeIndex,
 		}) * 2
-		if (stripePosition > gridAddress[ 0 ] + gridAddress[ 1 ]) return stripeIndex
+		if (stripePosition > gridAddress[ 0 ] + gridAddress[ 1 ]) {
+			return stripeIndex
+		}
 	}
 }
 
