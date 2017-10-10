@@ -2,8 +2,8 @@ import composeMainHoundstooth from '../../../../../../src/execute/composeMainHou
 import * as indexOfFirstStripeCrossingThisTile from '../../../../src/components/indexOfFirstStripeCrossingThisTile'
 import subject from '../../../../src/components/realignTileColorIndicesForGinghamChevronContinuum'
 
-describe(`realign tile color indices to maintain gingham chevron continuum across grid, 
-	because the information about alternation of the colorSet has been lost from individual tiles, 
+describe(`realign tile color indices to maintain gingham chevron continuum across grid,
+	because the information about alternation of the colorSet has been lost from individual tiles,
 	we have to check the modulus of the overall grid stripes instead`, () => {
 		const tileColorIndices = [ 'a', 'b' ]
 		const gridAddress = [ 4, 7 ]
