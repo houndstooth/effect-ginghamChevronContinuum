@@ -12,7 +12,7 @@ import * as animator from '../../../../../src/animation/animator'
 
 describe('gingham chevron continuum effect', () => {
 	it('each new diagonal row has an extra stripe', () => {
-		const tileSizeInPixels = getFromBasePatternOrDefault(TILE_SIZE)
+		const tileSizeInPixels = getFromBasePatternOrDefault(TILE_SIZE) as number
 		state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 		activateTestMarkerCanvas()
 
@@ -178,7 +178,7 @@ describe('gingham chevron continuum effect', () => {
 })
 
 const expectStripedTile = ({ coordinate, stripeCount, firstColor }) => {
-	const tileSizeInPixels = getFromBasePatternOrDefault(TILE_SIZE)
+	const tileSizeInPixels = getFromBasePatternOrDefault(TILE_SIZE) as number
 	iterator(stripeCount).forEach(stripe => {
 		expect(tileSectorCenterIsColor({
 			id: 1,
