@@ -5,9 +5,10 @@ import { Address } from '../../../../src'
 
 const realignTileColorIndicesForGinghamChevronContinuum: {
 	({}: { tileColorIndices: TileColorIndices, gridAddress: Address }): TileColorIndices,
-	} = ({ tileColorIndices, gridAddress }) => {
-		const stripeIndex = indexOfFirstStripeCrossingThisTile({ gridAddress })
-		return stripeIndex % 2 === 1 ? reversed(tileColorIndices) : tileColorIndices
-	}
+} = ({ tileColorIndices, gridAddress }) => {
+	const stripeIndex = indexOfFirstStripeCrossingThisTile({ gridAddress })
+	const realignedTileColorIndices = stripeIndex % 2 === 1 ? reversed(tileColorIndices) : tileColorIndices
+	return realignedTileColorIndices as TileColorIndices
+}
 
 export default realignTileColorIndicesForGinghamChevronContinuum
