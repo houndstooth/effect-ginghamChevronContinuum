@@ -2,9 +2,9 @@ import {
 	getGinghamChevronContinuumStripePositions,
 	realignTileColorIndicesForGinghamChevronContinuum,
 } from '../src'
-import { standardAnimation } from '../../../src'
+import { standardAnimation, Houndstooth } from '../../../src'
 
-const ginghamChevronContinuumEffect = {
+const ginghamChevronContinuumEffect: Houndstooth = {
 	name: 'gingham chevron continuum',
 	basePattern: {
 		stripeSettings: {

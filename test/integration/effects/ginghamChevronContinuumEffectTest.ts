@@ -9,6 +9,7 @@ import { thisAnimationFrameOnly } from '../../../../../test/integration/helpers/
 import state from '../../../../../src/state'
 import { deepClone, iterator } from '../../../../../src/utilities/codeUtilities'
 import * as animator from '../../../../../src/animation/animator'
+import expectStripedTile from '../helpers/expectStripedTile'
 
 describe('gingham chevron continuum effect', () => {
 	it('each new diagonal row has an extra stripe', () => {
@@ -120,10 +121,10 @@ describe('gingham chevron continuum effect', () => {
 
 			executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
-			expectStripedTile({ coordinate: 0, stripeCount: 1, firstColor: BLACK })
-			expectStripedTile({ coordinate: 1, stripeCount: 2, firstColor: BLACK })
-			expectStripedTile({ coordinate: 2, stripeCount: 3, firstColor: TRANSPARENT })
-			expectStripedTile({ coordinate: 3, stripeCount: 4, firstColor: TRANSPARENT })
+			expectStripedTile({ diagonalAddress: 0, stripeCount: 1, firstColor: BLACK })
+			expectStripedTile({ diagonalAddress: 1, stripeCount: 2, firstColor: BLACK })
+			expectStripedTile({ diagonalAddress: 2, stripeCount: 3, firstColor: TRANSPARENT })
+			expectStripedTile({ diagonalAddress: 3, stripeCount: 4, firstColor: TRANSPARENT })
 		})
 
 		it('around frame 525 each tile has twice its original stripe count', () => {
@@ -135,10 +136,10 @@ describe('gingham chevron continuum effect', () => {
 
 			executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
-			expectStripedTile({ coordinate: 0, stripeCount: 2, firstColor: BLACK })
-			expectStripedTile({ coordinate: 1, stripeCount: 4, firstColor: TRANSPARENT })
-			expectStripedTile({ coordinate: 2, stripeCount: 6, firstColor: BLACK })
-			expectStripedTile({ coordinate: 3, stripeCount: 8, firstColor: TRANSPARENT })
+			expectStripedTile({ diagonalAddress: 0, stripeCount: 2, firstColor: BLACK })
+			expectStripedTile({ diagonalAddress: 1, stripeCount: 4, firstColor: TRANSPARENT })
+			expectStripedTile({ diagonalAddress: 2, stripeCount: 6, firstColor: BLACK })
+			expectStripedTile({ diagonalAddress: 3, stripeCount: 8, firstColor: TRANSPARENT })
 		})
 
 		it('around frame 666 each tile has thrice its original stripe count', () => {
@@ -150,23 +151,10 @@ describe('gingham chevron continuum effect', () => {
 
 			executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
-			expectStripedTile({ coordinate: 0, stripeCount: 3, firstColor: BLACK })
-			expectStripedTile({ coordinate: 1, stripeCount: 6, firstColor: BLACK })
-			expectStripedTile({ coordinate: 2, stripeCount: 9, firstColor: TRANSPARENT })
-			expectStripedTile({ coordinate: 3, stripeCount: 12, firstColor: TRANSPARENT })
+			expectStripedTile({ diagonalAddress: 0, stripeCount: 3, firstColor: BLACK })
+			expectStripedTile({ diagonalAddress: 1, stripeCount: 6, firstColor: BLACK })
+			expectStripedTile({ diagonalAddress: 2, stripeCount: 9, firstColor: TRANSPARENT })
+			expectStripedTile({ diagonalAddress: 3, stripeCount: 12, firstColor: TRANSPARENT })
 		})
 	})
 })
-
-const expectStripedTile = ({ coordinate, stripeCount, firstColor }) => {
-	const areaSize = getFromBasePatternOrDefault(TILE_SIZE) as number
-	iterator(stripeCount).forEach(stripe => {
-		expect(sectionCenterIsColor({
-			areaOrigin: [ coordinate * areaSize, coordinate * areaSize ],
-			areaSize,
-			sectionResolution: stripeCount,
-			sectionAddress: [ stripe, stripe ],
-			color: stripe % 2 === 0 ? firstColor : firstColor === BLACK ? TRANSPARENT : BLACK,
-		})).toBe(true)
-	})
-}
