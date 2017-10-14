@@ -10,6 +10,7 @@ import state from '../../../../../src/state'
 import { deepClone, iterator } from '../../../../../src/utilities/codeUtilities'
 import * as animator from '../../../../../src/animation/animator'
 import expectStripedTile from '../helpers/expectStripedTile'
+import Address from '../../../../../src/components/types/Address'
 
 describe('gingham chevron continuum effect', () => {
 	it('each new diagonal row has an extra stripe', () => {
@@ -23,7 +24,7 @@ describe('gingham chevron continuum effect', () => {
 			areaOrigin: [ 0 * areaSize, 0 * areaSize ],
 			areaSize,
 			sectionResolution: 1,
-			sectionAddress: [ 0, 0 ],
+			sectionAddress: [ 0, 0 ] as Address,
 			color: BLACK,
 		})).toBe(true)
 
@@ -31,14 +32,14 @@ describe('gingham chevron continuum effect', () => {
 			areaOrigin: [ 1 * areaSize, 1 * areaSize ],
 			areaSize,
 			sectionResolution: 2,
-			sectionAddress: [ 0, 0 ],
+			sectionAddress: [ 0, 0 ] as Address,
 			color: BLACK,
 		})).toBe(true)
 		expect(sectionCenterIsColor({
 			areaOrigin: [ 1 * areaSize, 1 * areaSize ],
 			areaSize,
 			sectionResolution: 2,
-			sectionAddress: [ 1, 1 ],
+			sectionAddress: [ 1, 1 ] as Address,
 			color: TRANSPARENT,
 		})).toBe(true)
 
@@ -46,7 +47,7 @@ describe('gingham chevron continuum effect', () => {
 			areaOrigin: [ 2 * areaSize, 2 * areaSize ],
 			areaSize,
 			sectionResolution: 3,
-			sectionAddress: [ 0, 0 ],
+			sectionAddress: [ 0, 0 ] as Address,
 
 			color: TRANSPARENT,
 		})).toBe(true)
@@ -54,14 +55,14 @@ describe('gingham chevron continuum effect', () => {
 			areaOrigin: [ 2 * areaSize, 2 * areaSize ],
 			areaSize,
 			sectionResolution: 3,
-			sectionAddress: [ 1, 1 ],
+			sectionAddress: [ 1, 1 ] as Address,
 			color: BLACK,
 		})).toBe(true)
 		expect(sectionCenterIsColor({
 			areaOrigin: [ 2 * areaSize, 2 * areaSize ],
 			areaSize,
 			sectionResolution: 3,
-			sectionAddress: [ 2, 2 ],
+			sectionAddress: [ 2, 2 ] as Address,
 			color: TRANSPARENT,
 		})).toBe(true)
 
@@ -69,28 +70,28 @@ describe('gingham chevron continuum effect', () => {
 			areaOrigin: [ 3 * areaSize, 3 * areaSize ],
 			areaSize,
 			sectionResolution: 4,
-			sectionAddress: [ 0, 0 ],
+			sectionAddress: [ 0, 0 ] as Address,
 			color: TRANSPARENT,
 		})).toBe(true)
 		expect(sectionCenterIsColor({
 			areaOrigin: [ 3 * areaSize, 3 * areaSize ],
 			areaSize,
 			sectionResolution: 4,
-			sectionAddress: [ 1, 1 ],
+			sectionAddress: [ 1, 1 ] as Address,
 			color: BLACK,
 		})).toBe(true)
 		expect(sectionCenterIsColor({
 			areaOrigin: [ 3 * areaSize, 3 * areaSize ],
 			areaSize,
 			sectionResolution: 4,
-			sectionAddress: [ 2, 2 ],
+			sectionAddress: [ 2, 2 ] as Address,
 			color: TRANSPARENT,
 		})).toBe(true)
 		expect(sectionCenterIsColor({
 			areaOrigin: [ 3 * areaSize, 3 * areaSize ],
 			areaSize,
 			sectionResolution: 4,
-			sectionAddress: [ 3, 3 ],
+			sectionAddress: [ 3, 3 ] as Address,
 			color: BLACK,
 		})).toBe(true)
 	})
