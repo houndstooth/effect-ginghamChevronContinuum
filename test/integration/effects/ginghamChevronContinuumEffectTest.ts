@@ -1,5 +1,5 @@
 import executeSelectedHoundstoothEffects from '../../../../../src/execute/executeSelectedHoundstoothEffects'
-import tileSectorCenterIsColor from '../../../../../test/integration/helpers/tileSectorCenterIsColor'
+import sectionCenterIsColor from '../../../../../test/integration/helpers/sectionCenterIsColor'
 import activateTestMarkerCanvas from '../../../../../test/integration/helpers/activateTestMarkerCanvas'
 import { BLACK, TRANSPARENT } from '../../../../../src/constants'
 import ginghamChevronContinuumEffect from '../../../effects/ginghamChevronContinuumEffect'
@@ -12,103 +12,84 @@ import * as animator from '../../../../../src/animation/animator'
 
 describe('gingham chevron continuum effect', () => {
 	it('each new diagonal row has an extra stripe', () => {
-		const tileSizeInPixels = getFromBasePatternOrDefault(TILE_SIZE) as number
+		const areaSize = getFromBasePatternOrDefault(TILE_SIZE) as number
 		state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 		activateTestMarkerCanvas()
 
 		executeSelectedHoundstoothEffects({ houndstoothOverrides: { basePattern: { gridSettings: { gridSize: 8 } } } })
 
-		expect(tileSectorCenterIsColor({
-			id: 1,
-			originInPixels: [ 0 * tileSizeInPixels, 0 * tileSizeInPixels ],
-			tileSizeInPixels,
-			x: 0,
-			y: 0,
-			n: 1,
+		expect(sectionCenterIsColor({
+			areaOrigin: [ 0 * areaSize, 0 * areaSize ],
+			areaSize,
+			sectionResolution: 1,
+			sectionAddress: [ 0, 0 ],
 			color: BLACK,
 		})).toBe(true)
 
-		expect(tileSectorCenterIsColor({
-			id: 1,
-			originInPixels: [ 1 * tileSizeInPixels, 1 * tileSizeInPixels ],
-			tileSizeInPixels,
-			x: 0,
-			y: 0,
-			n: 2,
+		expect(sectionCenterIsColor({
+			areaOrigin: [ 1 * areaSize, 1 * areaSize ],
+			areaSize,
+			sectionResolution: 2,
+			sectionAddress: [ 0, 0 ],
 			color: BLACK,
 		})).toBe(true)
-		expect(tileSectorCenterIsColor({
-			id: 1,
-			originInPixels: [ 1 * tileSizeInPixels, 1 * tileSizeInPixels ],
-			tileSizeInPixels,
-			x: 1,
-			y: 1,
-			n: 2,
+		expect(sectionCenterIsColor({
+			areaOrigin: [ 1 * areaSize, 1 * areaSize ],
+			areaSize,
+			sectionResolution: 2,
+			sectionAddress: [ 1, 1 ],
 			color: TRANSPARENT,
 		})).toBe(true)
 
-		expect(tileSectorCenterIsColor({
-			id: 1,
-			originInPixels: [ 2 * tileSizeInPixels, 2 * tileSizeInPixels ],
-			tileSizeInPixels,
-			x: 0,
-			y: 0,
-			n: 3,
+		expect(sectionCenterIsColor({
+			areaOrigin: [ 2 * areaSize, 2 * areaSize ],
+			areaSize,
+			sectionResolution: 3,
+			sectionAddress: [ 0, 0 ],
+
 			color: TRANSPARENT,
 		})).toBe(true)
-		expect(tileSectorCenterIsColor({
-			id: 1,
-			originInPixels: [ 2 * tileSizeInPixels, 2 * tileSizeInPixels ],
-			tileSizeInPixels,
-			x: 1,
-			y: 1,
-			n: 3,
+		expect(sectionCenterIsColor({
+			areaOrigin: [ 2 * areaSize, 2 * areaSize ],
+			areaSize,
+			sectionResolution: 3,
+			sectionAddress: [ 1, 1 ],
 			color: BLACK,
 		})).toBe(true)
-		expect(tileSectorCenterIsColor({
-			id: 1,
-			originInPixels: [ 2 * tileSizeInPixels, 2 * tileSizeInPixels ],
-			tileSizeInPixels,
-			x: 2,
-			y: 2,
-			n: 3,
+		expect(sectionCenterIsColor({
+			areaOrigin: [ 2 * areaSize, 2 * areaSize ],
+			areaSize,
+			sectionResolution: 3,
+			sectionAddress: [ 2, 2 ],
 			color: TRANSPARENT,
 		})).toBe(true)
 
-		expect(tileSectorCenterIsColor({
-			id: 1,
-			originInPixels: [ 3 * tileSizeInPixels, 3 * tileSizeInPixels ],
-			tileSizeInPixels,
-			x: 0,
-			y: 0,
-			n: 4,
+		expect(sectionCenterIsColor({
+			areaOrigin: [ 3 * areaSize, 3 * areaSize ],
+			areaSize,
+			sectionResolution: 4,
+			sectionAddress: [ 0, 0 ],
 			color: TRANSPARENT,
 		})).toBe(true)
-		expect(tileSectorCenterIsColor({
-			id: 1,
-			originInPixels: [ 3 * tileSizeInPixels, 3 * tileSizeInPixels ],
-			tileSizeInPixels,
-			x: 1,
-			y: 1,
-			n: 4,
+		expect(sectionCenterIsColor({
+			areaOrigin: [ 3 * areaSize, 3 * areaSize ],
+			areaSize,
+			sectionResolution: 4,
+			sectionAddress: [ 1, 1 ],
 			color: BLACK,
 		})).toBe(true)
-		expect(tileSectorCenterIsColor({
-			id: 1,
-			originInPixels: [ 3 * tileSizeInPixels, 3 * tileSizeInPixels ],
-			tileSizeInPixels,
-			x: 2,
-			y: 2,
-			n: 4,
+		expect(sectionCenterIsColor({
+			areaOrigin: [ 3 * areaSize, 3 * areaSize ],
+			areaSize,
+			sectionResolution: 4,
+			sectionAddress: [ 2, 2 ],
 			color: TRANSPARENT,
 		})).toBe(true)
-		expect(tileSectorCenterIsColor({
-			id: 1,
-			originInPixels: [ 3 * tileSizeInPixels, 3 * tileSizeInPixels ],
-			tileSizeInPixels,
-			x: 3,
-			y: 3,
-			n: 4,
+		expect(sectionCenterIsColor({
+			areaOrigin: [ 3 * areaSize, 3 * areaSize ],
+			areaSize,
+			sectionResolution: 4,
+			sectionAddress: [ 3, 3 ],
 			color: BLACK,
 		})).toBe(true)
 	})
@@ -118,7 +99,7 @@ describe('gingham chevron continuum effect', () => {
 			basePattern: {
 				gridSettings: { gridSize: 4 },
 				viewSettings: { canvasSize: 200 },
-				tileSettings: { tileSizeSetting: 50 },
+				tileSettings: { areaSizeSetting: 50 },
 			},
 		}
 
@@ -178,15 +159,13 @@ describe('gingham chevron continuum effect', () => {
 })
 
 const expectStripedTile = ({ coordinate, stripeCount, firstColor }) => {
-	const tileSizeInPixels = getFromBasePatternOrDefault(TILE_SIZE) as number
+	const areaSize = getFromBasePatternOrDefault(TILE_SIZE) as number
 	iterator(stripeCount).forEach(stripe => {
-		expect(tileSectorCenterIsColor({
-			id: 1,
-			originInPixels: [ coordinate * tileSizeInPixels, coordinate * tileSizeInPixels ],
-			tileSizeInPixels,
-			x: stripe,
-			y: stripe,
-			n: stripeCount,
+		expect(sectionCenterIsColor({
+			areaOrigin: [ coordinate * areaSize, coordinate * areaSize ],
+			areaSize,
+			sectionResolution: stripeCount,
+			sectionAddress: [ stripe, stripe ],
 			color: stripe % 2 === 0 ? firstColor : firstColor === BLACK ? TRANSPARENT : BLACK,
 		})).toBe(true)
 	})
