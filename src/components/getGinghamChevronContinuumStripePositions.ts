@@ -15,7 +15,7 @@ const getGinghamChevronContinuumStripePositions: GetGinghamChevronContinuumStrip
 }
 
 type GetStripePositions = {
-	({}: { initialStripeCount: number, distanceFromHomeAddress: number, deltaStripeCount: number }): number[],
+	({}: { initialStripeCount: number, distanceFromHomeAddress: number, deltaStripeCount: number }): StripePosition[],
 }
 
 const getStripePositions: GetStripePositions = ({ initialStripeCount, distanceFromHomeAddress, deltaStripeCount }) => {
@@ -31,7 +31,7 @@ const getStripePositions: GetStripePositions = ({ initialStripeCount, distanceFr
 		}
 	}
 
-	return stripes
+	return stripes as any
 }
 
 export default getGinghamChevronContinuumStripePositions
