@@ -1,6 +1,7 @@
 import composeMainHoundstooth from '../../../../../../src/execute/composeMainHoundstooth'
 // eslint-disable-next-line max-len
 import getGinghamChevronContinuumStripePositions from '../../../../src/components/getGinghamChevronContinuumStripePositions'
+import Address from '../../../../../../src/components/types/Address'
 
 describe(`get gingham chevron continuum stripe positions returns an array of numbers
 	representing the positions of the stripes for a given tile in terms of its perimeter
@@ -39,8 +40,16 @@ const expectGccStripeCounts: { (initial: number, delta: number): void } = (initi
 		},
 	})
 
-	expect(getGinghamChevronContinuumStripePositions({ gridAddress: [ 0, 0 ] }).length).toEqual(initial)
-	expect(getGinghamChevronContinuumStripePositions({ gridAddress: [ 1, 1 ] }).length).toEqual(initial + 1 * delta)
-	expect(getGinghamChevronContinuumStripePositions({ gridAddress: [ 2, 2 ] }).length).toEqual(initial + 2 * delta)
-	expect(getGinghamChevronContinuumStripePositions({ gridAddress: [ 3, 3 ] }).length).toEqual(initial + 3 * delta)
+	expect(getGinghamChevronContinuumStripePositions({
+		gridAddress: [ 0, 0 ] as Address,
+	}).length).toEqual(initial)
+	expect(getGinghamChevronContinuumStripePositions({
+		gridAddress: [ 1, 1 ] as Address,
+	}).length).toEqual(initial + 1 * delta)
+	expect(getGinghamChevronContinuumStripePositions({
+		gridAddress: [ 2, 2 ] as Address,
+	}).length).toEqual(initial + 2 * delta)
+	expect(getGinghamChevronContinuumStripePositions({
+		gridAddress: [ 3, 3 ] as Address,
+	}).length).toEqual(initial + 3 * delta)
 }

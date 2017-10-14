@@ -1,12 +1,14 @@
 import composeMainHoundstooth from '../../../../../../src/execute/composeMainHoundstooth'
 import * as indexOfFirstStripeCrossingThisTile from '../../../../src/components/indexOfFirstStripeCrossingThisTile'
 import subject from '../../../../src/components/realignTileColorIndicesForGinghamChevronContinuum'
+import TileColorIndices from '../../../../../../src/components/types/TileColorIndices'
+import Address from '../../../../../../src/components/types/Address'
 
 describe(`realign tile color indices to maintain gingham chevron continuum across grid,
 	because the information about alternation of the colorSet has been lost from individual tiles,
 	we have to check the modulus of the overall grid stripes instead`, () => {
-		const tileColorIndices = [ 9, 88 ]
-		const gridAddress = [ 4, 7 ]
+		const tileColorIndices = [ 9, 88 ] as TileColorIndices
+		const gridAddress = [ 4, 7 ] as Address
 		beforeEach(() => {
 			composeMainHoundstooth({
 				houndstoothEffects: [],

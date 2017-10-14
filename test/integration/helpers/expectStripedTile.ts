@@ -3,11 +3,11 @@ import { TILE_SIZE } from '../../../../../test/helpers/settingsPaths'
 import { iterator } from '../../../../../src/utilities/codeUtilities'
 import sectionCenterIsColor from '../../../../../test/integration/helpers/sectionCenterIsColor'
 import { BLACK, TRANSPARENT } from '../../../../../src/constants'
-import { Color, Address, Coordinate } from '../../../../../src'
+import { Color, Address, Coordinate, Units } from '../../../../../src'
 
 type ExpectStripedTile = { ({}: { diagonalAddress: number, stripeCount: number, firstColor: Color }): void }
 const expectStripedTile: ExpectStripedTile = ({ diagonalAddress, stripeCount, firstColor }) => {
-	const areaSize = getFromBasePatternOrDefault(TILE_SIZE) as number
+	const areaSize = getFromBasePatternOrDefault(TILE_SIZE) as Units
 	iterator(stripeCount).forEach(stripe => {
 		expect(sectionCenterIsColor({
 			areaOrigin: [ diagonalAddress * areaSize, diagonalAddress * areaSize ] as Coordinate,

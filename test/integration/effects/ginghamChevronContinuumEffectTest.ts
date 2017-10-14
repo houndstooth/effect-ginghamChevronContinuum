@@ -12,10 +12,11 @@ import * as animator from '../../../../../src/animation/animator'
 import expectStripedTile from '../helpers/expectStripedTile'
 import Address from '../../../../../src/components/types/Address'
 import Coordinate from '../../../../../src/space/types/Coordinate'
+import Units from '../../../../../src/components/types/Units'
 
 describe('gingham chevron continuum effect', () => {
 	it('each new diagonal row has an extra stripe', () => {
-		const areaSize = getFromBasePatternOrDefault(TILE_SIZE) as number
+		const areaSize = getFromBasePatternOrDefault(TILE_SIZE) as Units
 		state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 		activateTestMarkerCanvas()
 
