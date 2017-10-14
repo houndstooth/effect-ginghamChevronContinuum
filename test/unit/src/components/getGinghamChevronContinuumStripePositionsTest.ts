@@ -5,24 +5,24 @@ import getGinghamChevronContinuumStripePositions from '../../../../src/component
 describe(`get gingham chevron continuum stripe positions returns an array of numbers
 	representing the positions of the stripes for a given tile in terms of its perimeter
 	(2 is the max) based on where on the grid it is`, () => {
-		it(`checking this units ability to start the stripe count at the right amount
+		it(`expecting this units ability to start the stripe count at the right amount
 	and grow it by the right amount each diagonal`, () => {
-				checkGccStripeCounts(4, 2)
-				checkGccStripeCounts(4, 3)
-				checkGccStripeCounts(3, 2)
-				// checkGccStripeCounts(1, 3)
-				// checkGccStripeCounts(2, 5) --> if the delta is more than twice the initial, it breaks a bit
-				checkGccStripeCounts(5, 3)
-				checkGccStripeCounts(3, 3)
-				checkGccStripeCounts(2, 1)
-				checkGccStripeCounts(3, 1)
-				checkGccStripeCounts(1, 1)
-				checkGccStripeCounts(2, 3)
-				checkGccStripeCounts(1, 2)
+				expectGccStripeCounts(4, 2)
+				expectGccStripeCounts(4, 3)
+				expectGccStripeCounts(3, 2)
+				// expectGccStripeCounts(1, 3)
+				// expectGccStripeCounts(2, 5) --> if the delta is more than twice the initial, it breaks a bit
+				expectGccStripeCounts(5, 3)
+				expectGccStripeCounts(3, 3)
+				expectGccStripeCounts(2, 1)
+				expectGccStripeCounts(3, 1)
+				expectGccStripeCounts(1, 1)
+				expectGccStripeCounts(2, 3)
+				expectGccStripeCounts(1, 2)
 			})
 	})
 
-const checkGccStripeCounts: { (initial: number, delta: number): void } = (initial, delta) => {
+const expectGccStripeCounts: { (initial: number, delta: number): void } = (initial, delta) => {
 	composeMainHoundstooth({
 		houndstoothEffects: [],
 		houndstoothOverrides: {

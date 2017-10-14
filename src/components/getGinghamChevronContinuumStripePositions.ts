@@ -2,9 +2,11 @@ import { termialRoot } from '../../../../src/utilities/mathUtilities'
 import { state } from '../../../../src'
 import getDistanceFromHomeAddress from './getDistanceFromHomeAddress'
 import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
-import { Address } from '../../../../src'
+import { Address, StripePosition } from '../../../../src'
 
-const getGinghamChevronContinuumStripePositions: { ({}: { gridAddress: Address }): number[] } = ({ gridAddress }) => {
+type GetGinghamChevronContinuumStripePositions = { ({}: { gridAddress: Address }): StripePosition[] }
+
+const getGinghamChevronContinuumStripePositions: GetGinghamChevronContinuumStripePositions = ({ gridAddress }) => {
 	const stripePositionSettings = state.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings
 	const { initialStripeCount, deltaStripeCount } = stripePositionSettings.stripeCountContinuumSettings
 	const distanceFromHomeAddress = getDistanceFromHomeAddress({ gridAddress })
