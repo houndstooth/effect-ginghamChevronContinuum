@@ -13,6 +13,8 @@ import expectStripedTile from '../helpers/expectStripedTile'
 import Address from '../../../../../src/components/types/Address'
 import Coordinate from '../../../../../src/space/types/Coordinate'
 import Units from '../../../../../src/components/types/Units'
+import CanvasSize from '../../../../../src/canvas/types/CanvasSize'
+import Houndstooth from '../../../../../src/store/types/Houndstooth'
 
 describe('gingham chevron continuum effect', () => {
 	it('each new diagonal row has an extra stripe', () => {
@@ -102,10 +104,10 @@ describe('gingham chevron continuum effect', () => {
 		const ginghamChevronContinuumAnimationTestHoundstoothOverrides = {
 			basePattern: {
 				gridSettings: { gridSize: 4 },
-				viewSettings: { canvasSize: 200 },
+				viewSettings: { canvasSize: 200 as CanvasSize },
 				tileSettings: { areaSizeSetting: 50 },
 			},
-		}
+		} as Houndstooth
 
 		beforeEach(() => {
 			spyOn(animator, 'default').and.callFake(({ animationFunction, stopConditionFunction }) => {
