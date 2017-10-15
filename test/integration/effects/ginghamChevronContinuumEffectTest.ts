@@ -7,7 +7,7 @@ import getFromBasePatternOrDefault from '../../../../../test/helpers/getFromBase
 import { TILE_SIZE } from '../../../../../test/helpers/settingsPaths'
 import { thisAnimationFrameOnly } from '../../../../../test/integration/helpers/thisFrameOnly'
 import state from '../../../../../src/state'
-import { deepClone, iterator } from '../../../../../src/utilities/codeUtilities'
+import { deepClone } from '../../../../../src/utilities/codeUtilities'
 import * as animator from '../../../../../src/animation/animator'
 import expectStripedTile from '../helpers/expectStripedTile'
 import Address from '../../../../../src/components/types/Address'
