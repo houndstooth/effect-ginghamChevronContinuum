@@ -6,8 +6,11 @@ import { Address, StripePosition, state } from '../../../../src'
 const getGinghamChevronContinuumStripePositions: {
 	({}: { gridAddress: Address }): StripePosition[],
 } = ({ gridAddress }) => {
-	const stripePositionSettings = state.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings
-	const { initialStripeCount, deltaStripeCount } = stripePositionSettings.stripeCountContinuumSettings
+	const basePattern = state.mainHoundstooth.basePattern || {}
+	const stripeSettings = basePattern.stripeSettings || {}
+	const stripePositionSettings = stripeSettings.stripePositionSettings || {}
+	const stripeCountContinuumSettings = stripePositionSettings.stripeCountContinuumSettings || {}
+	const { initialStripeCount = 0, deltaStripeCount = 0 } = stripeCountContinuumSettings
 	const distanceFromHomeAddress = getDistanceFromHomeAddress({ gridAddress })
 
 	return getStripePositions({ initialStripeCount, distanceFromHomeAddress, deltaStripeCount })

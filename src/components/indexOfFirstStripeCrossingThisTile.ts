@@ -3,8 +3,11 @@ import { state, Address } from '../../../../src'
 import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
 
 const indexOfFirstStripeCrossingThisTile: {({}: { gridAddress: Address }): number} = ({ gridAddress }) => {
-	const stripePositionSettings = state.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings
-	const { initialStripeCount, deltaStripeCount } = stripePositionSettings.stripeCountContinuumSettings
+	const basePattern = state.mainHoundstooth.basePattern || {}
+	const stripeSettings = basePattern.stripeSettings || {}
+	const stripePositionSettings = stripeSettings.stripePositionSettings || {}
+	const stripeCountContinuumSettings = stripePositionSettings.stripeCountContinuumSettings || {}
+	const { initialStripeCount = 0, deltaStripeCount = 0 } = stripeCountContinuumSettings
 
 	for (let stripeIndex = 0; stripeIndex < neededStripeCountToCoverGrid(); stripeIndex++) {
 		const stripePosition = termialRoot({
@@ -16,6 +19,8 @@ const indexOfFirstStripeCrossingThisTile: {({}: { gridAddress: Address }): numbe
 			return stripeIndex
 		}
 	}
+
+	return 0
 }
 
 export default indexOfFirstStripeCrossingThisTile

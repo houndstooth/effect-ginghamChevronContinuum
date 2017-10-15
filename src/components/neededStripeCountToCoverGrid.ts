@@ -2,10 +2,15 @@ import { triangularNumber } from '../../../../src/utilities/mathUtilities'
 import { state } from '../../../../src'
 
 const neededStripeCountToCoverGrid: { (): number } = () => {
-	const { stripeSettings, gridSettings } = state.mainHoundstooth.basePattern
-	const { initialStripeCount, deltaStripeCount } = stripeSettings.stripePositionSettings.stripeCountContinuumSettings
+	const basePattern = state.mainHoundstooth.basePattern || {}
+	const stripeSettings = basePattern.stripeSettings || {}
+	const gridSettings = basePattern.gridSettings || {}
 
-	return initialStripeCount + deltaStripeCount * triangularNumber(gridSettings.gridSize)
+	const stripePositionSettings = stripeSettings.stripePositionSettings || {}
+	const stripeCountContinuumSettings = stripePositionSettings.stripeCountContinuumSettings || {}
+	const { initialStripeCount = 0, deltaStripeCount = 0 } = stripeCountContinuumSettings
+
+	return initialStripeCount + deltaStripeCount * triangularNumber(gridSettings.gridSize || 0)
 }
 
 export default neededStripeCountToCoverGrid
