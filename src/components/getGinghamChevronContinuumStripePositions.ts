@@ -3,9 +3,9 @@ import getDistanceFromHomeAddress from './getDistanceFromHomeAddress'
 import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
 import { Address, StripePosition, state } from '../../../../src'
 
-type GetGinghamChevronContinuumStripePositions = { ({}: { gridAddress: Address }): StripePosition[] }
-
-const getGinghamChevronContinuumStripePositions: GetGinghamChevronContinuumStripePositions = ({ gridAddress }) => {
+const getGinghamChevronContinuumStripePositions: {
+	({}: { gridAddress: Address }): StripePosition[],
+} = ({ gridAddress }) => {
 	const stripePositionSettings = state.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings
 	const { initialStripeCount, deltaStripeCount } = stripePositionSettings.stripeCountContinuumSettings
 	const distanceFromHomeAddress = getDistanceFromHomeAddress({ gridAddress })
@@ -13,11 +13,9 @@ const getGinghamChevronContinuumStripePositions: GetGinghamChevronContinuumStrip
 	return getStripePositions({ initialStripeCount, distanceFromHomeAddress, deltaStripeCount })
 }
 
-type GetStripePositions = {
+const getStripePositions: {
 	({}: { initialStripeCount: number, distanceFromHomeAddress: number, deltaStripeCount: number }): StripePosition[],
-}
-
-const getStripePositions: GetStripePositions = ({ initialStripeCount, distanceFromHomeAddress, deltaStripeCount }) => {
+} = ({ initialStripeCount, distanceFromHomeAddress, deltaStripeCount }) => {
 	const stripes = [ 0 ]
 
 	for (let n = 0; n < neededStripeCountToCoverGrid(); n++) {

@@ -3,12 +3,9 @@ import indexOfFirstStripeCrossingThisTile from './indexOfFirstStripeCrossingThis
 import { TileColorIndices } from '../../../../src/components'
 import { Address } from '../../../../src'
 
-type RealignTileColorIndicesForGinghamChevronContinuum = {
+const realignTileColorIndicesForGinghamChevronContinuum: {
 	({}: { tileColorIndices: TileColorIndices, gridAddress: Address }): TileColorIndices,
-}
-
-const realignTileColorIndicesForGinghamChevronContinuum: RealignTileColorIndicesForGinghamChevronContinuum = params => {
-	const { tileColorIndices, gridAddress } = params
+} = ({ tileColorIndices, gridAddress }) => {
 	const stripeIndex = indexOfFirstStripeCrossingThisTile({ gridAddress })
 	const realignedTileColorIndices = stripeIndex % 2 === 1 ? reversed(tileColorIndices) : tileColorIndices
 
