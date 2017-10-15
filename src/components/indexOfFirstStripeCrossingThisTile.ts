@@ -1,7 +1,6 @@
 import { termialRoot } from '../../../../src/utilities/mathUtilities'
-import { state } from '../../../../src'
+import { state, Address } from '../../../../src'
 import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
-import { Address } from '../../../../src'
 
 const indexOfFirstStripeCrossingThisTile: {({}: { gridAddress: Address }): number} = ({ gridAddress }) => {
 	const stripePositionSettings = state.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings

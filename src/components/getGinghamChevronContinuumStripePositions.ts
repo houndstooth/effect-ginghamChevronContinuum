@@ -1,8 +1,7 @@
 import { termialRoot } from '../../../../src/utilities/mathUtilities'
-import { state } from '../../../../src'
 import getDistanceFromHomeAddress from './getDistanceFromHomeAddress'
 import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
-import { Address, StripePosition } from '../../../../src'
+import { Address, StripePosition, state } from '../../../../src'
 
 type GetGinghamChevronContinuumStripePositions = { ({}: { gridAddress: Address }): StripePosition[] }
 
