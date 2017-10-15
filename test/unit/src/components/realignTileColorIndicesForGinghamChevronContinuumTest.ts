@@ -4,7 +4,7 @@ import subject from '../../../../src/components/realignTileColorIndicesForGingha
 import TileColorIndices from '../../../../../../src/components/types/TileColorIndices'
 import Address from '../../../../../../src/components/types/Address'
 
-// eslint-disable-next-line max-len
+// tslint:disable-next-line:max-line-length
 describe('realign tile color indices to maintain gingham chevron continuum across grid, because the information about alternation of the colorSet has been lost from individual tiles, we have to check the modulus of the overall grid stripes instead', () => {
 	const tileColorIndices = [ 9, 88 ] as TileColorIndices
 	const gridAddress = [ 4, 7 ] as Address

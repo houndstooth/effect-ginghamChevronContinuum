@@ -1,11 +1,11 @@
 import composeMainHoundstooth from '../../../../../../src/execute/composeMainHoundstooth'
-// eslint-disable-next-line max-len
+// tslint:disable-next-line:max-line-length
 import getGinghamChevronContinuumStripePositions from '../../../../src/components/getGinghamChevronContinuumStripePositions'
 import Address from '../../../../../../src/components/types/Address'
 
-// eslint-disable-next-line max-len
+// tslint:disable-next-line:max-line-length
 describe('get gingham chevron continuum stripe positions returns an array of numbers representing the positions of the stripes for a given tile in terms of its perimeter (2 is the max) based on where on the grid it is', () => {
-	// eslint-disable-next-line max-len
+	// tslint:disable-next-line:max-line-length
 	it('expecting this units ability to start the stripe count at the right amount and grow it by the right amount each diagonal', () => {
 		expectGccStripeCounts(4, 2)
 		expectGccStripeCounts(4, 3)
