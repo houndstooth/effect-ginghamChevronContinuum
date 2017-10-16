@@ -2,14 +2,14 @@ import {
 	getGinghamChevronContinuumStripePositions,
 	realignTileColorIndicesForGinghamChevronContinuum,
 } from '../src'
-import { standardAnimation, Houndstooth } from '../../../src'
+import { standardAnimation, Houndstooth, StripeCountMode } from '../../../src'
 
 const ginghamChevronContinuumEffect: Houndstooth = {
 	name: 'gingham chevron continuum',
 	basePattern: {
 		stripeSettings: {
 			stripePositionSettings: {
-				stripeCountMode: 'GINGHAM_CHEVRON_CONTINUUM',
+				stripeCountMode: StripeCountMode.GINGHAM_CHEVRON_CONTINUUM,
 				stripeCountContinuumSettings: {
 					deltaStripeCount: 1,
 					initialStripeCount: 1,
