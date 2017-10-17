@@ -5,9 +5,9 @@ import getFromBasePatternOrDefault from '../../../../../test/helpers/getFromBase
 import { TILE_SIZE } from '../../../../../test/helpers/settingsPaths'
 import sectionCenterIsColor from '../../../../../test/integration/helpers/sectionCenterIsColor'
 
-interface ExpectStripedTile { ({}: { diagonalAddress: number, firstColor: Color, stripeCount: number }): void }
+type ExpectStripedTile = (_: { diagonalAddress: number, firstColor: Color, stripeCount: number }) => void
 const expectStripedTile: ExpectStripedTile = ({ diagonalAddress, firstColor, stripeCount }) => {
-	const areaSize = getFromBasePatternOrDefault(TILE_SIZE) as any
+	const areaSize = getFromBasePatternOrDefault(TILE_SIZE)
 	iterator(stripeCount).forEach(stripe => {
 		expect(sectionCenterIsColor({
 			areaOrigin: [ diagonalAddress * areaSize as any, diagonalAddress * areaSize as any ] as Coordinate,

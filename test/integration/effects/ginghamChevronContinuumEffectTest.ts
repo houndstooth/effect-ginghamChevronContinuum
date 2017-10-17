@@ -17,7 +17,7 @@ import expectStripedTile from '../helpers/expectStripedTile'
 
 describe('gingham chevron continuum effect', () => {
 	it('each new diagonal row has an extra stripe', () => {
-		const areaSize = getFromBasePatternOrDefault(TILE_SIZE) as any
+		const areaSize = getFromBasePatternOrDefault(TILE_SIZE)
 		state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 		activateTestMarkerCanvas()
 

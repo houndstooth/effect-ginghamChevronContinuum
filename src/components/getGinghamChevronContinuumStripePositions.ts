@@ -3,9 +3,9 @@ import { termialRoot } from '../../../../src/utilities/mathUtilities'
 import getDistanceFromHomeAddress from './getDistanceFromHomeAddress'
 import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
 
-const getGinghamChevronContinuumStripePositions: {
-	({}: { gridAddress: Address }): StripePosition[],
-} = ({ gridAddress }) => {
+const getGinghamChevronContinuumStripePositions: (_: {
+	gridAddress: Address,
+}) => StripePosition[] = ({ gridAddress }) => {
 	const basePattern = state.mainHoundstooth.basePattern || {}
 	const stripeSettings = basePattern.stripeSettings || {}
 	const stripePositionSettings = stripeSettings.stripePositionSettings || {}
@@ -16,9 +16,9 @@ const getGinghamChevronContinuumStripePositions: {
 	return getStripePositions({ initialStripeCount, distanceFromHomeAddress, deltaStripeCount })
 }
 
-const getStripePositions: {
-	({}: { deltaStripeCount: number, distanceFromHomeAddress: number, initialStripeCount: number }): StripePosition[],
-} = ({ deltaStripeCount, distanceFromHomeAddress, initialStripeCount }) => {
+const getStripePositions: (_: {
+	deltaStripeCount: number, distanceFromHomeAddress: number, initialStripeCount: number,
+}) => StripePosition[] = ({ deltaStripeCount, distanceFromHomeAddress, initialStripeCount }) => {
 	const stripes = [ 0 ]
 
 	for (let n = 0; n < neededStripeCountToCoverGrid(); n++) {

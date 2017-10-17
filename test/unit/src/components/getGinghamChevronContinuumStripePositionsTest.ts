@@ -22,7 +22,7 @@ describe('get gingham chevron continuum stripe positions returns an array of num
 	})
 })
 
-const expectGccStripeCounts: { (initial: number, delta: number): void } = (initial, delta) => {
+const expectGccStripeCounts: (initial: number, delta: number) => void = (initial, delta) => {
 	composeMainHoundstooth({
 		houndstoothEffects: [],
 		houndstoothOverrides: {
