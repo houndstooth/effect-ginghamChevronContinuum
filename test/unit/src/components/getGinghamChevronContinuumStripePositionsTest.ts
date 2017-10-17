@@ -44,11 +44,11 @@ const expectGccStripeCounts: { (initial: number, delta: number): void } = (initi
 	}).length).toEqual(initial)
 	expect(getGinghamChevronContinuumStripePositions({
 		gridAddress: [ 1, 1 ] as Address,
-	}).length).toEqual(initial + 1 * delta)
+	}).length).toEqual(initial + delta * 1)
 	expect(getGinghamChevronContinuumStripePositions({
 		gridAddress: [ 2, 2 ] as Address,
-	}).length).toEqual(initial + 2 * delta)
+	}).length).toEqual(initial + delta * 2)
 	expect(getGinghamChevronContinuumStripePositions({
 		gridAddress: [ 3, 3 ] as Address,
-	}).length).toEqual(initial + 3 * delta)
+	}).length).toEqual(initial + delta * 3)
 }

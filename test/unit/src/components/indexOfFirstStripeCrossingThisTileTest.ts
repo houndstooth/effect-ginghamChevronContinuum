@@ -42,6 +42,7 @@ describe('index of first grid stripe crossing this tile', () => {
 		})
 
 		const actual = indexOfFirstStripeCrossingThisTile({ gridAddress: [ 1, 5 ] as Address })
+		// tslint:disable-next-line:binary-expression-operand-order
 		expect(actual).toBe(4 + (4 + 7) + (4 + 7 + 7) + 1)
 	})
 })
