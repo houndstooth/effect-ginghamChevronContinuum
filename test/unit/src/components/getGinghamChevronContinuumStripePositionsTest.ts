@@ -10,8 +10,8 @@ describe('get gingham chevron continuum stripe positions returns an array of num
 		expectGccStripeCounts(4, 2)
 		expectGccStripeCounts(4, 3)
 		expectGccStripeCounts(3, 2)
-		// expectGccStripeCounts(1, 3)
-		// expectGccStripeCounts(2, 5) --> if the delta is more than twice the initial, it breaks a bit
+		// If the delta is more than twice the initial, it breaks a bit: expectGccStripeCounts(1, 3)
+		// If the delta is more than twice the initial, it breaks a bit: expectGccStripeCounts(2, 5)
 		expectGccStripeCounts(5, 3)
 		expectGccStripeCounts(3, 3)
 		expectGccStripeCounts(2, 1)
