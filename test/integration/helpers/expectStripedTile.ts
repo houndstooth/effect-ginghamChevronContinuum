@@ -5,8 +5,8 @@ import sectionCenterIsColor from '../../../../../test/integration/helpers/sectio
 import { BLACK, TRANSPARENT } from '../../../../../src/constants'
 import { Color, Address, Coordinate } from '../../../../../src'
 
-type ExpectStripedTile = { ({}: { diagonalAddress: number, stripeCount: number, firstColor: Color }): void }
-const expectStripedTile: ExpectStripedTile = ({ diagonalAddress, stripeCount, firstColor }) => {
+type ExpectStripedTile = { ({}: { diagonalAddress: number, firstColor: Color, stripeCount: number }): void }
+const expectStripedTile: ExpectStripedTile = ({ diagonalAddress, firstColor, stripeCount }) => {
 	const areaSize = getFromBasePatternOrDefault(TILE_SIZE) as any
 	iterator(stripeCount).forEach(stripe => {
 		expect(sectionCenterIsColor({

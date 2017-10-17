@@ -17,8 +17,8 @@ const getGinghamChevronContinuumStripePositions: {
 }
 
 const getStripePositions: {
-	({}: { initialStripeCount: number, distanceFromHomeAddress: number, deltaStripeCount: number }): StripePosition[],
-} = ({ initialStripeCount, distanceFromHomeAddress, deltaStripeCount }) => {
+	({}: { deltaStripeCount: number, distanceFromHomeAddress: number, initialStripeCount: number }): StripePosition[],
+} = ({ deltaStripeCount, distanceFromHomeAddress, initialStripeCount }) => {
 	const stripes = [ 0 ]
 
 	for (let n = 0; n < neededStripeCountToCoverGrid(); n++) {

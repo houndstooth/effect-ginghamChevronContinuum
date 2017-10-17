@@ -4,8 +4,8 @@ import { TileColorIndices } from '../../../../src/components'
 import { Address } from '../../../../src'
 
 const realignTileColorIndicesForGinghamChevronContinuum: {
-	({}: { tileColorIndices: TileColorIndices, gridAddress: Address }): TileColorIndices,
-} = ({ tileColorIndices, gridAddress }) => {
+	({}: { gridAddress: Address, tileColorIndices: TileColorIndices }): TileColorIndices,
+} = ({ gridAddress, tileColorIndices }) => {
 	const stripeIndex = indexOfFirstStripeCrossingThisTile({ gridAddress })
 	const realignedTileColorIndices = stripeIndex % 2 === 1 ? reversed(tileColorIndices) : tileColorIndices
 
