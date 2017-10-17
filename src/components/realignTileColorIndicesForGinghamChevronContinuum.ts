@@ -1,7 +1,7 @@
+import { Address } from '../../../../src'
+import { TileColorIndices } from '../../../../src/components'
 import { reversed } from '../../../../src/utilities/codeUtilities'
 import indexOfFirstStripeCrossingThisTile from './indexOfFirstStripeCrossingThisTile'
-import { TileColorIndices } from '../../../../src/components'
-import { Address } from '../../../../src'
 
 const realignTileColorIndicesForGinghamChevronContinuum: {
 	({}: { gridAddress: Address, tileColorIndices: TileColorIndices }): TileColorIndices,

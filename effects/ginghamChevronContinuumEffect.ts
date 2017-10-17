@@ -1,8 +1,8 @@
+import { Houndstooth, standardAnimation, StripeCountMode } from '../../../src'
 import {
 	getGinghamChevronContinuumStripePositions,
 	realignTileColorIndicesForGinghamChevronContinuum,
 } from '../src'
-import { standardAnimation, Houndstooth, StripeCountMode } from '../../../src'
 
 const ginghamChevronContinuumEffect: Houndstooth = {
 	name: 'gingham chevron continuum',

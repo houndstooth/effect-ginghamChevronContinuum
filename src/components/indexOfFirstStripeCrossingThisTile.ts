@@ -1,5 +1,5 @@
+import { Address, state } from '../../../../src'
 import { termialRoot } from '../../../../src/utilities/mathUtilities'
-import { state, Address } from '../../../../src'
 import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
 
 const indexOfFirstStripeCrossingThisTile: {({}: { gridAddress: Address }): number} = ({ gridAddress }) => {
