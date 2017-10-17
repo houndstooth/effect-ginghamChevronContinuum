@@ -5,24 +5,6 @@ import {
 } from '../src'
 
 const ginghamChevronContinuumEffect: Houndstooth = {
-	name: 'gingham chevron continuum',
-	basePattern: {
-		stripeSettings: {
-			stripePositionSettings: {
-				stripeCountMode: StripeCountMode.GINGHAM_CHEVRON_CONTINUUM,
-				stripeCountContinuumSettings: {
-					deltaStripeCount: 1,
-					initialStripeCount: 1,
-				},
-				getStripePositions: getGinghamChevronContinuumStripePositions,
-			},
-		},
-		colorSettings: {
-			assignment: {
-				transformTileColorIndices: realignTileColorIndicesForGinghamChevronContinuum,
-			},
-		},
-	},
 	animationsPattern: {
 		stripeSettings: {
 			stripePositionSettings: {
@@ -33,6 +15,24 @@ const ginghamChevronContinuumEffect: Houndstooth = {
 			},
 		},
 	},
+	basePattern: {
+		colorSettings: {
+			assignment: {
+				transformTileColorIndices: realignTileColorIndicesForGinghamChevronContinuum,
+			},
+		},
+		stripeSettings: {
+			stripePositionSettings: {
+				getStripePositions: getGinghamChevronContinuumStripePositions,
+				stripeCountContinuumSettings: {
+					deltaStripeCount: 1,
+					initialStripeCount: 1,
+				},
+				stripeCountMode: StripeCountMode.GINGHAM_CHEVRON_CONTINUUM,
+			},
+		},
+	},
+	name: 'gingham chevron continuum',
 }
 
 export default ginghamChevronContinuumEffect

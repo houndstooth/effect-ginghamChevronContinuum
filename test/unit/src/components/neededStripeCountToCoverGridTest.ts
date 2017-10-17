@@ -11,16 +11,16 @@ describe('needed stripe count to cover grid', () => {
 			houndstoothEffects: [],
 			houndstoothOverrides: {
 				basePattern: {
+					gridSettings: {
+						gridSize,
+					},
 					stripeSettings: {
 						stripePositionSettings: {
 							stripeCountContinuumSettings: {
-								initialStripeCount,
 								deltaStripeCount,
+								initialStripeCount,
 							},
 						},
-					},
-					gridSettings: {
-						gridSize,
 					},
 				},
 			},

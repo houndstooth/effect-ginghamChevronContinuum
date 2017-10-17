@@ -11,8 +11,8 @@ describe('index of first grid stripe crossing this tile', () => {
 					stripeSettings: {
 						stripePositionSettings: {
 							stripeCountContinuumSettings: {
-								initialStripeCount: 1,
 								deltaStripeCount: 1,
+								initialStripeCount: 1,
 							},
 						},
 					},
@@ -32,8 +32,8 @@ describe('index of first grid stripe crossing this tile', () => {
 					stripeSettings: {
 						stripePositionSettings: {
 							stripeCountContinuumSettings: {
-								initialStripeCount: 4,
 								deltaStripeCount: 7,
+								initialStripeCount: 4,
 							},
 						},
 					},

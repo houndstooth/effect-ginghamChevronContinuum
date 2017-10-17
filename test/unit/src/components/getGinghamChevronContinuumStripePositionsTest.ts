@@ -30,8 +30,8 @@ const expectGccStripeCounts: { (initial: number, delta: number): void } = (initi
 				stripeSettings: {
 					stripePositionSettings: {
 						stripeCountContinuumSettings: {
-							initialStripeCount: initial,
 							deltaStripeCount: delta,
+							initialStripeCount: initial,
 						},
 					},
 				},

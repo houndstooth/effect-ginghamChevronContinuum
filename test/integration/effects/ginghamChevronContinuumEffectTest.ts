@@ -26,76 +26,75 @@ describe('gingham chevron continuum effect', () => {
 		expect(sectionCenterIsColor({
 			areaOrigin: [ 0 * areaSize as any, 0 * areaSize as any ] as Coordinate,
 			areaSize,
+			color: BLACK,
+			sectionAddress: [ 0, 0 ] as Address,
 			sectionResolution: 1,
-			sectionAddress: [ 0, 0 ] as Address,
-			color: BLACK,
 		})).toBe(true)
 
 		expect(sectionCenterIsColor({
 			areaOrigin: [ 1 * areaSize as any, 1 * areaSize as any ] as Coordinate,
 			areaSize,
-			sectionResolution: 2,
-			sectionAddress: [ 0, 0 ] as Address,
 			color: BLACK,
+			sectionAddress: [ 0, 0 ] as Address,
+			sectionResolution: 2,
 		})).toBe(true)
 		expect(sectionCenterIsColor({
 			areaOrigin: [ 1 * areaSize as any, 1 * areaSize as any ] as Coordinate,
 			areaSize,
+			color: TRANSPARENT,
+			sectionAddress: [ 1, 1 ] as Address,
 			sectionResolution: 2,
-			sectionAddress: [ 1, 1 ] as Address,
-			color: TRANSPARENT,
 		})).toBe(true)
 
 		expect(sectionCenterIsColor({
 			areaOrigin: [ 2 * areaSize as any, 2 * areaSize as any ] as Coordinate,
 			areaSize,
-			sectionResolution: 3,
+			color: TRANSPARENT,
 			sectionAddress: [ 0, 0 ] as Address,
-
-			color: TRANSPARENT,
+			sectionResolution: 3,
 		})).toBe(true)
 		expect(sectionCenterIsColor({
 			areaOrigin: [ 2 * areaSize as any, 2 * areaSize as any ] as Coordinate,
 			areaSize,
-			sectionResolution: 3,
-			sectionAddress: [ 1, 1 ] as Address,
 			color: BLACK,
+			sectionAddress: [ 1, 1 ] as Address,
+			sectionResolution: 3,
 		})).toBe(true)
 		expect(sectionCenterIsColor({
 			areaOrigin: [ 2 * areaSize as any, 2 * areaSize as any ] as Coordinate,
 			areaSize,
-			sectionResolution: 3,
-			sectionAddress: [ 2, 2 ] as Address,
 			color: TRANSPARENT,
+			sectionAddress: [ 2, 2 ] as Address,
+			sectionResolution: 3,
 		})).toBe(true)
 
 		expect(sectionCenterIsColor({
 			areaOrigin: [ 3 * areaSize as any, 3 * areaSize as any ] as Coordinate,
 			areaSize,
-			sectionResolution: 4,
+			color: TRANSPARENT,
 			sectionAddress: [ 0, 0 ] as Address,
-			color: TRANSPARENT,
+			sectionResolution: 4,
 		})).toBe(true)
 		expect(sectionCenterIsColor({
 			areaOrigin: [ 3 * areaSize as any, 3 * areaSize as any ] as Coordinate,
 			areaSize,
-			sectionResolution: 4,
-			sectionAddress: [ 1, 1 ] as Address,
 			color: BLACK,
+			sectionAddress: [ 1, 1 ] as Address,
+			sectionResolution: 4,
 		})).toBe(true)
 		expect(sectionCenterIsColor({
 			areaOrigin: [ 3 * areaSize as any, 3 * areaSize as any ] as Coordinate,
 			areaSize,
-			sectionResolution: 4,
-			sectionAddress: [ 2, 2 ] as Address,
 			color: TRANSPARENT,
+			sectionAddress: [ 2, 2 ] as Address,
+			sectionResolution: 4,
 		})).toBe(true)
 		expect(sectionCenterIsColor({
 			areaOrigin: [ 3 * areaSize as any, 3 * areaSize as any ] as Coordinate,
 			areaSize,
-			sectionResolution: 4,
+			color: BLACK,
 			sectionAddress: [ 3, 3 ] as Address,
-			color: BLACK,
+			sectionResolution: 4,
 		})).toBe(true)
 	})
 
@@ -103,8 +102,8 @@ describe('gingham chevron continuum effect', () => {
 		const ginghamChevronContinuumAnimationTestHoundstoothOverrides = {
 			basePattern: {
 				gridSettings: { gridSize: 4 },
-				viewSettings: { canvasSize: 200 as CanvasSize },
 				tileSettings: { areaSizeSetting: 50 },
+				viewSettings: { canvasSize: 200 as CanvasSize },
 			},
 		} as Houndstooth
 

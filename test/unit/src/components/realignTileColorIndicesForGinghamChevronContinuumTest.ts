@@ -17,8 +17,8 @@ describe('realign tile color indices to maintain gingham chevron continuum acros
 					stripeSettings: {
 						stripePositionSettings: {
 							stripeCountContinuumSettings: {
-								initialStripeCount: 400,
 								deltaStripeCount: 67,
+								initialStripeCount: 400,
 							},
 						},
 					},

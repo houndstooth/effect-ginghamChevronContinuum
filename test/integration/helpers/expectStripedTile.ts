@@ -12,9 +12,9 @@ const expectStripedTile: ExpectStripedTile = ({ diagonalAddress, firstColor, str
 		expect(sectionCenterIsColor({
 			areaOrigin: [ diagonalAddress * areaSize as any, diagonalAddress * areaSize as any ] as Coordinate,
 			areaSize,
-			sectionResolution: stripeCount,
-			sectionAddress: [ stripe, stripe ] as Address,
 			color: stripe % 2 === 0 ? firstColor : firstColor === BLACK ? TRANSPARENT : BLACK,
+			sectionAddress: [ stripe, stripe ] as Address,
+			sectionResolution: stripeCount,
 		})).toBe(true)
 	})
 }
