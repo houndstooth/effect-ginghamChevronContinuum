@@ -97,7 +97,7 @@ describe('gingham chevron continuum effect', () => {
 		})).toBe(true)
 	})
 
-	fdescribe('animating', () => {
+	describe('animating', () => {
 		const ginghamChevronContinuumAnimationTestHoundstoothOverrides = {
 			basePattern: {
 				gridSettings: { gridSize: 4 },
