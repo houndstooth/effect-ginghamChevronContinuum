@@ -5,7 +5,6 @@ import { BLACK, TRANSPARENT } from '../../../../../src/constants'
 import executeSelectedHoundstoothEffects from '../../../../../src/execute/executeSelectedHoundstoothEffects'
 import Coordinate from '../../../../../src/space/types/Coordinate'
 import state from '../../../../../src/state'
-import Houndstooth from '../../../../../src/store/types/Houndstooth'
 import { deepClone } from '../../../../../src/utilities/codeUtilities'
 import getFromBasePatternOrDefault from '../../../../../test/helpers/getFromBasePatternOrDefault'
 import { TILE_SIZE } from '../../../../../test/helpers/settingsPaths'
@@ -105,7 +104,7 @@ describe('gingham chevron continuum effect', () => {
 				tileSettings: { areaSizeSetting: 50 },
 				viewSettings: { canvasSize: 200 as CanvasSize },
 			},
-		} as Houndstooth
+		}
 
 		beforeEach(() => {
 			spyOn(animator, 'default').and.callFake(({ animationFunction, stopConditionFunction }) => {
