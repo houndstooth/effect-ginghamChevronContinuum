@@ -1,6 +1,6 @@
 import { Address, constants, state } from '../../../../src'
 import { termialRoot } from '../../../../src/utilities/mathUtilities'
-import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
+import { neededStripeCountToCoverGrid } from './neededStripeCountToCoverGrid'
 
 const indexOfFirstStripeCrossingThisTile: (_: { gridAddress: Address }) => number = ({ gridAddress }) => {
 	const basePattern = state.mainHoundstooth.basePattern || {}
@@ -23,4 +23,4 @@ const indexOfFirstStripeCrossingThisTile: (_: { gridAddress: Address }) => numbe
 	return 0
 }
 
-export default indexOfFirstStripeCrossingThisTile
+export { indexOfFirstStripeCrossingThisTile }

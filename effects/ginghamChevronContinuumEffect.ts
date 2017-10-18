@@ -35,4 +35,4 @@ const ginghamChevronContinuumEffect: Houndstooth = {
 	name: 'gingham chevron continuum',
 }
 
-export default ginghamChevronContinuumEffect
+export { ginghamChevronContinuumEffect }

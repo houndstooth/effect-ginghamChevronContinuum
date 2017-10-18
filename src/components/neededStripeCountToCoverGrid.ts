@@ -13,4 +13,4 @@ const neededStripeCountToCoverGrid: () => number = () => {
 	return initialStripeCount + deltaStripeCount * triangularNumber(gridSettings.gridSize || 0)
 }
 
-export default neededStripeCountToCoverGrid
+export { neededStripeCountToCoverGrid }

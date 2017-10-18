@@ -1,6 +1,6 @@
-import Address from '../../../../../../src/components/types/Address'
-import composeMainHoundstooth from '../../../../../../src/execute/composeMainHoundstooth'
-import indexOfFirstStripeCrossingThisTile from '../../../../src/components/indexOfFirstStripeCrossingThisTile'
+import { Address } from '../../../../../../src/components/types/Address'
+import { composeMainHoundstooth } from '../../../../../../src/execute/composeMainHoundstooth'
+import { indexOfFirstStripeCrossingThisTile } from '../../../../src/components/indexOfFirstStripeCrossingThisTile'
 
 describe('index of first grid stripe crossing this tile', () => {
 	it('an example', () => {

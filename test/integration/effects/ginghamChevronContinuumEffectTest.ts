@@ -1,18 +1,18 @@
 import * as animator from '../../../../../src/animation/animator'
-import CanvasSize from '../../../../../src/canvas/types/CanvasSize'
-import Address from '../../../../../src/components/types/Address'
+import { CanvasSize } from '../../../../../src/canvas/types/CanvasSize'
+import { Address } from '../../../../../src/components/types/Address'
 import { BLACK, TRANSPARENT } from '../../../../../src/constants'
-import executeSelectedHoundstoothEffects from '../../../../../src/execute/executeSelectedHoundstoothEffects'
-import Coordinate from '../../../../../src/space/types/Coordinate'
-import state from '../../../../../src/state'
+import { executeSelectedHoundstoothEffects } from '../../../../../src/execute/executeSelectedHoundstoothEffects'
+import { Coordinate } from '../../../../../src/space/types/Coordinate'
+import { state } from '../../../../../src/state'
 import { deepClone } from '../../../../../src/utilities/codeUtilities'
-import getFromBasePatternOrDefault from '../../../../../test/helpers/getFromBasePatternOrDefault'
+import { getFromBasePatternOrDefault } from '../../../../../test/helpers/getFromBasePatternOrDefault'
 import { TILE_SIZE } from '../../../../../test/helpers/settingsPaths'
-import activateTestMarkerCanvas from '../../../../../test/integration/helpers/activateTestMarkerCanvas'
-import sectionCenterIsColor from '../../../../../test/integration/helpers/sectionCenterIsColor'
+import { activateTestMarkerCanvas } from '../../../../../test/integration/helpers/activateTestMarkerCanvas'
+import { sectionCenterIsColor } from '../../../../../test/integration/helpers/sectionCenterIsColor'
 import { thisAnimationFrameOnly } from '../../../../../test/integration/helpers/thisFrameOnly'
-import ginghamChevronContinuumEffect from '../../../effects/ginghamChevronContinuumEffect'
-import expectStripedTile from '../helpers/expectStripedTile'
+import { ginghamChevronContinuumEffect } from '../../../effects/ginghamChevronContinuumEffect'
+import { expectStripedTile } from '../helpers/expectStripedTile'
 
 describe('gingham chevron continuum effect', () => {
 	it('each new diagonal row has an extra stripe', () => {
@@ -97,7 +97,7 @@ describe('gingham chevron continuum effect', () => {
 		})).toBe(true)
 	})
 
-	describe('animating', () => {
+	fdescribe('animating', () => {
 		const ginghamChevronContinuumAnimationTestHoundstoothOverrides = {
 			basePattern: {
 				gridSettings: { gridSize: 4 },

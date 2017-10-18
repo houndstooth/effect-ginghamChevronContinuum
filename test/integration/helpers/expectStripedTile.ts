@@ -1,9 +1,9 @@
 import { Address, Color, Coordinate } from '../../../../../src'
 import { BLACK, TRANSPARENT } from '../../../../../src/constants'
 import { iterator } from '../../../../../src/utilities/codeUtilities'
-import getFromBasePatternOrDefault from '../../../../../test/helpers/getFromBasePatternOrDefault'
+import { getFromBasePatternOrDefault } from '../../../../../test/helpers/getFromBasePatternOrDefault'
 import { TILE_SIZE } from '../../../../../test/helpers/settingsPaths'
-import sectionCenterIsColor from '../../../../../test/integration/helpers/sectionCenterIsColor'
+import { sectionCenterIsColor } from '../../../../../test/integration/helpers/sectionCenterIsColor'
 
 type ExpectStripedTile = (_: { diagonalAddress: number, firstColor: Color, stripeCount: number }) => void
 const expectStripedTile: ExpectStripedTile = ({ diagonalAddress, firstColor, stripeCount }) => {
@@ -19,4 +19,4 @@ const expectStripedTile: ExpectStripedTile = ({ diagonalAddress, firstColor, str
 	})
 }
 
-export default expectStripedTile
+export { expectStripedTile }

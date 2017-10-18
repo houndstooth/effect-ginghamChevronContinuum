@@ -1,5 +1,5 @@
-import getGinghamChevronContinuumStripePositions from './getGinghamChevronContinuumStripePositions'
-import realignTileColorIndicesForGinghamChevronContinuum from './realignTileColorIndicesForGinghamChevronContinuum'
+import { getGinghamChevronContinuumStripePositions } from './getGinghamChevronContinuumStripePositions'
+import { realignTileColorIndicesForGinghamChevronContinuum } from './realignTileColorIndicesForGinghamChevronContinuum'
 
 export {
 	getGinghamChevronContinuumStripePositions,

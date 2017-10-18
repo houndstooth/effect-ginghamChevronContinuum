@@ -1,7 +1,7 @@
-import Address from '../../../../../../src/components/types/Address'
-import composeMainHoundstooth from '../../../../../../src/execute/composeMainHoundstooth'
+import { Address } from '../../../../../../src/components/types/Address'
+import { composeMainHoundstooth } from '../../../../../../src/execute/composeMainHoundstooth'
 // tslint:disable-next-line:max-line-length
-import getGinghamChevronContinuumStripePositions from '../../../../src/components/getGinghamChevronContinuumStripePositions'
+import { getGinghamChevronContinuumStripePositions } from '../../../../src/components/getGinghamChevronContinuumStripePositions'
 
 // tslint:disable-next-line:max-line-length
 describe('get gingham chevron continuum stripe positions returns an array of numbers representing the positions of the stripes for a given tile in terms of its perimeter (2 is the max) based on where on the grid it is', () => {
