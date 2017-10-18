@@ -1,4 +1,4 @@
-import { Address, state } from '../../../../src'
+import { Address, constants, state } from '../../../../src'
 import { termialRoot } from '../../../../src/utilities/mathUtilities'
 import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
 
@@ -14,7 +14,7 @@ const indexOfFirstStripeCrossingThisTile: (_: { gridAddress: Address }) => numbe
 			n: stripeIndex,
 			rangeDelta: deltaStripeCount,
 			rangeStart: initialStripeCount,
-		}) * 2
+		}) * constants.PERIMETER_SCALAR
 		if (stripePosition > gridAddress[ 0 ] + gridAddress[ 1 ]) {
 			return stripeIndex
 		}

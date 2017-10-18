@@ -1,4 +1,4 @@
-import { Address, state, StripePosition } from '../../../../src'
+import { Address, constants, state, StripePosition } from '../../../../src'
 import { termialRoot } from '../../../../src/utilities/mathUtilities'
 import getDistanceFromHomeAddress from './getDistanceFromHomeAddress'
 import neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
@@ -22,12 +22,16 @@ const getStripePositions: (_: {
 	const stripes = [ 0 ]
 
 	for (let n = 0; n < neededStripeCountToCoverGrid(); n++) {
-		const stripe = termialRoot({ rangeStart: initialStripeCount, rangeDelta: deltaStripeCount, n }) * 2
-		if (stripe >= distanceFromHomeAddress + 2) {
+		const stripe = termialRoot({
+			n,
+			rangeDelta: deltaStripeCount,
+			rangeStart: initialStripeCount,
+		}) * constants.PERIMETER_SCALAR
+		if (stripe >= distanceFromHomeAddress + constants.PERIMETER_SCALAR) {
 			return stripes
 		}
 		if (stripe > distanceFromHomeAddress) {
-			stripes.push((stripe - distanceFromHomeAddress) % 2)
+			stripes.push((stripe - distanceFromHomeAddress) % constants.PERIMETER_SCALAR)
 		}
 	}
 
