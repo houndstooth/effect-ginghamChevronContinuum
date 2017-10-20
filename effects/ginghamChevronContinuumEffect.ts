@@ -1,10 +1,10 @@
-import { Houndstooth, standardAnimation, StripeCountMode } from '../../../src'
+import { Effect, standardAnimation, StripeCountMode } from '../../../src'
 import {
 	getGinghamChevronContinuumStripePositions,
 	realignTileColorIndicesForGinghamChevronContinuum,
 } from '../src'
 
-const ginghamChevronContinuumEffect: Houndstooth = {
+const ginghamChevronContinuumEffect: Effect = {
 	animationsPattern: {
 		stripeSettings: {
 			stripePositionSettings: {

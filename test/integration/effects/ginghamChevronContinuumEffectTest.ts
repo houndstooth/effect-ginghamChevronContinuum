@@ -116,8 +116,7 @@ describe('gingham chevron continuum effect', () => {
 
 		it('frame 0 looks just like the normal pattern', () => {
 			const houndstoothOverrides = deepClone(ginghamChevronContinuumAnimationTestHoundstoothOverrides)
-			const houndstoothOverridesBasePattern = houndstoothOverrides.basePattern || {}
-			houndstoothOverridesBasePattern.animationSettings = thisAnimationFrameOnly(0 as any)
+			houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(0 as any)
 			state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 			activateTestMarkerCanvas()
 			state.animating = true
@@ -132,8 +131,7 @@ describe('gingham chevron continuum effect', () => {
 
 		it('around frame 525 each tile has twice its original stripe count', () => {
 			const houndstoothOverrides = deepClone(ginghamChevronContinuumAnimationTestHoundstoothOverrides)
-			const houndstoothOverridesBasePattern = houndstoothOverrides.basePattern || {}
-			houndstoothOverridesBasePattern.animationSettings = thisAnimationFrameOnly(525 as any)
+			houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(525 as any)
 			state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 			activateTestMarkerCanvas()
 			state.animating = true
@@ -148,8 +146,7 @@ describe('gingham chevron continuum effect', () => {
 
 		it('around frame 666 each tile has thrice its original stripe count', () => {
 			const houndstoothOverrides = deepClone(ginghamChevronContinuumAnimationTestHoundstoothOverrides)
-			const houndstoothOverridesBasePattern = houndstoothOverrides.basePattern || {}
-			houndstoothOverridesBasePattern.animationSettings = thisAnimationFrameOnly(666 as any)
+			houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(666 as any)
 			state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 			activateTestMarkerCanvas()
 			state.animating = true

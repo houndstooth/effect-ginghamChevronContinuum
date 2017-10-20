@@ -6,11 +6,8 @@ import { neededStripeCountToCoverGrid } from './neededStripeCountToCoverGrid'
 const getGinghamChevronContinuumStripePositions: (_: {
 	gridAddress: Address,
 }) => StripePosition[] = ({ gridAddress }) => {
-	const basePattern = state.mainHoundstooth.basePattern || {}
-	const stripeSettings = basePattern.stripeSettings || {}
-	const stripePositionSettings = stripeSettings.stripePositionSettings || {}
-	const stripeCountContinuumSettings = stripePositionSettings.stripeCountContinuumSettings || {}
-	const { initialStripeCount = 0, deltaStripeCount = 0 } = stripeCountContinuumSettings
+	// tslint:disable-next-line:max-line-length
+	const { initialStripeCount = 0, deltaStripeCount = 0 } = state.mainHoundstooth.basePattern.stripeSettings.stripePositionSettings.stripeCountContinuumSettings
 	const distanceFromHomeAddress = getDistanceFromHomeAddress({ gridAddress })
 
 	return getStripePositions({ initialStripeCount, distanceFromHomeAddress, deltaStripeCount })
