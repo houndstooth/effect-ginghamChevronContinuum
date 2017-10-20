@@ -1,5 +1,4 @@
 import * as animator from '../../../../../src/animation/animator'
-import { CanvasSize } from '../../../../../src/canvas/types/CanvasSize'
 import { Address } from '../../../../../src/components/types/Address'
 import { BLACK, TRANSPARENT } from '../../../../../src/constants'
 import { executeSelectedHoundstoothEffects } from '../../../../../src/execute/executeSelectedHoundstoothEffects'
@@ -102,7 +101,7 @@ describe('gingham chevron continuum effect', () => {
 			basePattern: {
 				gridSettings: { gridSize: 4 },
 				tileSettings: { areaSizeSetting: 50 },
-				viewSettings: { canvasSize: 200 as CanvasSize },
+				viewSettings: { canvasSize: 200 },
 			},
 		}
 
