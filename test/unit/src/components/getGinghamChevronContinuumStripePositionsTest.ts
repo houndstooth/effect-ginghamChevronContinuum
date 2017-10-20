@@ -1,11 +1,10 @@
-import { Address } from '../../../../../../src/components/types/Address'
+// tslint:disable:max-line-length
+
 import { composeMainHoundstooth } from '../../../../../../src/execute/composeMainHoundstooth'
-// tslint:disable-next-line:max-line-length
+import * as to from '../../../../../../src/to'
 import { getGinghamChevronContinuumStripePositions } from '../../../../src/components/getGinghamChevronContinuumStripePositions'
 
-// tslint:disable-next-line:max-line-length
 describe('get gingham chevron continuum stripe positions returns an array of numbers representing the positions of the stripes for a given tile in terms of its perimeter (2 is the max) based on where on the grid it is', () => {
-	// tslint:disable-next-line:max-line-length
 	it('expecting this units ability to start the stripe count at the right amount and grow it by the right amount each diagonal', () => {
 		expectGccStripeCounts(4, 2)
 		expectGccStripeCounts(4, 3)
@@ -40,15 +39,15 @@ const expectGccStripeCounts: (initial: number, delta: number) => void = (initial
 	})
 
 	expect(getGinghamChevronContinuumStripePositions({
-		gridAddress: [ 0, 0 ] as Address,
+		gridAddress: to.Address([ 0, 0 ]),
 	}).length).toEqual(initial)
 	expect(getGinghamChevronContinuumStripePositions({
-		gridAddress: [ 1, 1 ] as Address,
+		gridAddress: to.Address([ 1, 1 ]),
 	}).length).toEqual(initial + delta * 1)
 	expect(getGinghamChevronContinuumStripePositions({
-		gridAddress: [ 2, 2 ] as Address,
+		gridAddress: to.Address([ 2, 2 ]),
 	}).length).toEqual(initial + delta * 2)
 	expect(getGinghamChevronContinuumStripePositions({
-		gridAddress: [ 3, 3 ] as Address,
+		gridAddress: to.Address([ 3, 3 ]),
 	}).length).toEqual(initial + delta * 3)
 }

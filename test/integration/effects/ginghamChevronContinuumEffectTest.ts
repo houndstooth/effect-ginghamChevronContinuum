@@ -1,8 +1,7 @@
+import { to } from '../../../../../src'
 import * as animator from '../../../../../src/animation/animator'
-import { Address } from '../../../../../src/components/types/Address'
 import { BLACK, TRANSPARENT } from '../../../../../src/constants'
 import { executeSelectedHoundstoothEffects } from '../../../../../src/execute/executeSelectedHoundstoothEffects'
-import { Coordinate } from '../../../../../src/space/types/Coordinate'
 import { state } from '../../../../../src/state'
 import { deepClone } from '../../../../../src/utilities/codeUtilities'
 import { getFromBasePatternOrDefault } from '../../../../../test/helpers/getFromBasePatternOrDefault'
@@ -22,76 +21,76 @@ describe('gingham chevron continuum effect', () => {
 		executeSelectedHoundstoothEffects({ houndstoothOverrides: { basePattern: { gridSettings: { gridSize: 8 } } } })
 
 		expect(sectionCenterIsColor({
-			areaOrigin: [ areaSize * 0 as any, areaSize * 0 as any ] as Coordinate,
+			areaOrigin: to.Coordinate([ areaSize * 0, areaSize * 0 ]),
 			areaSize,
 			color: BLACK,
-			sectionAddress: [ 0, 0 ] as Address,
+			sectionAddress: to.Address([ 0, 0 ]),
 			sectionResolution: 1,
 		})).toBe(true)
 
 		expect(sectionCenterIsColor({
-			areaOrigin: [ areaSize * 1 as any, areaSize * 1 as any ] as Coordinate,
+			areaOrigin: to.Coordinate([ areaSize * 1, areaSize * 1 ]),
 			areaSize,
 			color: BLACK,
-			sectionAddress: [ 0, 0 ] as Address,
+			sectionAddress: to.Address([ 0, 0 ]),
 			sectionResolution: 2,
 		})).toBe(true)
 		expect(sectionCenterIsColor({
-			areaOrigin: [ areaSize * 1 as any, areaSize * 1 as any ] as Coordinate,
+			areaOrigin: to.Coordinate([ areaSize * 1, areaSize * 1 ]),
 			areaSize,
 			color: TRANSPARENT,
-			sectionAddress: [ 1, 1 ] as Address,
+			sectionAddress: to.Address([ 1, 1 ]),
 			sectionResolution: 2,
 		})).toBe(true)
 
 		expect(sectionCenterIsColor({
-			areaOrigin: [ areaSize * 2 as any, areaSize * 2 as any ] as Coordinate,
+			areaOrigin: to.Coordinate([ areaSize * 2, areaSize * 2 ]),
 			areaSize,
 			color: TRANSPARENT,
-			sectionAddress: [ 0, 0 ] as Address,
+			sectionAddress: to.Address([ 0, 0 ]),
 			sectionResolution: 3,
 		})).toBe(true)
 		expect(sectionCenterIsColor({
-			areaOrigin: [ areaSize * 2 as any, areaSize * 2 as any ] as Coordinate,
+			areaOrigin: to.Coordinate([ areaSize * 2, areaSize * 2 ]),
 			areaSize,
 			color: BLACK,
-			sectionAddress: [ 1, 1 ] as Address,
+			sectionAddress: to.Address([ 1, 1 ]),
 			sectionResolution: 3,
 		})).toBe(true)
 		expect(sectionCenterIsColor({
-			areaOrigin: [ areaSize * 2 as any, areaSize * 2 as any ] as Coordinate,
+			areaOrigin: to.Coordinate([ areaSize * 2, areaSize * 2 ]),
 			areaSize,
 			color: TRANSPARENT,
-			sectionAddress: [ 2, 2 ] as Address,
+			sectionAddress: to.Address([ 2, 2 ]),
 			sectionResolution: 3,
 		})).toBe(true)
 
 		expect(sectionCenterIsColor({
-			areaOrigin: [ areaSize * 3 as any, areaSize * 3 as any ] as Coordinate,
+			areaOrigin: to.Coordinate([ areaSize * 3, areaSize * 3 ]),
 			areaSize,
 			color: TRANSPARENT,
-			sectionAddress: [ 0, 0 ] as Address,
+			sectionAddress: to.Address([ 0, 0 ]),
 			sectionResolution: 4,
 		})).toBe(true)
 		expect(sectionCenterIsColor({
-			areaOrigin: [ areaSize * 3 as any, areaSize * 3 as any ] as Coordinate,
+			areaOrigin: to.Coordinate([ areaSize * 3, areaSize * 3 ]),
 			areaSize,
 			color: BLACK,
-			sectionAddress: [ 1, 1 ] as Address,
+			sectionAddress: to.Address([ 1, 1 ]),
 			sectionResolution: 4,
 		})).toBe(true)
 		expect(sectionCenterIsColor({
-			areaOrigin: [ areaSize * 3 as any, areaSize * 3 as any ] as Coordinate,
+			areaOrigin: to.Coordinate([ areaSize * 3, areaSize * 3 ]),
 			areaSize,
 			color: TRANSPARENT,
-			sectionAddress: [ 2, 2 ] as Address,
+			sectionAddress: to.Address([ 2, 2 ]),
 			sectionResolution: 4,
 		})).toBe(true)
 		expect(sectionCenterIsColor({
-			areaOrigin: [ areaSize * 3 as any, areaSize * 3 as any ] as Coordinate,
+			areaOrigin: to.Coordinate([ areaSize * 3, areaSize * 3 ]),
 			areaSize,
 			color: BLACK,
-			sectionAddress: [ 3, 3 ] as Address,
+			sectionAddress: to.Address([ 3, 3 ]),
 			sectionResolution: 4,
 		})).toBe(true)
 	})
@@ -115,7 +114,7 @@ describe('gingham chevron continuum effect', () => {
 
 		it('frame 0 looks just like the normal pattern', () => {
 			const houndstoothOverrides = deepClone(ginghamChevronContinuumAnimationTestHoundstoothOverrides)
-			houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(0 as any)
+			houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(to.Frame(0))
 			state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 			activateTestMarkerCanvas()
 			state.animating = true
@@ -130,7 +129,7 @@ describe('gingham chevron continuum effect', () => {
 
 		it('around frame 525 each tile has twice its original stripe count', () => {
 			const houndstoothOverrides = deepClone(ginghamChevronContinuumAnimationTestHoundstoothOverrides)
-			houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(525 as any)
+			houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(to.Frame(525))
 			state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 			activateTestMarkerCanvas()
 			state.animating = true
@@ -145,7 +144,7 @@ describe('gingham chevron continuum effect', () => {
 
 		it('around frame 666 each tile has thrice its original stripe count', () => {
 			const houndstoothOverrides = deepClone(ginghamChevronContinuumAnimationTestHoundstoothOverrides)
-			houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(666 as any)
+			houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(to.Frame(666))
 			state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 			activateTestMarkerCanvas()
 			state.animating = true

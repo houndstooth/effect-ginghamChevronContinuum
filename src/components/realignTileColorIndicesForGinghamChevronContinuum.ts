@@ -1,5 +1,4 @@
-import { Address } from '../../../../src'
-import { TileColorIndices } from '../../../../src/components'
+import { Address, TileColorIndices, to } from '../../../../src'
 import { reversed } from '../../../../src/utilities/codeUtilities'
 import { isOdd } from '../../../../src/utilities/mathUtilities'
 import { indexOfFirstStripeCrossingThisTile } from './indexOfFirstStripeCrossingThisTile'
@@ -11,7 +10,7 @@ const realignTileColorIndicesForGinghamChevronContinuum: (_: {
 
 	const realignedTileColorIndices = isOdd(stripeIndex) ? reversed(tileColorIndices) : tileColorIndices
 
-	return realignedTileColorIndices as TileColorIndices
+	return to.TileColorIndices(realignedTileColorIndices)
 }
 
 export { realignTileColorIndicesForGinghamChevronContinuum }

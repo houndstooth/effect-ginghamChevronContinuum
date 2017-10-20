@@ -1,5 +1,5 @@
-import { Address } from '../../../../../../src/components/types/Address'
 import { composeMainHoundstooth } from '../../../../../../src/execute/composeMainHoundstooth'
+import * as to from '../../../../../../src/to'
 import { indexOfFirstStripeCrossingThisTile } from '../../../../src/components/indexOfFirstStripeCrossingThisTile'
 
 describe('index of first grid stripe crossing this tile', () => {
@@ -20,7 +20,7 @@ describe('index of first grid stripe crossing this tile', () => {
 			},
 		})
 
-		const actual = indexOfFirstStripeCrossingThisTile({ gridAddress: [ 1, 5 ] as Address })
+		const actual = indexOfFirstStripeCrossingThisTile({ gridAddress: to.Address([ 1, 5 ]) })
 		expect(actual).toBe(1 + 2 + 3 + 1)
 	})
 
@@ -41,7 +41,7 @@ describe('index of first grid stripe crossing this tile', () => {
 			},
 		})
 
-		const actual = indexOfFirstStripeCrossingThisTile({ gridAddress: [ 1, 5 ] as Address })
+		const actual = indexOfFirstStripeCrossingThisTile({ gridAddress: to.Address([ 1, 5 ]) })
 		// tslint:disable-next-line:binary-expression-operand-order
 		expect(actual).toBe(4 + (4 + 7) + (4 + 7 + 7) + 1)
 	})
