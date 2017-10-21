@@ -1,11 +1,11 @@
-import { state } from '../../../../src'
+import { getSetting, StripeCountContinuumSettings } from '../../../../src'
 import { triangularNumber } from '../../../../src/utilities/mathUtilities'
 
 const neededStripeCountToCoverGrid: () => number = () => {
-	const { stripeSettings: { stripePositionSettings }, gridSettings } = state.mainHoundstooth.basePattern
-	const { initialStripeCount = 0, deltaStripeCount = 0 } = stripePositionSettings.stripeCountContinuumSettings
+	const { initialStripeCount, deltaStripeCount }: StripeCountContinuumSettings = getSetting('stripeCountContinuum')
+	const gridSize: number = getSetting('gridSize')
 
-	return initialStripeCount + deltaStripeCount * triangularNumber(gridSettings.gridSize || 0)
+	return initialStripeCount + deltaStripeCount * triangularNumber(gridSize)
 }
 
 export { neededStripeCountToCoverGrid }
