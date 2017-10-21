@@ -28,7 +28,7 @@ const ginghamChevronContinuumEffect: Effect = {
 					deltaStripeCount: 1,
 					initialStripeCount: 1,
 				},
-				stripeCountMode: StripeCountMode.GINGHAM_CHEVRON_CONTINUUM,
+				stripeCountMode: StripeCountMode.GinghamChevronContinuum,
 			},
 		},
 	},
