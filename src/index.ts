@@ -1,9 +1,9 @@
 import {
 	getGinghamChevronContinuumStripePositions,
-	realignTileColorIndicesForGinghamChevronContinuum,
+	realignShapeColorIndicesForGinghamChevronContinuum,
 } from './components'
 
 export {
 	getGinghamChevronContinuumStripePositions,
-	realignTileColorIndicesForGinghamChevronContinuum,
+	realignShapeColorIndicesForGinghamChevronContinuum,
 }

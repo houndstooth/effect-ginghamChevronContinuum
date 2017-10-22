@@ -1,7 +1,7 @@
 import { Effect, standardAnimation, StripeCountMode } from '../../../src'
 import {
 	getGinghamChevronContinuumStripePositions,
-	realignTileColorIndicesForGinghamChevronContinuum,
+	realignShapeColorIndicesForGinghamChevronContinuum,
 } from '../src'
 
 const ginghamChevronContinuumEffect: Effect = {
@@ -18,7 +18,7 @@ const ginghamChevronContinuumEffect: Effect = {
 	basePattern: {
 		colorSettings: {
 			colorAssignment: {
-				transformTileColorIndices: realignTileColorIndicesForGinghamChevronContinuum,
+				transformShapeColorIndices: realignShapeColorIndicesForGinghamChevronContinuum,
 			},
 		},
 		stripeSettings: {
