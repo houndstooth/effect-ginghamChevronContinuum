@@ -30,7 +30,7 @@ describe('realign tile color indices to maintain gingham chevron continuum acros
 		it('returns the set for tile as is; all is well', () => {
 			spyOn(indexOfFirstStripeCrossingThisTile, 'indexOfFirstStripeCrossingThisTile').and.returnValue(2)
 			const actual = realignTileColorIndicesForGinghamChevronContinuum({ tileColorIndices, gridAddress })
-			expect(actual).toEqual([ 9, 88 ])
+			expect(actual).toEqual(to.TileColorIndices([ 9, 88 ]))
 		})
 	})
 
@@ -38,7 +38,7 @@ describe('realign tile color indices to maintain gingham chevron continuum acros
 		it('reverses the set to flip the grain, to realign with previous diagonal row of striped tiles', () => {
 			spyOn(indexOfFirstStripeCrossingThisTile, 'indexOfFirstStripeCrossingThisTile').and.returnValue(1)
 			const actual = realignTileColorIndicesForGinghamChevronContinuum({ tileColorIndices, gridAddress })
-			expect(actual).toEqual([ 88, 9 ])
+			expect(actual).toEqual(to.TileColorIndices([ 88, 9 ]))
 		})
 	})
 })
