@@ -1,4 +1,4 @@
-import { Address, constants, getFromBaseOrDefaultPattern, StripeCountContinuumSettings, from } from '../../../../src'
+import { Address, constants, from, getFromBaseOrDefaultPattern, StripeCountContinuumSettings } from '../../../../src'
 import { termialRoot } from '../../../../src/utilities/mathUtilities'
 import { neededStripeCountToCoverGrid } from './neededStripeCountToCoverGrid'
 

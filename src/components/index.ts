@@ -1,5 +1,7 @@
 import { getGinghamChevronContinuumStripePositions } from './getGinghamChevronContinuumStripePositions'
-import { realignShapeColorIndicesForGinghamChevronContinuum } from './realignShapeColorIndicesForGinghamChevronContinuum'
+import {
+	realignShapeColorIndicesForGinghamChevronContinuum,
+} from './realignShapeColorIndicesForGinghamChevronContinuum'
 
 export {
 	getGinghamChevronContinuumStripePositions,
