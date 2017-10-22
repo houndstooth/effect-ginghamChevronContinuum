@@ -14,8 +14,8 @@ const getGinghamChevronContinuumStripePositions: (_: {
 	gridAddress: Address,
 }) => StripePosition[] = ({ gridAddress }) => {
 	const {
-		initialStripeCount = 0,
-		deltaStripeCount = 0,
+		initialStripeCount,
+		deltaStripeCount,
 	}: StripeCountContinuumSettings = getFromBaseOrDefaultPattern('stripeCountContinuum')
 
 	const distanceFromHomeAddress = getDistanceFromHomeAddress({ gridAddress })
