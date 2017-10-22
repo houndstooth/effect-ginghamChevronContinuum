@@ -4,7 +4,7 @@ import { isOdd } from '../../../../src/utilities/mathUtilities'
 import { indexOfFirstStripeCrossingThisTile } from './indexOfFirstStripeCrossingThisTile'
 
 const realignShapeColorIndicesForGinghamChevronContinuum: (_: {
-	gridAddress: Address, shapeColorIndices: ShapeColorIndex[],
+	gridAddress: Address[], shapeColorIndices: ShapeColorIndex[],
 }) => ShapeColorIndex[] = ({ gridAddress, shapeColorIndices }) => {
 	const stripeIndex = indexOfFirstStripeCrossingThisTile({ gridAddress })
 

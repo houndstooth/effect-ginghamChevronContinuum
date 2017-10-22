@@ -1,8 +1,8 @@
-import { Address, constants, getFromBaseOrDefaultPattern, StripeCountContinuumSettings } from '../../../../src'
+import { Address, constants, getFromBaseOrDefaultPattern, StripeCountContinuumSettings, from } from '../../../../src'
 import { termialRoot } from '../../../../src/utilities/mathUtilities'
 import { neededStripeCountToCoverGrid } from './neededStripeCountToCoverGrid'
 
-const indexOfFirstStripeCrossingThisTile: (_: { gridAddress: Address }) => number = ({ gridAddress }) => {
+const indexOfFirstStripeCrossingThisTile: (_: { gridAddress: Address[] }) => number = ({ gridAddress }) => {
 	const {
 		initialStripeCount,
 		deltaStripeCount,
@@ -14,7 +14,8 @@ const indexOfFirstStripeCrossingThisTile: (_: { gridAddress: Address }) => numbe
 			rangeDelta: deltaStripeCount,
 			rangeStart: initialStripeCount,
 		}) * constants.PERIMETER_SCALAR
-		if (stripePosition > gridAddress[ 0 ] + gridAddress[ 1 ]) {
+		const [ x, y ] = from.Address(gridAddress)
+		if (stripePosition > x + y) {
 			return stripeIndex
 		}
 	}
