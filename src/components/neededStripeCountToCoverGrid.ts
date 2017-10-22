@@ -5,7 +5,7 @@ const neededStripeCountToCoverGrid: () => number = () => {
 	const {
 		initialStripeCount,
 		deltaStripeCount,
-	}: StripeCountContinuumSettings = getFromBaseOrDefaultPattern('stripeCountContinuum')
+	}: StripeCountContinuumSettings = getFromBaseOrDefaultPattern('stripeCountContinuumSettings')
 	const gridSize: number = getFromBaseOrDefaultPattern('gridSize')
 
 	return initialStripeCount + deltaStripeCount * triangularNumber(gridSize)

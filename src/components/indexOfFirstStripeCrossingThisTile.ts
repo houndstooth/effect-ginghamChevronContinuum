@@ -6,7 +6,7 @@ const indexOfFirstStripeCrossingThisTile: (_: { gridAddress: Address }) => numbe
 	const {
 		initialStripeCount,
 		deltaStripeCount,
-	}: StripeCountContinuumSettings = getFromBaseOrDefaultPattern('stripeCountContinuum')
+	}: StripeCountContinuumSettings = getFromBaseOrDefaultPattern('stripeCountContinuumSettings')
 
 	for (let stripeIndex = 0; stripeIndex < neededStripeCountToCoverGrid(); stripeIndex++) {
 		const stripePosition = termialRoot({
