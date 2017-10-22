@@ -1,4 +1,4 @@
-import * as to from '../../../../../../src/to'
+import * as to from '../../../../../../src/utilities/to'
 import { getDistanceFromHomeAddress } from '../../../../src/components/getDistanceFromHomeAddress'
 
 describe('get distance from home address', () => {

@@ -1,5 +1,5 @@
 import { composeMainHoundstooth } from '../../../../../../src/execute/composeMainHoundstooth'
-import * as to from '../../../../../../src/to'
+import * as to from '../../../../../../src/utilities/to'
 import { indexOfFirstStripeCrossingThisTile } from '../../../../src/components/indexOfFirstStripeCrossingThisTile'
 
 describe('index of first grid stripe crossing this tile', () => {

@@ -1,5 +1,5 @@
 import { composeMainHoundstooth } from '../../../../../../src/execute/composeMainHoundstooth'
-import * as to from '../../../../../../src/to'
+import * as to from '../../../../../../src/utilities/to'
 import * as indexOfFirstStripeCrossingThisTile from '../../../../src/components/indexOfFirstStripeCrossingThisTile'
 // tslint:disable-next-line:max-line-length
 import { realignTileColorIndicesForGinghamChevronContinuum } from '../../../../src/components/realignTileColorIndicesForGinghamChevronContinuum'
