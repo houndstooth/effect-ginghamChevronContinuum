@@ -1,7 +1,7 @@
 import {
-	Address,
 	constants,
 	getFromBaseOrDefaultPattern,
+	GetStripePositions,
 	StripeCountContinuumSettings,
 	StripePosition,
 	to,
@@ -10,9 +10,7 @@ import { termialRoot } from '../../../../src/utilities/mathUtilities'
 import { getDistanceFromHomeAddress } from './getDistanceFromHomeAddress'
 import { neededStripeCountToCoverGrid } from './neededStripeCountToCoverGrid'
 
-const getGinghamChevronContinuumStripePositions: (_: {
-	gridAddress: Address,
-}) => StripePosition[] = ({ gridAddress }) => {
+const getGinghamChevronContinuumStripePositions: GetStripePositions = ({ gridAddress }) => {
 	const {
 		initialStripeCount,
 		deltaStripeCount,
