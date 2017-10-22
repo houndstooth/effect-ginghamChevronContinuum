@@ -17,7 +17,7 @@ const ginghamChevronContinuumEffect: Effect = {
 	},
 	basePattern: {
 		colorSettings: {
-			assignment: {
+			colorAssignment: {
 				transformTileColorIndices: realignTileColorIndicesForGinghamChevronContinuum,
 			},
 		},
