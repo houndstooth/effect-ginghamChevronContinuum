@@ -3,7 +3,7 @@ import * as animator from '../../../../../src/animation/animator'
 import { Unit } from '../../../../../src/components/types/Unit'
 import { BLACK, TRANSPARENT } from '../../../../../src/constants'
 import { executeSelectedHoundstoothEffects } from '../../../../../src/execute/executeSelectedHoundstoothEffects'
-import { getSetting } from '../../../../../src/store/getSetting'
+import { getFromBaseOrDefaultPattern } from '../../../../../src/store/getFromBaseOrDefaultPattern'
 import { deepClone } from '../../../../../src/utilities/codeUtilities'
 import { activateTestMarkerCanvas } from '../../../../../test/integration/helpers/activateTestMarkerCanvas'
 import { sectionCenterIsColor } from '../../../../../test/integration/helpers/sectionCenterIsColor'
@@ -13,7 +13,7 @@ import { expectStripedTile } from '../helpers/expectStripedTile'
 
 describe('gingham chevron continuum effect', () => {
 	it('each new diagonal row has an extra stripe', () => {
-		const areaSize: Unit = getSetting('tileSize')
+		const areaSize: Unit = getFromBaseOrDefaultPattern('tileSize')
 		state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 		activateTestMarkerCanvas()
 
