@@ -5,6 +5,7 @@ import { BLACK, TRANSPARENT } from '../../../../../src/constants'
 import { executeSelectedHoundstoothEffects } from '../../../../../src/execute/executeSelectedHoundstoothEffects'
 import { getFromBaseOrDefaultPattern } from '../../../../../src/store/getFromBaseOrDefaultPattern'
 import { deepClone } from '../../../../../src/utilities/codeUtilities'
+import { NullarySideEffector } from '../../../../../src/utilities/types/NullarySideEffector'
 import { activateTestMarkerCanvas } from '../../../../../test/integration/helpers/activateTestMarkerCanvas'
 import { sectionCenterIsColor } from '../../../../../test/integration/helpers/sectionCenterIsColor'
 import { thisAnimationFrameOnly } from '../../../../../test/integration/helpers/thisFrameOnly'
@@ -104,11 +105,15 @@ describe('gingham chevron continuum effect', () => {
 		}
 
 		beforeEach(() => {
-			spyOn(animator, 'default').and.callFake(({ animationFunction, stopConditionFunction }) => {
+			type FakeAnimator = (_: {
+				animationFunction: NullarySideEffector, stopConditionFunction: () => boolean,
+			}) => void
+			const fakeAnimator: FakeAnimator = ({ animationFunction, stopConditionFunction }) => {
 				while (!stopConditionFunction()) {
 					animationFunction()
 				}
-			})
+			}
+			spyOn(animator, 'default').and.callFake(fakeAnimator)
 		})
 
 		it('frame 0 looks just like the normal pattern', () => {
