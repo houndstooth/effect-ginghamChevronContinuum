@@ -1,5 +1,6 @@
 import { from, state, to } from '../../../../../src'
 import * as animator from '../../../../../src/animation/animator'
+import { ConditionFunction } from '../../../../../src/animation/types/ConditionFunction'
 import { Unit } from '../../../../../src/components/types/Unit'
 import { BLACK, TRANSPARENT } from '../../../../../src/constants'
 import { executeSelectedHoundstoothEffects } from '../../../../../src/execute/executeSelectedHoundstoothEffects'
@@ -9,7 +10,7 @@ import { deepClone } from '../../../../../src/utilities/codeUtilities'
 import { NullarySideEffector } from '../../../../../src/utilities/types/NullarySideEffector'
 import { activateTestMarkerCanvas } from '../../../../../test/integration/helpers/activateTestMarkerCanvas'
 import { sectionCenterIsColor } from '../../../../../test/integration/helpers/sectionCenterIsColor'
-import { thisAnimationFrameOnly } from '../../../../../test/integration/helpers/thisFrameOnly'
+import { thisFrameOnly } from '../../../../../test/integration/helpers/thisFrameOnly'
 import { ginghamChevronContinuumEffect } from '../../../effects/ginghamChevronContinuumEffect'
 import { expectStripedTile } from '../helpers/expectStripedTile'
 
@@ -107,7 +108,7 @@ describe('gingham chevron continuum effect', () => {
 
 		beforeEach(() => {
 			type FakeAnimator = (_: {
-				animationFunction: NullarySideEffector, stopConditionFunction: () => boolean,
+				animationFunction: NullarySideEffector, stopConditionFunction: ConditionFunction,
 			}) => void
 			const fakeAnimator: FakeAnimator = ({ animationFunction, stopConditionFunction }) => {
 				while (!stopConditionFunction()) {
@@ -120,7 +121,7 @@ describe('gingham chevron continuum effect', () => {
 		it('frame 0 looks just like the normal pattern', () => {
 			const houndstoothOverrides: Effect = deepClone(ginghamChevronContinuumAnimationTestHoundstoothOverrides)
 			if (houndstoothOverrides.basePattern) {
-				houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(to.Frame(0))
+				houndstoothOverrides.basePattern.animationSettings = thisFrameOnly(to.Frame(0))
 			}
 			state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 			activateTestMarkerCanvas()
@@ -137,7 +138,7 @@ describe('gingham chevron continuum effect', () => {
 		it('around frame 525 each tile has twice its original stripe count', () => {
 			const houndstoothOverrides: Effect = deepClone(ginghamChevronContinuumAnimationTestHoundstoothOverrides)
 			if (houndstoothOverrides.basePattern) {
-				houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(to.Frame(525))
+				houndstoothOverrides.basePattern.animationSettings = thisFrameOnly(to.Frame(525))
 			}
 			state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 			activateTestMarkerCanvas()
@@ -154,7 +155,7 @@ describe('gingham chevron continuum effect', () => {
 		it('around frame 666 each tile has thrice its original stripe count', () => {
 			const houndstoothOverrides: Effect = deepClone(ginghamChevronContinuumAnimationTestHoundstoothOverrides)
 			if (houndstoothOverrides.basePattern) {
-				houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(to.Frame(666))
+				houndstoothOverrides.basePattern.animationSettings = thisFrameOnly(to.Frame(666))
 			}
 			state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 			activateTestMarkerCanvas()
