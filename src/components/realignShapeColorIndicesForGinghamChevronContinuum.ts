@@ -1,15 +1,17 @@
-import { to, TransformShapeColorIndices } from '../../../../src'
+// tslint:disable:max-line-length
+
+import { Address, ShapeColorIndex, to, TransformShapeColorIndices } from '../../../../src'
 import { reversed } from '../../../../src/utilities/codeUtilities'
 import { isOdd } from '../../../../src/utilities/mathUtilities'
 import { indexOfFirstStripeCrossingThisTile } from './indexOfFirstStripeCrossingThisTile'
 
-const realignShapeColorIndicesForGinghamChevronContinuum: TransformShapeColorIndices = params => {
-	const { gridAddress, shapeColorIndices } = params
-	const stripeIndex = indexOfFirstStripeCrossingThisTile({ gridAddress })
+const realignShapeColorIndicesForGinghamChevronContinuum: TransformShapeColorIndices =
+	({ gridAddress, shapeColorIndices }: { gridAddress: Address, shapeColorIndices: ShapeColorIndex[] }): ShapeColorIndex[] => {
+		const stripeIndex: number = indexOfFirstStripeCrossingThisTile({ gridAddress })
 
-	const realignedShapeColorIndices = isOdd(stripeIndex) ? reversed(shapeColorIndices) : shapeColorIndices
+		const realignedShapeColorIndices: ShapeColorIndex[] = isOdd(stripeIndex) ? reversed(shapeColorIndices) : shapeColorIndices
 
-	return to.ShapeColorIndices(realignedShapeColorIndices)
-}
+		return to.ShapeColorIndices(realignedShapeColorIndices)
+	}
 
 export { realignShapeColorIndicesForGinghamChevronContinuum }

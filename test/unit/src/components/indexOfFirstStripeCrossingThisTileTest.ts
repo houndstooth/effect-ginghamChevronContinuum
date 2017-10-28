@@ -20,7 +20,7 @@ describe('index of first grid stripe crossing this tile', () => {
 			},
 		})
 
-		const actual = indexOfFirstStripeCrossingThisTile({ gridAddress: to.Address([ 1, 5 ]) })
+		const actual: number = indexOfFirstStripeCrossingThisTile({ gridAddress: to.Address([ 1, 5 ]) })
 		expect(actual).toBe(1 + 2 + 3 + 1)
 	})
 
@@ -41,7 +41,7 @@ describe('index of first grid stripe crossing this tile', () => {
 			},
 		})
 
-		const actual = indexOfFirstStripeCrossingThisTile({ gridAddress: to.Address([ 1, 5 ]) })
+		const actual: number = indexOfFirstStripeCrossingThisTile({ gridAddress: to.Address([ 1, 5 ]) })
 		// tslint:disable-next-line:binary-expression-operand-order
 		expect(actual).toBe(4 + (4 + 7) + (4 + 7 + 7) + 1)
 	})

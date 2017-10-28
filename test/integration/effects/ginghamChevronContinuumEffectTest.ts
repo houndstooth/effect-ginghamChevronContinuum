@@ -107,14 +107,13 @@ describe('gingham chevron continuum effect', () => {
 		}
 
 		beforeEach(() => {
-			type FakeAnimator = (_: {
-				animationFunction: NullarySideEffector, stopConditionFunction: ConditionFunction,
-			}) => void
-			const fakeAnimator: FakeAnimator = ({ animationFunction, stopConditionFunction }) => {
-				while (!stopConditionFunction()) {
-					animationFunction()
+			interface FakeAnimator { animationFunction: NullarySideEffector, stopConditionFunction: ConditionFunction }
+			const fakeAnimator: (_: FakeAnimator) => void =
+				({ animationFunction, stopConditionFunction }: FakeAnimator): void => {
+					while (!stopConditionFunction()) {
+						animationFunction()
+					}
 				}
-			}
 			spyOn(animator, 'default').and.callFake(fakeAnimator)
 		})
 

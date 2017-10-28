@@ -3,10 +3,11 @@ import { neededStripeCountToCoverGrid } from '../../../../src/components/neededS
 
 describe('needed stripe count to cover grid', () => {
 	it('makes sure just enough gcc stripes are calculated to make it across the grid', () => {
-		const initialStripeCount = 400
-		const deltaStripeCount = 67
-		const gridSize = 5
-		const triangularNumberOfGridSize = 1 + 2 + 3 + 4 + 5
+		const initialStripeCount: number = 400
+		const deltaStripeCount: number = 67
+		const gridSize: number = 5
+		const triangularNumberOfGridSize: number = 1 + 2 + 3 + 4 + 5
+
 		composeMainHoundstooth({
 			houndstoothEffects: [],
 			houndstoothOverrides: {
