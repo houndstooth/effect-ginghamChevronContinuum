@@ -1,10 +1,9 @@
-import { Color, from, to, Unit } from '../../../../../src'
+import { from, to, Unit } from '../../../../../src'
 import { BLACK, TRANSPARENT } from '../../../../../src/constants'
 import { getFromBaseOrDefaultPattern } from '../../../../../src/store/getFromBaseOrDefaultPattern'
 import { iterator } from '../../../../../src/utilities/codeUtilities'
 import { sectionCenterIsColor } from '../../../../../test/integration/helpers/sectionCenterIsColor'
-
-interface ExpectStripedTile { diagonalAddress: number, firstColor: Color, stripeCount: number }
+import { ExpectStripedTile } from './types'
 
 const expectStripedTile: (_: ExpectStripedTile) => void =
 	({ diagonalAddress, firstColor, stripeCount }: ExpectStripedTile): void => {

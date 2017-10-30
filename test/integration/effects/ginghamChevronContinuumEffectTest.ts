@@ -1,17 +1,16 @@
 import { from, state, to } from '../../../../../src'
 import * as animator from '../../../../../src/animation/animator'
-import { ConditionFunction } from '../../../../../src/animation/types'
 import { Unit } from '../../../../../src/components'
 import { BLACK, TRANSPARENT } from '../../../../../src/constants'
 import { executeSelectedHoundstoothEffects } from '../../../../../src/execute/executeSelectedHoundstoothEffects'
 import { getFromBaseOrDefaultPattern } from '../../../../../src/store/getFromBaseOrDefaultPattern'
 import { Effect } from '../../../../../src/store/types'
-import { NullarySideEffector } from '../../../../../src/utilities/types'
 import { activateTestMarkerCanvas } from '../../../../../test/integration/helpers/activateTestMarkerCanvas'
 import { sectionCenterIsColor } from '../../../../../test/integration/helpers/sectionCenterIsColor'
 import { thisFrameOnly } from '../../../../../test/integration/helpers/thisFrameOnly'
 import { ginghamChevronContinuumEffect } from '../../../effects/ginghamChevronContinuumEffect'
 import { expectStripedTile } from '../helpers/expectStripedTile'
+import { FakeAnimatorParams } from '../helpers/types'
 
 describe('gingham chevron continuum effect', () => {
 	it('each new diagonal row has an extra stripe', () => {
@@ -106,13 +105,8 @@ describe('gingham chevron continuum effect', () => {
 		}
 
 		beforeEach(() => {
-			interface FakeAnimator {
-				animationFunction: NullarySideEffector,
-				stopConditionFunction: ConditionFunction
-			}
-
-			const fakeAnimator: (_: FakeAnimator) => void =
-				({ animationFunction, stopConditionFunction }: FakeAnimator): void => {
+			const fakeAnimator: (_: FakeAnimatorParams) => void =
+				({ animationFunction, stopConditionFunction }: FakeAnimatorParams): void => {
 					while (!stopConditionFunction()) {
 						animationFunction()
 					}
