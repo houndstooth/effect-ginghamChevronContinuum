@@ -14,7 +14,7 @@ const indexOfFirstStripeCrossingThisTile: (_: { gridAddress: Address }) => numbe
 				n: stripeIndex,
 				rangeDelta: deltaStripeCount,
 				rangeStart: initialStripeCount,
-			}) * constants.PERIMETER_SCALAR
+			}) * from.StripePosition(constants.PERIMETER_SCALAR)
 			const [ x, y ]: number[] = from.Address(gridAddress)
 			if (stripePosition > x + y) {
 				return stripeIndex
