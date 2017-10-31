@@ -1,8 +1,10 @@
 // tslint:disable:max-line-length
 
+import { StripePosition } from '../../../../../../src/components/types'
 import { composeMainHoundstooth } from '../../../../../../src/execute/composeMainHoundstooth'
 import * as to from '../../../../../../src/utilities/to'
 import { getGinghamChevronContinuumStripePositions } from '../../../../src/components/getGinghamChevronContinuumStripePositions'
+import * as neededStripeCountToCoverGrid from '../../../../src/components/neededStripeCountToCoverGrid'
 
 describe('get gingham chevron continuum stripe positions returns an array of numbers representing the positions of the stripes for a given tile in terms of its perimeter (2 is the max) based on where on the grid it is', () => {
 	it('expecting this units ability to start the stripe count at the right amount and grow it by the right amount each diagonal', () => {
@@ -18,6 +20,13 @@ describe('get gingham chevron continuum stripe positions returns an array of num
 		expectGccStripeCounts(1, 1)
 		expectGccStripeCounts(2, 3)
 		expectGccStripeCounts(1, 2)
+	})
+
+	it('edge case', () => {
+		spyOn(neededStripeCountToCoverGrid, 'neededStripeCountToCoverGrid').and.returnValue(0)
+
+		const actual: StripePosition[] = getGinghamChevronContinuumStripePositions({ gridAddress: to.Address([ 1, 5 ]) })
+		expect(actual).toEqual(to.StripePositions([ 0 ]))
 	})
 })
 

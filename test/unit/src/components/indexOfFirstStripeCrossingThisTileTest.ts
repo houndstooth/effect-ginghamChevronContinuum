@@ -1,6 +1,7 @@
 import { composeMainHoundstooth } from '../../../../../../src/execute/composeMainHoundstooth'
 import * as to from '../../../../../../src/utilities/to'
 import { indexOfFirstStripeCrossingThisTile } from '../../../../src/components/indexOfFirstStripeCrossingThisTile'
+import * as neededStripeCountToCoverGrid from '../../../../src/components/neededStripeCountToCoverGrid'
 
 describe('index of first grid stripe crossing this tile', () => {
 	it('an example', () => {
@@ -44,5 +45,12 @@ describe('index of first grid stripe crossing this tile', () => {
 		const actual: number = indexOfFirstStripeCrossingThisTile({ gridAddress: to.Address([ 1, 5 ]) })
 		// tslint:disable-next-line:binary-expression-operand-order
 		expect(actual).toBe(4 + (4 + 7) + (4 + 7 + 7) + 1)
+	})
+
+	it('edge case', () => {
+		spyOn(neededStripeCountToCoverGrid, 'neededStripeCountToCoverGrid').and.returnValue(0)
+
+		const actual: number = indexOfFirstStripeCrossingThisTile({ gridAddress: to.Address([ 1, 5 ]) })
+		expect(actual).toBe(0)
 	})
 })
