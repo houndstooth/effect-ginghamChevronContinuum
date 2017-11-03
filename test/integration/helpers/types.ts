@@ -1,6 +1,6 @@
 import { ConditionFunction } from '../../../../../src/animation/types'
 import { Color } from '../../../../../src/render/types'
-import { NullarySideEffector } from '../../../../../src/utilities/types'
+import { NullaryVoidPromise } from '../../../../../src/utilities/types'
 
 interface ExpectStripedTile {
 	diagonalAddress: number,
@@ -9,7 +9,7 @@ interface ExpectStripedTile {
 }
 
 interface FakeAnimatorParams {
-	animationFunction: NullarySideEffector,
+	animationFunction: NullaryVoidPromise,
 	stopConditionFunction: ConditionFunction
 }
 
