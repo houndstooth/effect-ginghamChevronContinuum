@@ -18,7 +18,9 @@ describe('gingham chevron continuum effect', () => {
 		state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 		activateTestMarkerCanvas()
 
-		await executeSelectedHoundstoothEffects({ houndstoothOverrides: { basePattern: { gridSettings: { gridSize: 8 } } } })
+		await executeSelectedHoundstoothEffects({
+			houndstoothOverrides: { basePattern: { gridSettings: { tileResolution: 8 } } },
+		})
 
 		expect(sectionCenterIsColor({
 			areaOrigin: to.Coordinate([ from.Unit(areaSize) * 0, from.Unit(areaSize) * 0 ]),
@@ -100,7 +102,7 @@ describe('gingham chevron continuum effect', () => {
 	describe('animating', () => {
 		const ginghamChevronContinuumAnimationTestHoundstoothOverrides: Effect = {
 			basePattern: {
-				gridSettings: { gridSize: 4 },
+				gridSettings: { tileResolution: 4 },
 				tileSettings: { tileSize: to.Unit(50) },
 				viewSettings: { canvasSize: to.Px(200) },
 			},

@@ -5,15 +5,15 @@ describe('needed stripe count to cover grid', () => {
 	it('makes sure just enough gcc stripes are calculated to make it across the grid', () => {
 		const initialStripeCount: number = 400
 		const deltaStripeCount: number = 67
-		const gridSize: number = 5
-		const triangularNumberOfGridSize: number = 1 + 2 + 3 + 4 + 5
+		const tileResolution: number = 5
+		const triangularNumberOfTileResolution: number = 1 + 2 + 3 + 4 + 5
 
 		composeMainHoundstooth({
 			houndstoothEffects: [],
 			houndstoothOverrides: {
 				basePattern: {
 					gridSettings: {
-						gridSize,
+						tileResolution,
 					},
 					stripeSettings: {
 						stripePositionSettings: {
@@ -27,6 +27,6 @@ describe('needed stripe count to cover grid', () => {
 			},
 		})
 
-		expect(neededStripeCountToCoverGrid()).toBe(initialStripeCount + deltaStripeCount * triangularNumberOfGridSize)
+		expect(neededStripeCountToCoverGrid()).toBe(initialStripeCount + deltaStripeCount * triangularNumberOfTileResolution)
 	})
 })

@@ -8,9 +8,9 @@ const neededStripeCountToCoverGrid: () => number =
 			deltaStripeCount,
 		}: StripeCountContinuumSettings = getFromBaseOrDefaultPattern('stripeCountContinuumSettings')
 
-		const gridSize: number = getFromBaseOrDefaultPattern('gridSize')
+		const tileResolution: number = getFromBaseOrDefaultPattern('tileResolution')
 
-		return initialStripeCount + deltaStripeCount * triangularNumber(gridSize)
+		return initialStripeCount + deltaStripeCount * triangularNumber(tileResolution)
 	}
 
 export { neededStripeCountToCoverGrid }
