@@ -1,5 +1,5 @@
-import { composeMainHoundstooth } from '../../../../../../src/execute/composeMainHoundstooth'
-import { neededStripeCountToCoverGrid } from '../../../../src/components/neededStripeCountToCoverGrid'
+import { composeMainHoundstooth } from '../../../../../src/app/execute/composeMainHoundstooth'
+import { neededStripeCountToCoverGrid } from '../../../pattern/grid/neededStripeCountToCoverGrid'
 
 describe('needed stripe count to cover grid', () => {
 	it('makes sure just enough gcc stripes are calculated to make it across the grid', () => {

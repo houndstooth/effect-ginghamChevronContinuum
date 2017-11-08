@@ -2,7 +2,7 @@ import { Effect, standardAnimation, StripeCountMode } from '../../../src'
 import {
 	getGinghamChevronContinuumStripePositions,
 	realignShapeColorIndicesForGinghamChevronContinuum,
-} from '../src'
+} from '../pattern'
 
 const ginghamChevronContinuumEffect: Effect = {
 	animationsPattern: {

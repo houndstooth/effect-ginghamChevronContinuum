@@ -1,16 +1,15 @@
-import { Address, constants, from, getFromBaseOrDefaultPattern, StripeCountContinuumSettings } from '../../../../src'
-import { termialRoot } from '../../../../src/utilities/mathUtilities'
-import { neededStripeCountToCoverGrid } from './neededStripeCountToCoverGrid'
+import { Address, constants, mathUtilities } from '../../../../src'
+import { getFromBaseOrDefaultPattern } from '../../../../src/app/store/getFromBaseOrDefaultPattern'
+import * as from from '../../../../src/from'
+import { neededStripeCountToCoverGrid } from '../grid/neededStripeCountToCoverGrid'
 
 const indexOfFirstStripeCrossingThisTile: (_: { gridAddress: Address }) => number =
 	({ gridAddress }: { gridAddress: Address }): number => {
-		const {
-			initialStripeCount,
-			deltaStripeCount,
-		}: StripeCountContinuumSettings = getFromBaseOrDefaultPattern('stripeCountContinuumSettings')
+		const initialStripeCount: number = getFromBaseOrDefaultPattern('initialStripeCount')
+		const deltaStripeCount: number = getFromBaseOrDefaultPattern('deltaStripeCount')
 
 		for (let stripeIndex: number = 0; stripeIndex < neededStripeCountToCoverGrid(); stripeIndex++) {
-			const stripePosition: number = termialRoot({
+			const stripePosition: number = mathUtilities.termialRoot({
 				n: stripeIndex,
 				rangeDelta: deltaStripeCount,
 				rangeStart: initialStripeCount,

@@ -1,7 +1,7 @@
-import { composeMainHoundstooth } from '../../../../../../src/execute/composeMainHoundstooth'
-import * as to from '../../../../../../src/utilities/to'
-import { indexOfFirstStripeCrossingThisTile } from '../../../../src/components/indexOfFirstStripeCrossingThisTile'
-import * as neededStripeCountToCoverGrid from '../../../../src/components/neededStripeCountToCoverGrid'
+import { composeMainHoundstooth } from '../../../../../src/app/execute/composeMainHoundstooth'
+import * as to from '../../../../../src/to'
+import { indexOfFirstStripeCrossingThisTile } from '../../../pattern/color/indexOfFirstStripeCrossingThisTile'
+import * as neededStripeCountToCoverGrid from '../../../pattern/grid/neededStripeCountToCoverGrid'
 
 describe('index of first grid stripe crossing this tile', () => {
 	it('an example', () => {

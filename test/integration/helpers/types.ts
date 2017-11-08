@@ -1,5 +1,5 @@
-import { ConditionFunction } from '../../../../../src/animation/types'
-import { Color } from '../../../../../src/render/types'
+import { ConditionFunction } from '../../../../../src/pattern/animation/types'
+import { Color } from '../../../../../src/pattern/color/types'
 import { NullaryVoidPromise } from '../../../../../src/utilities/types'
 
 interface ExpectStripedTile {

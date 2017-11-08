@@ -1,10 +1,10 @@
 // tslint:disable:max-line-length
 
-import { StripePosition } from '../../../../../../src/components/types'
-import { composeMainHoundstooth } from '../../../../../../src/execute/composeMainHoundstooth'
-import * as to from '../../../../../../src/utilities/to'
-import { getGinghamChevronContinuumStripePositions } from '../../../../src/components/getGinghamChevronContinuumStripePositions'
-import * as neededStripeCountToCoverGrid from '../../../../src/components/neededStripeCountToCoverGrid'
+import { composeMainHoundstooth } from '../../../../../src/app/execute/composeMainHoundstooth'
+import { StripePosition } from '../../../../../src/pattern/stripe/types'
+import * as to from '../../../../../src/to'
+import * as neededStripeCountToCoverGrid from '../../../pattern/grid/neededStripeCountToCoverGrid'
+import { getGinghamChevronContinuumStripePositions } from '../../../pattern/stripe/getGinghamChevronContinuumStripePositions'
 
 describe('get gingham chevron continuum stripe positions returns an array of numbers representing the positions of the stripes for a given tile in terms of its perimeter (2 is the max) based on where on the grid it is', () => {
 	it('expecting this units ability to start the stripe count at the right amount and grow it by the right amount each diagonal', () => {

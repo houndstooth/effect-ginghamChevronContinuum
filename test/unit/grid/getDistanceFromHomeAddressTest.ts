@@ -1,5 +1,5 @@
-import * as to from '../../../../../../src/utilities/to'
-import { getDistanceFromHomeAddress } from '../../../../src/components/getDistanceFromHomeAddress'
+import * as to from '../../../../../src/to'
+import { getDistanceFromHomeAddress } from '../../../pattern/grid/getDistanceFromHomeAddress'
 
 describe('get distance from home address', () => {
 	it('gives the distance, in address positions, from grid address 0, 0', () => {

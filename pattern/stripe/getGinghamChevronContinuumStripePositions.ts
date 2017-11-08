@@ -1,24 +1,20 @@
 import {
 	Address,
 	constants,
-	from,
-	getFromBaseOrDefaultPattern,
 	GetStripePositions,
-	StripeCountContinuumSettings,
+	mathUtilities,
 	StripePosition,
-	to,
 } from '../../../../src'
-import { termialRoot } from '../../../../src/utilities/mathUtilities'
-import { getDistanceFromHomeAddress } from './getDistanceFromHomeAddress'
-import { neededStripeCountToCoverGrid } from './neededStripeCountToCoverGrid'
+import { getFromBaseOrDefaultPattern } from '../../../../src/app/store/getFromBaseOrDefaultPattern'
+import * as from from '../../../../src/from'
+import * as to from '../../../../src/to'
+import { getDistanceFromHomeAddress, neededStripeCountToCoverGrid } from '../grid'
 import { GetStripePositionsParams } from './types'
 
 const getGinghamChevronContinuumStripePositions: GetStripePositions =
 	({ gridAddress }: { gridAddress: Address }): StripePosition[] => {
-		const {
-			initialStripeCount,
-			deltaStripeCount,
-		}: StripeCountContinuumSettings = getFromBaseOrDefaultPattern('stripeCountContinuumSettings')
+		const initialStripeCount: number = getFromBaseOrDefaultPattern('initialStripeCount')
+		const deltaStripeCount: number = getFromBaseOrDefaultPattern('deltaStripeCount')
 
 		const distanceFromHomeAddress: number = getDistanceFromHomeAddress({ gridAddress })
 
@@ -30,7 +26,7 @@ const getStripePositions: (_: GetStripePositionsParams) => StripePosition[] =
 		const stripePositions: StripePosition[] = to.StripePositions([ 0 ])
 
 		for (let n: number = 0; n < neededStripeCountToCoverGrid(); n++) {
-			const rawStripePositionValue: number = termialRoot({
+			const rawStripePositionValue: number = mathUtilities.termialRoot({
 				n,
 				rangeDelta: deltaStripeCount,
 				rangeStart: initialStripeCount,

@@ -1,9 +1,10 @@
-import { Address, ShapeColorIndex } from '../../../../../../src/components/types'
-import { composeMainHoundstooth } from '../../../../../../src/execute/composeMainHoundstooth'
-import * as to from '../../../../../../src/utilities/to'
-import * as indexOfFirstStripeCrossingThisTile from '../../../../src/components/indexOfFirstStripeCrossingThisTile'
+import { composeMainHoundstooth } from '../../../../../src/app/execute/composeMainHoundstooth'
+import { ShapeColorIndex } from '../../../../../src/pattern/color/types'
+import { Address } from '../../../../../src/pattern/grid/types'
+import * as to from '../../../../../src/to'
+import * as indexOfFirstStripeCrossingThisTile from '../../../pattern/color/indexOfFirstStripeCrossingThisTile'
 // tslint:disable-next-line:max-line-length
-import { realignShapeColorIndicesForGinghamChevronContinuum } from '../../../../src/components/realignShapeColorIndicesForGinghamChevronContinuum'
+import { realignShapeColorIndicesForGinghamChevronContinuum } from '../../../pattern/color/realignShapeColorIndicesForGinghamChevronContinuum'
 
 // tslint:disable-next-line:max-line-length
 describe('realign tile color indices to maintain gingham chevron continuum across grid, because the information about alternation of the colorSet has been lost from individual tiles, we have to check the modulus of the overall grid stripes instead', () => {
