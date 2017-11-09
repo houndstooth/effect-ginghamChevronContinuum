@@ -4,10 +4,10 @@ import {
 	codeUtilities,
 	mathUtilities,
 	ShapeColorIndex,
+	to,
 	TransformShapeColorIndices,
 	TransformShapeColorIndicesParams,
 } from '../../../../src'
-import * as to from '../../../../src/to'
 import { indexOfFirstStripeCrossingThisTile } from './indexOfFirstStripeCrossingThisTile'
 
 const realignShapeColorIndicesForGinghamChevronContinuum: TransformShapeColorIndices =

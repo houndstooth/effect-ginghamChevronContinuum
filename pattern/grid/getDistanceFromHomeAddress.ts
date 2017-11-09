@@ -1,5 +1,4 @@
-import { Address } from '../../../../src'
-import * as from from '../../../../src/from'
+import { Address, from } from '../../../../src'
 
 const getDistanceFromHomeAddress: (_: { gridAddress: Address }) => number =
 	({ gridAddress }: { gridAddress: Address }): number =>

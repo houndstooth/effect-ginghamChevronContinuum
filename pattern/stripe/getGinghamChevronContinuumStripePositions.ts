@@ -1,13 +1,13 @@
 import {
 	Address,
 	constants,
+	from,
 	GetStripePositions,
 	mathUtilities,
 	StripePosition,
+	to,
 } from '../../../../src'
 import { getFromBaseOrDefaultPattern } from '../../../../src/app/store/getFromBaseOrDefaultPattern'
-import * as from from '../../../../src/from'
-import * as to from '../../../../src/to'
 import { getDistanceFromHomeAddress, neededStripeCountToCoverGrid } from '../grid'
 import { GetStripePositionsParams } from './types'
 

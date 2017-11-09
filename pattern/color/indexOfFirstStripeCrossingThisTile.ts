@@ -1,6 +1,5 @@
-import { Address, constants, mathUtilities } from '../../../../src'
+import { Address, constants, from, mathUtilities } from '../../../../src'
 import { getFromBaseOrDefaultPattern } from '../../../../src/app/store/getFromBaseOrDefaultPattern'
-import * as from from '../../../../src/from'
 import { neededStripeCountToCoverGrid } from '../grid/neededStripeCountToCoverGrid'
 
 const indexOfFirstStripeCrossingThisTile: (_: { gridAddress: Address }) => number =
