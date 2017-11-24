@@ -7,6 +7,7 @@ import {
 	StripePosition,
 	to,
 } from '../../../../src'
+// tslint:disable-next-line:no-reaching-imports
 import { getFromBaseOrDefaultPattern } from '../../../../src/app/store/getFromBaseOrDefaultPattern'
 import { getDistanceFromHomeAddress, neededStripeCountToCoverGrid } from '../grid'
 import { GetStripePositionsParams } from './types'

@@ -1,4 +1,5 @@
 import { mathUtilities } from '../../../../src'
+// tslint:disable-next-line:no-reaching-imports
 import { getFromBaseOrDefaultPattern } from '../../../../src/app/store/getFromBaseOrDefaultPattern'
 
 const neededStripeCountToCoverGrid: () => number =

@@ -1,7 +1,7 @@
 import { composeMainHoundstooth } from '../../../../../src/app/execute/composeMainHoundstooth'
 import * as to from '../../../../../src/to'
 import { indexOfFirstStripeCrossingThisTile } from '../../../pattern/color/indexOfFirstStripeCrossingThisTile'
-import * as neededStripeCountToCoverGrid from '../../../pattern/grid/neededStripeCountToCoverGrid'
+import * as grid from '../../../pattern/grid'
 
 describe('index of first grid stripe crossing this tile', () => {
 	it('an example', () => {
@@ -48,7 +48,7 @@ describe('index of first grid stripe crossing this tile', () => {
 	})
 
 	it('edge case', () => {
-		spyOn(neededStripeCountToCoverGrid, 'neededStripeCountToCoverGrid').and.returnValue(0)
+		spyOn(grid, 'neededStripeCountToCoverGrid').and.returnValue(0)
 
 		const actual: number = indexOfFirstStripeCrossingThisTile({ gridAddress: to.Address([ 1, 5 ]) })
 		expect(actual).toBe(0)
