@@ -1,7 +1,3 @@
-import { realignShapeColorIndicesForGinghamChevronContinuum } from './color'
-import { getGinghamChevronContinuumStripePositions } from './stripe'
-
-export {
-	getGinghamChevronContinuumStripePositions,
-	realignShapeColorIndicesForGinghamChevronContinuum,
-}
+export { realignShapeColorIndicesForGinghamChevronContinuum, indexOfFirstStripeCrossingThisTile } from './color'
+export { neededStripeCountToCoverGrid, getDistanceFromHomeAddress } from './grid'
+export { getGinghamChevronContinuumStripePositions } from './stripe'

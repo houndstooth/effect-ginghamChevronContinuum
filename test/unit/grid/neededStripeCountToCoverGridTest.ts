@@ -1,5 +1,5 @@
-import { composeMainHoundstooth } from '../../../../../src/app/execute/composeMainHoundstooth'
-import { neededStripeCountToCoverGrid } from '../../../pattern/grid/neededStripeCountToCoverGrid'
+import { composeMainHoundstooth } from '../../../../../src'
+import { neededStripeCountToCoverGrid } from '../../../pattern'
 
 describe('needed stripe count to cover grid', () => {
 	it('makes sure just enough gcc stripes are calculated to make it across the grid', () => {
@@ -8,7 +8,7 @@ describe('needed stripe count to cover grid', () => {
 		const tileResolution: number = 5
 		const triangularNumberOfTileResolution: number = 1 + 2 + 3 + 4 + 5
 
-		composeMainHoundstooth({
+		composeMainHoundstooth.main({
 			houndstoothEffects: [],
 			houndstoothOverrides: {
 				basePattern: {
@@ -27,6 +27,7 @@ describe('needed stripe count to cover grid', () => {
 			},
 		})
 
-		expect(neededStripeCountToCoverGrid()).toBe(initialStripeCount + deltaStripeCount * triangularNumberOfTileResolution)
+		const expectedStripeCount: number = initialStripeCount + deltaStripeCount * triangularNumberOfTileResolution
+		expect(neededStripeCountToCoverGrid.main()).toBe(expectedStripeCount)
 	})
 })

@@ -1,11 +1,9 @@
-import { composeMainHoundstooth } from '../../../../../src/app/execute/composeMainHoundstooth'
-import * as to from '../../../../../src/to'
-import { indexOfFirstStripeCrossingThisTile } from '../../../pattern/color/indexOfFirstStripeCrossingThisTile'
-import * as grid from '../../../pattern/grid'
+import { composeMainHoundstooth, to } from '../../../../../src'
+import { indexOfFirstStripeCrossingThisTile, neededStripeCountToCoverGrid } from '../../../pattern'
 
 describe('index of first grid stripe crossing this tile', () => {
 	it('an example', () => {
-		composeMainHoundstooth({
+		composeMainHoundstooth.main({
 			houndstoothEffects: [],
 			houndstoothOverrides: {
 				basePattern: {
@@ -21,12 +19,12 @@ describe('index of first grid stripe crossing this tile', () => {
 			},
 		})
 
-		const actual: number = indexOfFirstStripeCrossingThisTile({ gridAddress: to.Address([ 1, 5 ]) })
+		const actual: number = indexOfFirstStripeCrossingThisTile.main({ gridAddress: to.Address([ 1, 5 ]) })
 		expect(actual).toBe(1 + 2 + 3 + 1)
 	})
 
 	it('another example', () => {
-		composeMainHoundstooth({
+		composeMainHoundstooth.main({
 			houndstoothEffects: [],
 			houndstoothOverrides: {
 				basePattern: {
@@ -42,15 +40,15 @@ describe('index of first grid stripe crossing this tile', () => {
 			},
 		})
 
-		const actual: number = indexOfFirstStripeCrossingThisTile({ gridAddress: to.Address([ 1, 5 ]) })
+		const actual: number = indexOfFirstStripeCrossingThisTile.main({ gridAddress: to.Address([ 1, 5 ]) })
 		// tslint:disable-next-line:binary-expression-operand-order
 		expect(actual).toBe(4 + (4 + 7) + (4 + 7 + 7) + 1)
 	})
 
 	it('edge case', () => {
-		spyOn(grid, 'neededStripeCountToCoverGrid').and.returnValue(0)
+		spyOn(neededStripeCountToCoverGrid, 'main').and.returnValue(0)
 
-		const actual: number = indexOfFirstStripeCrossingThisTile({ gridAddress: to.Address([ 1, 5 ]) })
+		const actual: number = indexOfFirstStripeCrossingThisTile.main({ gridAddress: to.Address([ 1, 5 ]) })
 		expect(actual).toBe(0)
 	})
 })

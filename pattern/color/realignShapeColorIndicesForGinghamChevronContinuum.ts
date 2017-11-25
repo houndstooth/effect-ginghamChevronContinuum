@@ -1,5 +1,3 @@
-// tslint:disable:max-line-length
-
 import {
 	codeUtilities,
 	mathUtilities,
@@ -8,7 +6,7 @@ import {
 	TransformShapeColorIndices,
 	TransformShapeColorIndicesParams,
 } from '../../../../src'
-import { indexOfFirstStripeCrossingThisTile } from './indexOfFirstStripeCrossingThisTile'
+import { main as indexOfFirstStripeCrossingThisTile } from './indexOfFirstStripeCrossingThisTile'
 
 const realignShapeColorIndicesForGinghamChevronContinuum: TransformShapeColorIndices =
 	({ gridAddress, shapeColorIndices }: TransformShapeColorIndicesParams): ShapeColorIndex[] => {
@@ -21,4 +19,4 @@ const realignShapeColorIndicesForGinghamChevronContinuum: TransformShapeColorInd
 		return to.ShapeColorIndices(realignedShapeColorIndices)
 	}
 
-export { realignShapeColorIndicesForGinghamChevronContinuum }
+export { realignShapeColorIndicesForGinghamChevronContinuum as main }

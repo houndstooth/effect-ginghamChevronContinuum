@@ -1,8 +1,16 @@
-import { animator, constants, Effect, executeSelectedHoundstoothEffects, from, state, to, Unit } from '../../../../../src'
+import {
+	animator,
+	constants,
+	Effect,
+	executeSelectedHoundstoothEffects,
+	from,
+	state,
+	to,
+	Unit,
+} from '../../../../../src'
 // tslint:disable-next-line:no-reaching-imports
-import { getFromBaseOrDefaultPattern } from '../../../../../src/app/store/getFromBaseOrDefaultPattern'
-import { activateTestMarkerCanvas } from '../../../../../test'
-import { fakeAnimator, sectionCenterIsColor, thisFrameOnly } from '../../../../../test'
+import { main as getFromBaseOrDefaultPattern } from '../../../../../src/app/store/getFromBaseOrDefaultPattern'
+import { activateTestMarkerCanvas, fakeAnimator, sectionCenterIsColor, thisFrameOnly } from '../../../../../test'
 import { ginghamChevronContinuumEffect } from '../../../effects'
 import { expectStripedTile } from '../helpers'
 
@@ -18,7 +26,7 @@ describe('gingham chevron continuum effect', () => {
 		state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 		activateTestMarkerCanvas()
 
-		executeSelectedHoundstoothEffects({
+		executeSelectedHoundstoothEffects.main({
 			houndstoothOverrides: { basePattern: { gridSettings: { tileResolution: 8 } } },
 		})
 
@@ -124,7 +132,7 @@ describe('gingham chevron continuum effect', () => {
 			activateTestMarkerCanvas()
 			state.animating = true
 
-			executeSelectedHoundstoothEffects({ houndstoothOverrides })
+			executeSelectedHoundstoothEffects.main({ houndstoothOverrides })
 
 			setTimeout(() => {
 				expectStripedTile({ diagonalAddress: 0, stripeCount: 1, firstColor: BLACK })
@@ -145,7 +153,7 @@ describe('gingham chevron continuum effect', () => {
 			activateTestMarkerCanvas()
 			state.animating = true
 
-			executeSelectedHoundstoothEffects({ houndstoothOverrides })
+			executeSelectedHoundstoothEffects.main({ houndstoothOverrides })
 
 			setTimeout(() => {
 				expectStripedTile({ diagonalAddress: 0, stripeCount: 2, firstColor: BLACK })
@@ -166,7 +174,7 @@ describe('gingham chevron continuum effect', () => {
 			activateTestMarkerCanvas()
 			state.animating = true
 
-			executeSelectedHoundstoothEffects({ houndstoothOverrides })
+			executeSelectedHoundstoothEffects.main({ houndstoothOverrides })
 
 			setTimeout(() => {
 				expectStripedTile({ diagonalAddress: 0, stripeCount: 3, firstColor: BLACK })

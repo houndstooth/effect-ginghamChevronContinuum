@@ -1,10 +1,7 @@
 // tslint:disable:max-line-length
 
-import { composeMainHoundstooth } from '../../../../../src/app/execute/composeMainHoundstooth'
-import { StripePosition } from '../../../../../src/pattern/stripe/types'
-import * as to from '../../../../../src/to'
-import * as grid from '../../../pattern/grid'
-import { getGinghamChevronContinuumStripePositions } from '../../../pattern/stripe/getGinghamChevronContinuumStripePositions'
+import { composeMainHoundstooth, StripePosition, to } from '../../../../../src'
+import { getGinghamChevronContinuumStripePositions, neededStripeCountToCoverGrid } from '../../../pattern'
 
 describe('get gingham chevron continuum stripe positions returns an array of numbers representing the positions of the stripes for a given tile in terms of its perimeter (2 is the max) based on where on the grid it is', () => {
 	it('expecting this units ability to start the stripe count at the right amount and grow it by the right amount each diagonal', () => {
@@ -23,16 +20,16 @@ describe('get gingham chevron continuum stripe positions returns an array of num
 	})
 
 	it('edge case', () => {
-		spyOn(grid, 'neededStripeCountToCoverGrid').and.returnValue(0)
+		spyOn(neededStripeCountToCoverGrid, 'main').and.returnValue(0)
 
-		const actual: StripePosition[] = getGinghamChevronContinuumStripePositions({ gridAddress: to.Address([ 1, 5 ]) })
+		const actual: StripePosition[] = getGinghamChevronContinuumStripePositions.main({ gridAddress: to.Address([ 1, 5 ]) })
 		expect(actual).toEqual(to.StripePositions([ 0 ]))
 	})
 })
 
 const expectGccStripeCounts: (initial: number, delta: number) => void =
 	(initial: number, delta: number): void => {
-		composeMainHoundstooth({
+		composeMainHoundstooth.main({
 			houndstoothEffects: [],
 			houndstoothOverrides: {
 				basePattern: {
@@ -48,16 +45,16 @@ const expectGccStripeCounts: (initial: number, delta: number) => void =
 			},
 		})
 
-		expect(getGinghamChevronContinuumStripePositions({
+		expect(getGinghamChevronContinuumStripePositions.main({
 			gridAddress: to.Address([ 0, 0 ]),
 		}).length).toEqual(initial)
-		expect(getGinghamChevronContinuumStripePositions({
+		expect(getGinghamChevronContinuumStripePositions.main({
 			gridAddress: to.Address([ 1, 1 ]),
 		}).length).toEqual(initial + delta * 1)
-		expect(getGinghamChevronContinuumStripePositions({
+		expect(getGinghamChevronContinuumStripePositions.main({
 			gridAddress: to.Address([ 2, 2 ]),
 		}).length).toEqual(initial + delta * 2)
-		expect(getGinghamChevronContinuumStripePositions({
+		expect(getGinghamChevronContinuumStripePositions.main({
 			gridAddress: to.Address([ 3, 3 ]),
 		}).length).toEqual(initial + delta * 3)
 	}

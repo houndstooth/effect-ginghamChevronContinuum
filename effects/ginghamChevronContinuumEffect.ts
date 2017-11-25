@@ -9,8 +9,8 @@ const ginghamChevronContinuumEffect: Effect = {
 		stripeSettings: {
 			stripePositionSettings: {
 				stripeCountContinuumSettings: {
-					deltaStripeCount: standardAnimation,
-					initialStripeCount: standardAnimation,
+					deltaStripeCount: standardAnimation.main,
+					initialStripeCount: standardAnimation.main,
 				},
 			},
 		},
@@ -18,12 +18,12 @@ const ginghamChevronContinuumEffect: Effect = {
 	basePattern: {
 		colorSettings: {
 			colorAssignmentSettings: {
-				transformShapeColorIndices: realignShapeColorIndicesForGinghamChevronContinuum,
+				transformShapeColorIndices: realignShapeColorIndicesForGinghamChevronContinuum.main,
 			},
 		},
 		stripeSettings: {
 			stripePositionSettings: {
-				getStripePositions: getGinghamChevronContinuumStripePositions,
+				getStripePositions: getGinghamChevronContinuumStripePositions.main,
 				stripeCountContinuumSettings: {
 					deltaStripeCount: 1,
 					initialStripeCount: 1,

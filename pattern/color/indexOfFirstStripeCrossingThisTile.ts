@@ -1,6 +1,6 @@
 import { Address, constants, from, mathUtilities } from '../../../../src'
 // tslint:disable-next-line:no-reaching-imports
-import { getFromBaseOrDefaultPattern } from '../../../../src/app/store/getFromBaseOrDefaultPattern'
+import { main as getFromBaseOrDefaultPattern } from '../../../../src/app/store/getFromBaseOrDefaultPattern'
 import { neededStripeCountToCoverGrid } from '../grid'
 
 const indexOfFirstStripeCrossingThisTile: (_: { gridAddress: Address }) => number =
@@ -8,7 +8,7 @@ const indexOfFirstStripeCrossingThisTile: (_: { gridAddress: Address }) => numbe
 		const initialStripeCount: number = getFromBaseOrDefaultPattern('initialStripeCount')
 		const deltaStripeCount: number = getFromBaseOrDefaultPattern('deltaStripeCount')
 
-		for (let stripeIndex: number = 0; stripeIndex < neededStripeCountToCoverGrid(); stripeIndex++) {
+		for (let stripeIndex: number = 0; stripeIndex < neededStripeCountToCoverGrid.main(); stripeIndex++) {
 			const stripePosition: number = mathUtilities.termialRoot({
 				n: stripeIndex,
 				rangeDelta: deltaStripeCount,
@@ -23,4 +23,4 @@ const indexOfFirstStripeCrossingThisTile: (_: { gridAddress: Address }) => numbe
 		return 0
 	}
 
-export { indexOfFirstStripeCrossingThisTile }
+export { indexOfFirstStripeCrossingThisTile as main }

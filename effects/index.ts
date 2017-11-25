@@ -1,3 +1,1 @@
-import { ginghamChevronContinuumEffect } from './ginghamChevronContinuumEffect'
-
-export { ginghamChevronContinuumEffect }
+export { ginghamChevronContinuumEffect } from './ginghamChevronContinuumEffect'

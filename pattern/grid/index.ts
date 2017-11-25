@@ -1,5 +1,5 @@
-import { getDistanceFromHomeAddress } from './getDistanceFromHomeAddress'
-import { neededStripeCountToCoverGrid } from './neededStripeCountToCoverGrid'
+import * as getDistanceFromHomeAddress from './getDistanceFromHomeAddress'
+import * as neededStripeCountToCoverGrid from './neededStripeCountToCoverGrid'
 
 export {
 	getDistanceFromHomeAddress,
