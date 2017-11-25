@@ -1,6 +1,6 @@
-import { ConditionFunction } from '../../../../../src/pattern/animation/types'
-import { Color } from '../../../../../src/pattern/color/types'
-import { NullaryVoidPromise } from '../../../../../src/utilities/types'
+import { ConditionFunction } from '../../../../../src'
+import { Color } from '../../../../../src'
+import { NullaryVoidPromise } from '../../../../../src'
 
 interface ExpectStripedTile {
 	diagonalAddress: number,

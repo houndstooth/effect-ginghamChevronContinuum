@@ -1,17 +1,16 @@
-import { Unit } from '../../../../../src'
+import { codeUtilities, constants, from, to, Unit } from '../../../../../src'
+// tslint:disable-next-line:no-reaching-imports
 import { getFromBaseOrDefaultPattern } from '../../../../../src/app/store/getFromBaseOrDefaultPattern'
-import { BLACK, TRANSPARENT } from '../../../../../src/constants'
-import * as from from '../../../../../src/from'
-import * as to from '../../../../../src/to'
-import { iterator } from '../../../../../src/utilities/codeUtilities'
-import { sectionCenterIsColor } from '../../../../../test/integration/helpers/sectionCenterIsColor'
+import { sectionCenterIsColor } from '../../../../../test'
 import { ExpectStripedTile } from './types'
+
+const { BLACK, TRANSPARENT } = constants
 
 const expectStripedTile: (_: ExpectStripedTile) => void =
 	({ diagonalAddress, firstColor, stripeCount }: ExpectStripedTile): void => {
 		const areaSize: Unit = getFromBaseOrDefaultPattern('tileSize')
 
-		iterator(stripeCount).forEach((stripe: number): void => {
+		codeUtilities.iterator(stripeCount).forEach((stripe: number): void => {
 			expect(sectionCenterIsColor({
 				areaOrigin: to.Coordinate([
 					diagonalAddress * from.Unit(areaSize),

@@ -1,20 +1,18 @@
-import { state } from '../../../../../src'
-import { executeSelectedHoundstoothEffects } from '../../../../../src/app/execute/executeSelectedHoundstoothEffects'
+import { animator, constants, Effect, executeSelectedHoundstoothEffects, from, state, to, Unit } from '../../../../../src'
+// tslint:disable-next-line:no-reaching-imports
 import { getFromBaseOrDefaultPattern } from '../../../../../src/app/store/getFromBaseOrDefaultPattern'
-import { BLACK, TRANSPARENT } from '../../../../../src/constants'
-import * as from from '../../../../../src/from'
-import { Effect } from '../../../../../src/pattern'
-import * as animator from '../../../../../src/pattern/animation/animator'
-import { Unit } from '../../../../../src/pattern/grid/types'
-import * as to from '../../../../../src/to'
-import { activateTestMarkerCanvas } from '../../../../../test/integration/helpers/activateTestMarkerCanvas'
-import { fakeAnimator } from '../../../../../test/integration/helpers/fakeAnimator'
-import { sectionCenterIsColor } from '../../../../../test/integration/helpers/sectionCenterIsColor'
-import { thisFrameOnly } from '../../../../../test/integration/helpers/thisFrameOnly'
-import { ginghamChevronContinuumEffect } from '../../../effects/ginghamChevronContinuumEffect'
-import { expectStripedTile } from '../helpers/expectStripedTile'
+import { activateTestMarkerCanvas } from '../../../../../test'
+import { fakeAnimator, sectionCenterIsColor, thisFrameOnly } from '../../../../../test'
+import { ginghamChevronContinuumEffect } from '../../../effects'
+import { expectStripedTile } from '../helpers'
+
+const { BLACK, TRANSPARENT } = constants
 
 describe('gingham chevron continuum effect', () => {
+	afterEach(() => {
+		state.animating = false
+	})
+
 	it('each new diagonal row has an extra stripe', async (done: DoneFn) => {
 		const areaSize: Unit = getFromBaseOrDefaultPattern('tileSize')
 		state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
@@ -113,6 +111,7 @@ describe('gingham chevron continuum effect', () => {
 		}
 
 		beforeEach(() => {
+			state.currentFrame = to.Frame(0)
 			spyOn(animator, 'default').and.callFake(fakeAnimator)
 		})
 
