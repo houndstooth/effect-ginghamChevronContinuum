@@ -1,13 +1,10 @@
-import { mathUtilities } from '../../../../src'
-// tslint:disable-next-line:no-reaching-imports
-import { main as getFromBaseOrDefaultPattern } from '../../../../src/app/store/getFromBaseOrDefaultPattern'
+import { getFromBaseOrDefaultPattern, mathUtilities } from '../../../../src'
 
 const neededStripeCountToCoverGrid: () => number =
 	(): number => {
-		const initialStripeCount: number = getFromBaseOrDefaultPattern('initialStripeCount')
-		const deltaStripeCount: number = getFromBaseOrDefaultPattern('deltaStripeCount')
-
-		const tileResolution: number = getFromBaseOrDefaultPattern('tileResolution')
+		const initialStripeCount: number = getFromBaseOrDefaultPattern.main('initialStripeCount')
+		const deltaStripeCount: number = getFromBaseOrDefaultPattern.main('deltaStripeCount')
+		const tileResolution: number = getFromBaseOrDefaultPattern.main('tileResolution')
 
 		return initialStripeCount + deltaStripeCount * mathUtilities.triangularNumber(tileResolution)
 	}

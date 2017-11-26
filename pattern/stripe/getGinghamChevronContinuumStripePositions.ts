@@ -2,20 +2,19 @@ import {
 	Address,
 	constants,
 	from,
+	getFromBaseOrDefaultPattern,
 	GetStripePositions,
 	mathUtilities,
 	StripePosition,
 	to,
 } from '../../../../src'
-// tslint:disable-next-line:no-reaching-imports
-import { main as getFromBaseOrDefaultPattern } from '../../../../src/app/store/getFromBaseOrDefaultPattern'
 import { getDistanceFromHomeAddress, neededStripeCountToCoverGrid } from '../grid'
 import { GetStripePositionsParams } from './types'
 
 const getGinghamChevronContinuumStripePositions: GetStripePositions =
 	({ gridAddress }: { gridAddress: Address }): StripePosition[] => {
-		const initialStripeCount: number = getFromBaseOrDefaultPattern('initialStripeCount')
-		const deltaStripeCount: number = getFromBaseOrDefaultPattern('deltaStripeCount')
+		const initialStripeCount: number = getFromBaseOrDefaultPattern.main('initialStripeCount')
+		const deltaStripeCount: number = getFromBaseOrDefaultPattern.main('deltaStripeCount')
 
 		const distanceFromHomeAddress: number = getDistanceFromHomeAddress.main({ gridAddress })
 

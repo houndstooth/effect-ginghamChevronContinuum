@@ -4,12 +4,11 @@ import {
 	Effect,
 	executeSelectedHoundstoothEffects,
 	from,
+	getFromBaseOrDefaultPattern,
 	state,
 	to,
 	Unit,
 } from '../../../../../src'
-// tslint:disable-next-line:no-reaching-imports
-import { main as getFromBaseOrDefaultPattern } from '../../../../../src/app/store/getFromBaseOrDefaultPattern'
 import { activateTestMarkerCanvas, fakeAnimator, sectionCenterIsColor, thisFrameOnly } from '../../../../../test'
 import { ginghamChevronContinuumEffect } from '../../../effects'
 import { expectStripedTile } from '../helpers'
@@ -22,7 +21,7 @@ describe('gingham chevron continuum effect', () => {
 	})
 
 	it('each new diagonal row has an extra stripe', async (done: DoneFn) => {
-		const areaSize: Unit = getFromBaseOrDefaultPattern('tileSize')
+		const areaSize: Unit = getFromBaseOrDefaultPattern.main('tileSize')
 		state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 		activateTestMarkerCanvas()
 

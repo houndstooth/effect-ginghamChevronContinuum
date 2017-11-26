@@ -1,12 +1,10 @@
-import { Address, constants, from, mathUtilities } from '../../../../src'
-// tslint:disable-next-line:no-reaching-imports
-import { main as getFromBaseOrDefaultPattern } from '../../../../src/app/store/getFromBaseOrDefaultPattern'
+import { Address, constants, from, getFromBaseOrDefaultPattern, mathUtilities } from '../../../../src'
 import { neededStripeCountToCoverGrid } from '../grid'
 
 const indexOfFirstStripeCrossingThisTile: (_: { gridAddress: Address }) => number =
 	({ gridAddress }: { gridAddress: Address }): number => {
-		const initialStripeCount: number = getFromBaseOrDefaultPattern('initialStripeCount')
-		const deltaStripeCount: number = getFromBaseOrDefaultPattern('deltaStripeCount')
+		const initialStripeCount: number = getFromBaseOrDefaultPattern.main('initialStripeCount')
+		const deltaStripeCount: number = getFromBaseOrDefaultPattern.main('deltaStripeCount')
 
 		for (let stripeIndex: number = 0; stripeIndex < neededStripeCountToCoverGrid.main(); stripeIndex++) {
 			const stripePosition: number = mathUtilities.termialRoot({

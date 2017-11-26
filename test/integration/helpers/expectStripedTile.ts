@@ -1,6 +1,4 @@
-import { codeUtilities, constants, from, to, Unit } from '../../../../../src'
-// tslint:disable-next-line:no-reaching-imports
-import { main as getFromBaseOrDefaultPattern } from '../../../../../src/app/store/getFromBaseOrDefaultPattern'
+import { codeUtilities, constants, from, getFromBaseOrDefaultPattern, to, Unit } from '../../../../../src'
 import { sectionCenterIsColor } from '../../../../../test'
 import { ExpectStripedTile } from './types'
 
@@ -8,7 +6,7 @@ const { BLACK, TRANSPARENT } = constants
 
 const expectStripedTile: (_: ExpectStripedTile) => void =
 	({ diagonalAddress, firstColor, stripeCount }: ExpectStripedTile): void => {
-		const areaSize: Unit = getFromBaseOrDefaultPattern('tileSize')
+		const areaSize: Unit = getFromBaseOrDefaultPattern.main('tileSize')
 
 		codeUtilities.iterator(stripeCount).forEach((stripe: number): void => {
 			expect(sectionCenterIsColor({
