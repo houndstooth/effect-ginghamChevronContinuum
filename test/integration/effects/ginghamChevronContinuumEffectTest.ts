@@ -4,7 +4,7 @@ import {
 	Effect,
 	executeSelectedHoundstoothEffects,
 	from,
-	getFromBaseOrDefaultPattern,
+	getSetting,
 	state,
 	to,
 	Unit,
@@ -21,7 +21,7 @@ describe('gingham chevron continuum effect', () => {
 	})
 
 	it('each new diagonal row has an extra stripe', async (done: DoneFn) => {
-		const areaSize: Unit = getFromBaseOrDefaultPattern.main('tileSize')
+		const areaSize: Unit = getSetting.main('tileSize')
 		state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 		activateTestMarkerCanvas()
 

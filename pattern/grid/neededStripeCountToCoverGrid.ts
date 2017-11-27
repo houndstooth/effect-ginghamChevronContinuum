@@ -1,10 +1,10 @@
-import { getFromBaseOrDefaultPattern, mathUtilities } from '../../../../src'
+import { getSetting, mathUtilities } from '../../../../src'
 
 const neededStripeCountToCoverGrid: () => number =
 	(): number => {
-		const initialStripeCount: number = getFromBaseOrDefaultPattern.main('initialStripeCount')
-		const deltaStripeCount: number = getFromBaseOrDefaultPattern.main('deltaStripeCount')
-		const tileResolution: number = getFromBaseOrDefaultPattern.main('tileResolution')
+		const initialStripeCount: number = getSetting.main('initialStripeCount')
+		const deltaStripeCount: number = getSetting.main('deltaStripeCount')
+		const tileResolution: number = getSetting.main('tileResolution')
 
 		return initialStripeCount + deltaStripeCount * mathUtilities.triangularNumber(tileResolution)
 	}
