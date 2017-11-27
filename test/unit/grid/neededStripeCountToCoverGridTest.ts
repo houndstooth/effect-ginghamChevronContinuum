@@ -8,7 +8,7 @@ describe('needed stripe count to cover grid', () => {
 		const tileResolution: number = 5
 		const triangularNumberOfTileResolution: number = 1 + 2 + 3 + 4 + 5
 
-		composeMainHoundstooth.main({
+		composeMainHoundstooth.default({
 			houndstoothEffects: [],
 			houndstoothOverrides: {
 				basePattern: {
@@ -28,6 +28,6 @@ describe('needed stripe count to cover grid', () => {
 		})
 
 		const expectedStripeCount: number = initialStripeCount + deltaStripeCount * triangularNumberOfTileResolution
-		expect(neededStripeCountToCoverGrid.main()).toBe(expectedStripeCount)
+		expect(neededStripeCountToCoverGrid.default()).toBe(expectedStripeCount)
 	})
 })

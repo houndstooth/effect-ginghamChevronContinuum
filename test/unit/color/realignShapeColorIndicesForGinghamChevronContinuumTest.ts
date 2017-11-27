@@ -10,7 +10,7 @@ describe('realign tile color indices to maintain gingham chevron continuum acros
 	const shapeColorIndices: ShapeColorIndex[] = to.ShapeColorIndices([ 9, 88 ])
 	const gridAddress: Address = to.Address([ 4, 7 ])
 	beforeEach(() => {
-		composeMainHoundstooth.main({
+		composeMainHoundstooth.default({
 			houndstoothEffects: [],
 			houndstoothOverrides: {
 				basePattern: {
@@ -29,8 +29,8 @@ describe('realign tile color indices to maintain gingham chevron continuum acros
 
 	describe('when the index of the first grid stripe crossing this tile is even', () => {
 		it('returns the set for tile as is; all is well', () => {
-			spyOn(indexOfFirstStripeCrossingThisTile, 'main').and.returnValue(2)
-			const actual: ShapeColorIndex[] = realignShapeColorIndicesForGinghamChevronContinuum.main({
+			spyOn(indexOfFirstStripeCrossingThisTile, 'default').and.returnValue(2)
+			const actual: ShapeColorIndex[] = realignShapeColorIndicesForGinghamChevronContinuum.default({
 				gridAddress,
 				shapeColorIndices,
 			})
@@ -40,8 +40,8 @@ describe('realign tile color indices to maintain gingham chevron continuum acros
 
 	describe('when the index of the first grid stripe crossing this tile is odd', () => {
 		it('reverses the set to flip the grain, to realign with previous diagonal row of striped tiles', () => {
-			spyOn(indexOfFirstStripeCrossingThisTile, 'main').and.returnValue(1)
-			const actual: ShapeColorIndex[] = realignShapeColorIndicesForGinghamChevronContinuum.main({
+			spyOn(indexOfFirstStripeCrossingThisTile, 'default').and.returnValue(1)
+			const actual: ShapeColorIndex[] = realignShapeColorIndicesForGinghamChevronContinuum.default({
 				gridAddress,
 				shapeColorIndices,
 			})

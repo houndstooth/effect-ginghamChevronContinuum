@@ -6,7 +6,7 @@ import {
 	TransformShapeColorIndices,
 	TransformShapeColorIndicesParams,
 } from '../../../../src'
-import { main as indexOfFirstStripeCrossingThisTile } from './indexOfFirstStripeCrossingThisTile'
+import indexOfFirstStripeCrossingThisTile from './indexOfFirstStripeCrossingThisTile'
 
 const realignShapeColorIndicesForGinghamChevronContinuum: TransformShapeColorIndices =
 	({ gridAddress, shapeColorIndices }: TransformShapeColorIndicesParams): ShapeColorIndex[] => {
@@ -19,4 +19,4 @@ const realignShapeColorIndicesForGinghamChevronContinuum: TransformShapeColorInd
 		return to.ShapeColorIndices(realignedShapeColorIndices)
 	}
 
-export { realignShapeColorIndicesForGinghamChevronContinuum as main }
+export default realignShapeColorIndicesForGinghamChevronContinuum

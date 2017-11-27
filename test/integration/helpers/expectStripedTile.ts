@@ -6,7 +6,7 @@ const { BLACK, TRANSPARENT } = constants
 
 const expectStripedTile: (_: ExpectStripedTile) => void =
 	({ diagonalAddress, firstColor, stripeCount }: ExpectStripedTile): void => {
-		const areaSize: Unit = getSetting.main('tileSize')
+		const areaSize: Unit = getSetting.default('tileSize')
 
 		codeUtilities.iterator(stripeCount).forEach((stripe: number): void => {
 			expect(sectionCenterIsColor({

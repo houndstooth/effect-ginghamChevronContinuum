@@ -3,10 +3,10 @@ import { neededStripeCountToCoverGrid } from '../grid'
 
 const indexOfFirstStripeCrossingThisTile: (_: { gridAddress: Address }) => number =
 	({ gridAddress }: { gridAddress: Address }): number => {
-		const initialStripeCount: number = getSetting.main('initialStripeCount')
-		const deltaStripeCount: number = getSetting.main('deltaStripeCount')
+		const initialStripeCount: number = getSetting.default('initialStripeCount')
+		const deltaStripeCount: number = getSetting.default('deltaStripeCount')
 
-		for (let stripeIndex: number = 0; stripeIndex < neededStripeCountToCoverGrid.main(); stripeIndex++) {
+		for (let stripeIndex: number = 0; stripeIndex < neededStripeCountToCoverGrid.default(); stripeIndex++) {
 			const stripePosition: number = mathUtilities.termialRoot({
 				n: stripeIndex,
 				rangeDelta: deltaStripeCount,
@@ -21,4 +21,4 @@ const indexOfFirstStripeCrossingThisTile: (_: { gridAddress: Address }) => numbe
 		return 0
 	}
 
-export { indexOfFirstStripeCrossingThisTile as main }
+export default indexOfFirstStripeCrossingThisTile

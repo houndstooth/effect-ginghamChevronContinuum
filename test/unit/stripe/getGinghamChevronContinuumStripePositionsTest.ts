@@ -20,16 +20,16 @@ describe('get gingham chevron continuum stripe positions returns an array of num
 	})
 
 	it('edge case', () => {
-		spyOn(neededStripeCountToCoverGrid, 'main').and.returnValue(0)
+		spyOn(neededStripeCountToCoverGrid, 'default').and.returnValue(0)
 
-		const actual: StripePosition[] = getGinghamChevronContinuumStripePositions.main({ gridAddress: to.Address([ 1, 5 ]) })
+		const actual: StripePosition[] = getGinghamChevronContinuumStripePositions.default({ gridAddress: to.Address([ 1, 5 ]) })
 		expect(actual).toEqual(to.StripePositions([ 0 ]))
 	})
 })
 
 const expectGccStripeCounts: (initial: number, delta: number) => void =
 	(initial: number, delta: number): void => {
-		composeMainHoundstooth.main({
+		composeMainHoundstooth.default({
 			houndstoothEffects: [],
 			houndstoothOverrides: {
 				basePattern: {
@@ -45,16 +45,16 @@ const expectGccStripeCounts: (initial: number, delta: number) => void =
 			},
 		})
 
-		expect(getGinghamChevronContinuumStripePositions.main({
+		expect(getGinghamChevronContinuumStripePositions.default({
 			gridAddress: to.Address([ 0, 0 ]),
 		}).length).toEqual(initial)
-		expect(getGinghamChevronContinuumStripePositions.main({
+		expect(getGinghamChevronContinuumStripePositions.default({
 			gridAddress: to.Address([ 1, 1 ]),
 		}).length).toEqual(initial + delta * 1)
-		expect(getGinghamChevronContinuumStripePositions.main({
+		expect(getGinghamChevronContinuumStripePositions.default({
 			gridAddress: to.Address([ 2, 2 ]),
 		}).length).toEqual(initial + delta * 2)
-		expect(getGinghamChevronContinuumStripePositions.main({
+		expect(getGinghamChevronContinuumStripePositions.default({
 			gridAddress: to.Address([ 3, 3 ]),
 		}).length).toEqual(initial + delta * 3)
 	}

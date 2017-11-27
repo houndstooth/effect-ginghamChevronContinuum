@@ -13,10 +13,10 @@ import { GetStripePositionsParams } from './types'
 
 const getGinghamChevronContinuumStripePositions: GetStripePositions =
 	({ gridAddress }: { gridAddress: Address }): StripePosition[] => {
-		const initialStripeCount: number = getSetting.main('initialStripeCount')
-		const deltaStripeCount: number = getSetting.main('deltaStripeCount')
+		const initialStripeCount: number = getSetting.default('initialStripeCount')
+		const deltaStripeCount: number = getSetting.default('deltaStripeCount')
 
-		const distanceFromHomeAddress: number = getDistanceFromHomeAddress.main({ gridAddress })
+		const distanceFromHomeAddress: number = getDistanceFromHomeAddress.default({ gridAddress })
 
 		return getStripePositions({ initialStripeCount, distanceFromHomeAddress, deltaStripeCount })
 	}
@@ -25,7 +25,7 @@ const getStripePositions: (_: GetStripePositionsParams) => StripePosition[] =
 	({ deltaStripeCount, distanceFromHomeAddress, initialStripeCount }: GetStripePositionsParams): StripePosition[] => {
 		const stripePositions: StripePosition[] = to.StripePositions([ 0 ])
 
-		for (let n: number = 0; n < neededStripeCountToCoverGrid.main(); n++) {
+		for (let n: number = 0; n < neededStripeCountToCoverGrid.default(); n++) {
 			const rawStripePositionValue: number = mathUtilities.termialRoot({
 				n,
 				rangeDelta: deltaStripeCount,
@@ -45,4 +45,4 @@ const getStripePositions: (_: GetStripePositionsParams) => StripePosition[] =
 		return stripePositions
 	}
 
-export { getGinghamChevronContinuumStripePositions as main }
+export default getGinghamChevronContinuumStripePositions
