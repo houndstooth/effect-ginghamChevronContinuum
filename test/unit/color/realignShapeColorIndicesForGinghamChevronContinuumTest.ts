@@ -1,4 +1,4 @@
-import { Address, composeMainHoundstooth, ShapeColorIndex, to } from '../../../../../src'
+import { Address, setSetting, ShapeColorIndex, to } from '../../../../../src'
 // tslint:disable-next-line:max-line-length
 import {
 	indexOfFirstStripeCrossingThisTile,
@@ -10,21 +10,8 @@ describe('realign tile color indices to maintain gingham chevron continuum acros
 	const shapeColorIndices: ShapeColorIndex[] = to.ShapeColorIndices([ 9, 88 ])
 	const gridAddress: Address = to.Address([ 4, 7 ])
 	beforeEach(() => {
-		composeMainHoundstooth.default({
-			houndstoothEffects: [],
-			houndstoothOverrides: {
-				basePattern: {
-					stripeSettings: {
-						stripePositionSettings: {
-							stripeCountContinuumSettings: {
-								deltaStripeCount: 67,
-								initialStripeCount: 400,
-							},
-						},
-					},
-				},
-			},
-		})
+		setSetting.default('deltaStripeCount', 67)
+		setSetting.default('initialStripeCount', 400)
 	})
 
 	describe('when the index of the first grid stripe crossing this tile is even', () => {

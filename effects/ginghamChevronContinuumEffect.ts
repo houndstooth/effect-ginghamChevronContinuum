@@ -24,10 +24,6 @@ const ginghamChevronContinuumEffect: Effect = {
 		stripeSettings: {
 			stripePositionSettings: {
 				getStripePositions: getGinghamChevronContinuumStripePositions.default,
-				stripeCountContinuumSettings: {
-					deltaStripeCount: 1,
-					initialStripeCount: 1,
-				},
 				stripeCountMode: StripeCountMode.GinghamChevronContinuum,
 			},
 		},

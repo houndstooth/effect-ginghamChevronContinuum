@@ -1,6 +1,6 @@
 // tslint:disable:max-line-length
 
-import { composeMainHoundstooth, StripePosition, to } from '../../../../../src'
+import { setSetting, StripePosition, to } from '../../../../../src'
 import { getGinghamChevronContinuumStripePositions, neededStripeCountToCoverGrid } from '../../../pattern'
 
 describe('get gingham chevron continuum stripe positions returns an array of numbers representing the positions of the stripes for a given tile in terms of its perimeter (2 is the max) based on where on the grid it is', () => {
@@ -29,21 +29,8 @@ describe('get gingham chevron continuum stripe positions returns an array of num
 
 const expectGccStripeCounts: (initial: number, delta: number) => void =
 	(initial: number, delta: number): void => {
-		composeMainHoundstooth.default({
-			houndstoothEffects: [],
-			houndstoothOverrides: {
-				basePattern: {
-					stripeSettings: {
-						stripePositionSettings: {
-							stripeCountContinuumSettings: {
-								deltaStripeCount: delta,
-								initialStripeCount: initial,
-							},
-						},
-					},
-				},
-			},
-		})
+		setSetting.default('deltaStripeCount', delta)
+		setSetting.default('initialStripeCount', initial)
 
 		expect(getGinghamChevronContinuumStripePositions.default({
 			gridAddress: to.Address([ 0, 0 ]),

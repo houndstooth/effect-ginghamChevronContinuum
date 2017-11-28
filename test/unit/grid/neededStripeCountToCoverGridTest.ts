@@ -1,4 +1,4 @@
-import { composeMainHoundstooth } from '../../../../../src'
+import { setSetting } from '../../../../../src'
 import { neededStripeCountToCoverGrid } from '../../../pattern'
 
 describe('needed stripe count to cover grid', () => {
@@ -8,24 +8,9 @@ describe('needed stripe count to cover grid', () => {
 		const tileResolution: number = 5
 		const triangularNumberOfTileResolution: number = 1 + 2 + 3 + 4 + 5
 
-		composeMainHoundstooth.default({
-			houndstoothEffects: [],
-			houndstoothOverrides: {
-				basePattern: {
-					gridSettings: {
-						tileResolution,
-					},
-					stripeSettings: {
-						stripePositionSettings: {
-							stripeCountContinuumSettings: {
-								deltaStripeCount,
-								initialStripeCount,
-							},
-						},
-					},
-				},
-			},
-		})
+		setSetting.default('tileResolution', tileResolution)
+		setSetting.default('deltaStripeCount', deltaStripeCount)
+		setSetting.default('initialStripeCount', initialStripeCount)
 
 		const expectedStripeCount: number = initialStripeCount + deltaStripeCount * triangularNumberOfTileResolution
 		expect(neededStripeCountToCoverGrid.default()).toBe(expectedStripeCount)
