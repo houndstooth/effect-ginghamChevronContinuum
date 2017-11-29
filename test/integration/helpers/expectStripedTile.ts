@@ -22,4 +22,4 @@ const expectStripedTile: (_: ExpectStripedTile) => void =
 		})
 	}
 
-export { expectStripedTile }
+export default expectStripedTile

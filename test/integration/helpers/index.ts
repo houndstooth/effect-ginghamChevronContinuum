@@ -1,4 +1,4 @@
-import { expectStripedTile } from './expectStripedTile'
+import expectStripedTile from './expectStripedTile'
 
 export {
 	expectStripedTile,
