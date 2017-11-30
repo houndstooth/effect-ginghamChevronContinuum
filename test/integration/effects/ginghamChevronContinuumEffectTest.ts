@@ -9,7 +9,7 @@ import {
 	to,
 	Unit,
 } from '../../../../../src'
-import { activateTestMarkerCanvas, fakeAnimator, sectionCenterIsColor, thisFrameOnly } from '../../../../../test'
+import { fakeAnimator, sectionCenterIsColor, thisFrameOnly } from '../../../../../test'
 import { ginghamChevronContinuumEffect } from '../../../effects'
 import { expectStripedTile } from '../helpers'
 
@@ -23,7 +23,6 @@ describe('gingham chevron continuum effect', () => {
 	it('each new diagonal row has an extra stripe', async (done: DoneFn) => {
 		const areaSize: Unit = getSetting.default('tileSize')
 		state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
-		activateTestMarkerCanvas()
 
 		executeSelectedHoundstoothEffects.default({
 			houndstoothOverrides: { basePattern: { gridSettings: { tileResolution: 8 } } },
@@ -128,7 +127,6 @@ describe('gingham chevron continuum effect', () => {
 				basePattern: { animationSettings: thisFrameOnly(to.Frame(0)) },
 			}
 			state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
-			activateTestMarkerCanvas()
 			state.animating = true
 
 			executeSelectedHoundstoothEffects.default({ houndstoothOverrides })
@@ -149,7 +147,6 @@ describe('gingham chevron continuum effect', () => {
 				basePattern: { animationSettings: thisFrameOnly(to.Frame(720)) },
 			}
 			state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
-			activateTestMarkerCanvas()
 			state.animating = true
 
 			executeSelectedHoundstoothEffects.default({ houndstoothOverrides })
@@ -170,7 +167,6 @@ describe('gingham chevron continuum effect', () => {
 				basePattern: { animationSettings: thisFrameOnly(to.Frame(1111)) },
 			}
 			state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
-			activateTestMarkerCanvas()
 			state.animating = true
 
 			executeSelectedHoundstoothEffects.default({ houndstoothOverrides })
