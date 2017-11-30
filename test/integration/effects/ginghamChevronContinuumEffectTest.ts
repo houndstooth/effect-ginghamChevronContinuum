@@ -1,5 +1,4 @@
 import {
-	animator,
 	constants,
 	Effect,
 	executeSelectedHoundstoothEffects,
@@ -9,20 +8,19 @@ import {
 	to,
 	Unit,
 } from '../../../../../src'
-import { fakeAnimator, sectionCenterIsColor, thisFrameOnly } from '../../../../../test'
+import { sectionCenterIsColor } from '../../../../../test'
 import { ginghamChevronContinuumEffect } from '../../../effects'
 import { expectStripedTile } from '../helpers'
 
 const { BLACK, TRANSPARENT } = constants
 
 describe('gingham chevron continuum effect', () => {
-	afterEach(() => {
-		state.animating = false
+	beforeEach(() => {
+		state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 	})
 
 	it('each new diagonal row has an extra stripe', async (done: DoneFn) => {
 		const areaSize: Unit = getSetting.default('tileSize')
-		state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
 
 		executeSelectedHoundstoothEffects.default({
 			houndstoothOverrides: { basePattern: { gridSettings: { tileResolution: 8 } } },
@@ -108,7 +106,7 @@ describe('gingham chevron continuum effect', () => {
 	})
 
 	describe('animating', () => {
-		const ginghamChevronContinuumAnimationTestHoundstoothOverrides: Effect = {
+		const houndstoothOverrides: Effect = {
 			basePattern: {
 				gridSettings: { tileResolution: 4 },
 				tileSettings: { tileSize: to.Unit(50) },
@@ -116,18 +114,8 @@ describe('gingham chevron continuum effect', () => {
 			},
 		}
 
-		beforeEach(() => {
-			state.currentFrame = to.Frame(0)
-			spyOn(animator, 'default').and.callFake(fakeAnimator)
-		})
-
 		it('frame 0 looks just like the normal pattern', async (done: DoneFn) => {
-			const houndstoothOverrides: Effect = {
-				...ginghamChevronContinuumAnimationTestHoundstoothOverrides,
-				basePattern: { animationSettings: thisFrameOnly(to.Frame(0)) },
-			}
-			state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
-			state.animating = true
+			state.currentFrame = to.Frame(0)
 
 			executeSelectedHoundstoothEffects.default({ houndstoothOverrides })
 
@@ -142,12 +130,7 @@ describe('gingham chevron continuum effect', () => {
 		})
 
 		it('around frame 720 each tile has twice its original stripe count', async (done: DoneFn) => {
-			const houndstoothOverrides: Effect = {
-				...ginghamChevronContinuumAnimationTestHoundstoothOverrides,
-				basePattern: { animationSettings: thisFrameOnly(to.Frame(720)) },
-			}
-			state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
-			state.animating = true
+			state.currentFrame = to.Frame(720)
 
 			executeSelectedHoundstoothEffects.default({ houndstoothOverrides })
 
@@ -162,12 +145,7 @@ describe('gingham chevron continuum effect', () => {
 		})
 
 		it('around frame 1111 each tile has thrice its original stripe count', async (done: DoneFn) => {
-			const houndstoothOverrides: Effect = {
-				...ginghamChevronContinuumAnimationTestHoundstoothOverrides,
-				basePattern: { animationSettings: thisFrameOnly(to.Frame(1111)) },
-			}
-			state.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
-			state.animating = true
+			state.currentFrame = to.Frame(1111)
 
 			executeSelectedHoundstoothEffects.default({ houndstoothOverrides })
 
