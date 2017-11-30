@@ -1,4 +1,4 @@
-import { Color, ConditionFunction, NullaryVoidPromise } from '../../../../../src'
+import { Color } from '../../../../../src'
 
 interface ExpectStripedTile {
 	diagonalAddress: number,
@@ -6,12 +6,6 @@ interface ExpectStripedTile {
 	stripeCount: number
 }
 
-interface FakeAnimatorParams {
-	animationFunction: NullaryVoidPromise,
-	stopConditionFunction: ConditionFunction
-}
-
 export {
 	ExpectStripedTile,
-	FakeAnimatorParams,
 }
