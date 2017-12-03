@@ -1,10 +1,10 @@
-import { Effect, standardAnimation, StripeCountMode } from '../../../src'
+import { NamedEffect, standardAnimation, StripeCountMode } from '../../../src'
 import {
 	getGinghamChevronContinuumStripePositions,
 	realignShapeColorIndicesForGinghamChevronContinuum,
 } from '../pattern'
 
-const ginghamChevronContinuumEffect: Effect = {
+const ginghamChevronContinuumEffect: NamedEffect = {
 	animationsPattern: {
 		stripeSettings: {
 			stripePositionSettings: {
