@@ -110,7 +110,6 @@ describe('gingham chevron continuum effect', () => {
 			basePattern: {
 				gridSettings: { tileResolution: 4 },
 				tileSettings: { tileSize: to.Unit(50) },
-				viewSettings: { canvasSize: to.Px(200) },
 			},
 		}
 
