@@ -1,6 +1,8 @@
 import { setPatternStateForTest } from '../../../../../test'
 import { neededStripeCountToCoverGrid } from '../../../pattern'
 
+const subject: () => number = neededStripeCountToCoverGrid.default
+
 describe('needed stripe count to cover grid', () => {
 	it('makes sure just enough gcc stripes are calculated to make it across the grid', () => {
 		const initialStripeCount: number = 400
@@ -13,6 +15,6 @@ describe('needed stripe count to cover grid', () => {
 		setPatternStateForTest('initialStripeCount', initialStripeCount)
 
 		const expectedStripeCount: number = initialStripeCount + deltaStripeCount * triangularNumberOfTileResolution
-		expect(neededStripeCountToCoverGrid.default()).toBe(expectedStripeCount)
+		expect(subject()).toBe(expectedStripeCount)
 	})
 })
