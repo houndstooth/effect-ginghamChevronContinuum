@@ -1,10 +1,10 @@
-import { Address, constants, from, getSetting, mathUtilities } from '../../../../src'
+import { Address, constants, from, mathUtilities, patternState } from '../../../../src'
 import { neededStripeCountToCoverGrid } from '../grid'
 
 const indexOfFirstStripeCrossingThisTile: (_: { gridAddress: Address }) => number =
 	({ gridAddress }: { gridAddress: Address }): number => {
-		const initialStripeCount: number = getSetting.default('initialStripeCount')
-		const deltaStripeCount: number = getSetting.default('deltaStripeCount')
+		const initialStripeCount: number = patternState.get('initialStripeCount')
+		const deltaStripeCount: number = patternState.get('deltaStripeCount')
 
 		for (let stripeIndex: number = 0; stripeIndex < neededStripeCountToCoverGrid.default(); stripeIndex++) {
 			const stripePosition: number = mathUtilities.termialRoot({

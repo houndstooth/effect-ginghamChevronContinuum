@@ -4,7 +4,7 @@ import {
 	Effect,
 	executeSelectedHoundstoothEffects,
 	from,
-	getSetting,
+	patternState,
 	to,
 	Unit,
 } from '../../../../../src'
@@ -20,7 +20,7 @@ describe('gingham chevron continuum effect', () => {
 	})
 
 	it('each new diagonal row has an extra stripe', async (done: DoneFn) => {
-		const areaSize: Unit = getSetting.default('tileSize')
+		const areaSize: Unit = patternState.get('tileSize')
 
 		executeSelectedHoundstoothEffects.default({
 			houndstoothOverrides: { basePattern: { gridSettings: { tileResolution: 8 } } },

@@ -2,9 +2,9 @@ import {
 	Address,
 	constants,
 	from,
-	getSetting,
 	GetStripePositions,
 	mathUtilities,
+	patternState,
 	StripePosition,
 	to,
 } from '../../../../src'
@@ -13,8 +13,8 @@ import { GetStripePositionsParams } from './types'
 
 const getGinghamChevronContinuumStripePositions: GetStripePositions =
 	({ gridAddress }: { gridAddress: Address }): StripePosition[] => {
-		const initialStripeCount: number = getSetting.default('initialStripeCount')
-		const deltaStripeCount: number = getSetting.default('deltaStripeCount')
+		const initialStripeCount: number = patternState.get('initialStripeCount')
+		const deltaStripeCount: number = patternState.get('deltaStripeCount')
 
 		const distanceFromHomeAddress: number = getDistanceFromHomeAddress.default({ gridAddress })
 

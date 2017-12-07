@@ -1,4 +1,4 @@
-import { codeUtilities, constants, from, getSetting, to, Unit } from '../../../../../src'
+import { codeUtilities, constants, from, patternState, to, Unit } from '../../../../../src'
 import { sectionCenterIsColor } from '../../../../../test'
 import { ExpectStripedTile } from './types'
 
@@ -6,7 +6,7 @@ const { BLACK, TRANSPARENT } = constants
 
 const expectStripedTile: (_: ExpectStripedTile) => void =
 	({ diagonalAddress, firstColor, stripeCount }: ExpectStripedTile): void => {
-		const areaSize: Unit = getSetting.default('tileSize')
+		const areaSize: Unit = patternState.get('tileSize')
 
 		codeUtilities.iterator(stripeCount).forEach((stripe: number): void => {
 			expect(sectionCenterIsColor({

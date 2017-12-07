@@ -1,10 +1,10 @@
-import { getSetting, mathUtilities } from '../../../../src'
+import { mathUtilities, patternState } from '../../../../src'
 
 const neededStripeCountToCoverGrid: () => number =
 	(): number => {
-		const initialStripeCount: number = getSetting.default('initialStripeCount')
-		const deltaStripeCount: number = getSetting.default('deltaStripeCount')
-		const tileResolution: number = getSetting.default('tileResolution')
+		const initialStripeCount: number = patternState.get('initialStripeCount')
+		const deltaStripeCount: number = patternState.get('deltaStripeCount')
+		const tileResolution: number = patternState.get('tileResolution')
 
 		return initialStripeCount + deltaStripeCount * mathUtilities.triangularNumber(tileResolution)
 	}
