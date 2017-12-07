@@ -2,7 +2,7 @@ import {
 	appState,
 	constants,
 	Effect,
-	executeSelectedHoundstoothEffects,
+	executeSelectedEffects,
 	from,
 	patternState,
 	to,
@@ -16,14 +16,14 @@ const { BLACK, TRANSPARENT } = constants
 
 describe('gingham chevron continuum effect', () => {
 	beforeEach(() => {
-		appState.controls.selectedHoundstoothEffects = [ ginghamChevronContinuumEffect ]
+		appState.controls.selectedEffects = [ ginghamChevronContinuumEffect ]
 	})
 
 	it('each new diagonal row has an extra stripe', async (done: DoneFn) => {
 		const areaSize: Unit = patternState.get('tileSize')
 
-		executeSelectedHoundstoothEffects.default({
-			houndstoothOverrides: { basePattern: { gridSettings: { tileResolution: 8 } } },
+		executeSelectedEffects.default({
+			overrides: { basePattern: { gridSettings: { tileResolution: 8 } } },
 		})
 
 		setTimeout(() => {
@@ -106,7 +106,7 @@ describe('gingham chevron continuum effect', () => {
 	})
 
 	describe('animating', () => {
-		const houndstoothOverrides: Effect = {
+		const overrides: Effect = {
 			basePattern: {
 				gridSettings: { tileResolution: 4 },
 				tileSettings: { tileSize: to.Unit(50) },
@@ -116,7 +116,7 @@ describe('gingham chevron continuum effect', () => {
 		it('frame 0 looks just like the normal pattern', async (done: DoneFn) => {
 			appState.controls.currentFrame = to.Frame(0)
 
-			executeSelectedHoundstoothEffects.default({ houndstoothOverrides })
+			executeSelectedEffects.default({ overrides })
 
 			setTimeout(() => {
 				expectStripedTile({ diagonalAddress: 0, stripeCount: 1, firstColor: BLACK })
@@ -131,7 +131,7 @@ describe('gingham chevron continuum effect', () => {
 		it('around frame 720 each tile has twice its original stripe count', async (done: DoneFn) => {
 			appState.controls.currentFrame = to.Frame(720)
 
-			executeSelectedHoundstoothEffects.default({ houndstoothOverrides })
+			executeSelectedEffects.default({ overrides })
 
 			setTimeout(() => {
 				expectStripedTile({ diagonalAddress: 0, stripeCount: 2, firstColor: BLACK })
@@ -146,7 +146,7 @@ describe('gingham chevron continuum effect', () => {
 		it('around frame 1111 each tile has thrice its original stripe count', async (done: DoneFn) => {
 			appState.controls.currentFrame = to.Frame(1111)
 
-			executeSelectedHoundstoothEffects.default({ houndstoothOverrides })
+			executeSelectedEffects.default({ overrides })
 
 			setTimeout(() => {
 				expectStripedTile({ diagonalAddress: 0, stripeCount: 3, firstColor: BLACK })
