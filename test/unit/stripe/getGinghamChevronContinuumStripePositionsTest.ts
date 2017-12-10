@@ -1,7 +1,7 @@
 // tslint:disable:max-line-length
 
 import { GetStripePositions, StripePosition, to } from '../../../../../src'
-import { setPatternStateForTest } from '../../../../../test'
+import { setPatternSettingForTest } from '../../../../../test'
 import { getGinghamChevronContinuumStripePositions, neededStripeCountToCoverGrid } from '../../../pattern'
 
 const subject: GetStripePositions = getGinghamChevronContinuumStripePositions.default
@@ -32,8 +32,8 @@ describe('get gingham chevron continuum stripe positions returns an array of num
 
 const expectGccStripeCounts: (initial: number, delta: number) => void =
 	(initial: number, delta: number): void => {
-		setPatternStateForTest('deltaStripeCount', delta)
-		setPatternStateForTest('initialStripeCount', initial)
+		setPatternSettingForTest('deltaStripeCount', delta)
+		setPatternSettingForTest('initialStripeCount', initial)
 
 		expect(subject({
 			gridAddress: to.Address([ 0, 0 ]),
