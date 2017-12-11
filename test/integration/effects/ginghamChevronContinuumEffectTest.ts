@@ -7,10 +7,9 @@ import {
 	to,
 	Unit,
 } from '../../../../../src/indexForTest'
-import { sectionCenterIsColor } from '../../../../../test'
+import { sectionCenterIsColor, setAppStateForEffectTests } from '../../../../../test'
 import { ginghamChevronContinuumEffect } from '../../../effects'
 import { expectStripedTile } from '../helpers'
-import { setAppStateForEffectTests } from '../../../../../test'
 
 const { BLACK, TRANSPARENT } = constants
 
