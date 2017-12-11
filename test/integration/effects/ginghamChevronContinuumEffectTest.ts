@@ -1,5 +1,4 @@
 import {
-	appState,
 	constants,
 	Effect,
 	executeSelectedEffects,
@@ -11,12 +10,13 @@ import {
 import { sectionCenterIsColor } from '../../../../../test'
 import { ginghamChevronContinuumEffect } from '../../../effects'
 import { expectStripedTile } from '../helpers'
+import { setAppStateForEffectTests } from '../../../../../test'
 
 const { BLACK, TRANSPARENT } = constants
 
 describe('gingham chevron continuum effect', () => {
 	beforeEach(() => {
-		appState.controls.selectedEffects = [ ginghamChevronContinuumEffect ]
+		setAppStateForEffectTests.setSelectedEffects([ ginghamChevronContinuumEffect ])
 	})
 
 	it('each new diagonal row has an extra stripe', async (done: DoneFn) => {
@@ -114,7 +114,7 @@ describe('gingham chevron continuum effect', () => {
 		}
 
 		it('frame 0 looks just like the normal pattern', async (done: DoneFn) => {
-			appState.controls.currentFrame = to.Frame(0)
+			setAppStateForEffectTests.setCurrentFrame(to.Frame(0))
 
 			executeSelectedEffects.default({ overrides })
 
@@ -129,7 +129,7 @@ describe('gingham chevron continuum effect', () => {
 		})
 
 		it('around frame 720 each tile has twice its original stripe count', async (done: DoneFn) => {
-			appState.controls.currentFrame = to.Frame(720)
+			setAppStateForEffectTests.setCurrentFrame(to.Frame(720))
 
 			executeSelectedEffects.default({ overrides })
 
@@ -144,7 +144,7 @@ describe('gingham chevron continuum effect', () => {
 		})
 
 		it('around frame 1111 each tile has thrice its original stripe count', async (done: DoneFn) => {
-			appState.controls.currentFrame = to.Frame(1111)
+			setAppStateForEffectTests.setCurrentFrame(to.Frame(1111))
 
 			executeSelectedEffects.default({ overrides })
 
