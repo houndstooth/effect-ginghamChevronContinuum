@@ -7,7 +7,7 @@ import {
 	patternState,
 	to,
 	Unit,
-} from '../../../../../src'
+} from '../../../../../src/indexForTest'
 import { sectionCenterIsColor } from '../../../../../test'
 import { ginghamChevronContinuumEffect } from '../../../effects'
 import { expectStripedTile } from '../helpers'

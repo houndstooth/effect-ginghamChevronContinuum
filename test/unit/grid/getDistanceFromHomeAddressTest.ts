@@ -1,4 +1,4 @@
-import { Address, to } from '../../../../../src'
+import { Address, to } from '../../../../../src/indexForTest'
 import { getDistanceFromHomeAddress } from '../../../pattern'
 
 const subject: (_: { gridAddress: Address }) => number = getDistanceFromHomeAddress.default

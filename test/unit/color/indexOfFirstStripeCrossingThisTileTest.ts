@@ -1,4 +1,4 @@
-import { Address, to } from '../../../../../src'
+import { Address, to } from '../../../../../src/indexForTest'
 import { setPatternSettingForTest } from '../../../../../test'
 import { indexOfFirstStripeCrossingThisTile, neededStripeCountToCoverGrid } from '../../../pattern'
 

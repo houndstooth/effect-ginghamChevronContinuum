@@ -1,6 +1,6 @@
 // tslint:disable:max-line-length
 
-import { GetStripePositions, StripePosition, to } from '../../../../../src'
+import { GetStripePositions, StripePosition, to } from '../../../../../src/indexForTest'
 import { setPatternSettingForTest } from '../../../../../test'
 import { getGinghamChevronContinuumStripePositions, neededStripeCountToCoverGrid } from '../../../pattern'
 

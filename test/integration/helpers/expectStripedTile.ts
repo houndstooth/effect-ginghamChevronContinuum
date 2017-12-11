@@ -1,4 +1,4 @@
-import { codeUtilities, constants, from, patternState, to, Unit } from '../../../../../src'
+import { codeUtilities, constants, from, patternState, to, Unit } from '../../../../../src/indexForTest'
 import { sectionCenterIsColor } from '../../../../../test'
 import { ExpectStripedTile } from './types'
 

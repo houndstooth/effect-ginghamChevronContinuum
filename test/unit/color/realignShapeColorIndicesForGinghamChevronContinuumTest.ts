@@ -1,4 +1,4 @@
-import { Address, ShapeColorIndex, to, TransformShapeColorIndices } from '../../../../../src'
+import { Address, ShapeColorIndex, to, TransformShapeColorIndices } from '../../../../../src/indexForTest'
 import { setPatternSettingForTest } from '../../../../../test'
 // tslint:disable-next-line:max-line-length
 import {
