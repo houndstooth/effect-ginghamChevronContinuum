@@ -1,4 +1,4 @@
-import { setPatternSettingForTest } from '../../../../../test'
+import { patternState } from '../../../../../src/pattern/patternState'
 import { neededStripeCountToCoverGrid } from '../../../pattern'
 
 const subject: () => number = neededStripeCountToCoverGrid.default
@@ -10,9 +10,11 @@ describe('needed stripe count to cover grid', () => {
 		const tileResolution: number = 5
 		const triangularNumberOfTileResolution: number = 1 + 2 + 3 + 4 + 5
 
-		setPatternSettingForTest('tileResolution', tileResolution)
-		setPatternSettingForTest('deltaStripeCount', deltaStripeCount)
-		setPatternSettingForTest('initialStripeCount', initialStripeCount)
+		patternState.gridSettings.tileResolution = tileResolution
+		patternState.stripeSettings.stripePositionSettings.stripeCountContinuumSettings = {
+			deltaStripeCount,
+			initialStripeCount,
+		}
 
 		const expectedStripeCount: number = initialStripeCount + deltaStripeCount * triangularNumberOfTileResolution
 		expect(subject()).toBe(expectedStripeCount)

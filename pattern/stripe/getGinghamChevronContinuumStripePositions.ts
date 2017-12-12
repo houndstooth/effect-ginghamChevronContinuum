@@ -1,3 +1,5 @@
+// tslint:disable:max-line-length
+
 import {
 	Address,
 	constants,
@@ -13,8 +15,8 @@ import { GetStripePositionsParams } from './types'
 
 const getGinghamChevronContinuumStripePositions: GetStripePositions =
 	({ gridAddress }: { gridAddress: Address }): StripePosition[] => {
-		const initialStripeCount: number = patternState.get('initialStripeCount')
-		const deltaStripeCount: number = patternState.get('deltaStripeCount')
+		const initialStripeCount: number = patternState.stripeSettings.stripePositionSettings.stripeCountContinuumSettings.initialStripeCount
+		const deltaStripeCount: number = patternState.stripeSettings.stripePositionSettings.stripeCountContinuumSettings.deltaStripeCount
 
 		const distanceFromHomeAddress: number = getDistanceFromHomeAddress.default({ gridAddress })
 

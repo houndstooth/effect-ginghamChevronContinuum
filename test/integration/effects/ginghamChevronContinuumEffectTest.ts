@@ -19,7 +19,7 @@ describe('gingham chevron continuum effect', () => {
 	})
 
 	it('each new diagonal row has an extra stripe', async (done: DoneFn) => {
-		const areaSize: Unit = patternState.get('tileSize')
+		const areaSize: Unit = patternState.tileSettings.tileSize
 
 		executeSelectedEffects.default({
 			overrides: { basePattern: { gridSettings: { tileResolution: 8 } } },

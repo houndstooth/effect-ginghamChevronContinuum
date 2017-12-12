@@ -1,5 +1,4 @@
-import { Address, ShapeColorIndex, to, TransformShapeColorIndices } from '../../../../../src/indexForTest'
-import { setPatternSettingForTest } from '../../../../../test'
+import { Address, patternState, ShapeColorIndex, to, TransformShapeColorIndices } from '../../../../../src/indexForTest'
 // tslint:disable-next-line:max-line-length
 import {
 	indexOfFirstStripeCrossingThisTile,
@@ -13,8 +12,10 @@ describe('realign tile color indices to maintain gingham chevron continuum acros
 	const shapeColorIndices: ShapeColorIndex[] = to.ShapeColorIndices([ 9, 88 ])
 	const gridAddress: Address = to.Address([ 4, 7 ])
 	beforeEach(() => {
-		setPatternSettingForTest('deltaStripeCount', 67)
-		setPatternSettingForTest('initialStripeCount', 400)
+		patternState.stripeSettings.stripePositionSettings.stripeCountContinuumSettings = {
+			deltaStripeCount: 67,
+			initialStripeCount: 400,
+		}
 	})
 
 	describe('when the index of the first grid stripe crossing this tile is even', () => {

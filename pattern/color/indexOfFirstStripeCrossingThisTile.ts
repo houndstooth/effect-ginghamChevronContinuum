@@ -1,10 +1,12 @@
+// tslint:disable:max-line-length
+
 import { Address, constants, from, mathUtilities, patternState } from '../../../../src'
 import { neededStripeCountToCoverGrid } from '../grid'
 
 const indexOfFirstStripeCrossingThisTile: (_: { gridAddress: Address }) => number =
 	({ gridAddress }: { gridAddress: Address }): number => {
-		const initialStripeCount: number = patternState.get('initialStripeCount')
-		const deltaStripeCount: number = patternState.get('deltaStripeCount')
+		const initialStripeCount: number = patternState.stripeSettings.stripePositionSettings.stripeCountContinuumSettings.initialStripeCount
+		const deltaStripeCount: number = patternState.stripeSettings.stripePositionSettings.stripeCountContinuumSettings.deltaStripeCount
 
 		for (let stripeIndex: number = 0; stripeIndex < neededStripeCountToCoverGrid.default(); stripeIndex++) {
 			const stripePosition: number = mathUtilities.termialRoot({
