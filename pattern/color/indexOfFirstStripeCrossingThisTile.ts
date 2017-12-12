@@ -1,6 +1,6 @@
 // tslint:disable:max-line-length
 
-import { Address, constants, from, mathUtilities, patternState } from '../../../../src'
+import { Address, from, mathUtilities, patternState, PERIMETER_SCALAR } from '../../../../src'
 import { neededStripeCountToCoverGrid } from '../grid'
 
 const indexOfFirstStripeCrossingThisTile: (_: { gridAddress: Address }) => number =
@@ -13,7 +13,7 @@ const indexOfFirstStripeCrossingThisTile: (_: { gridAddress: Address }) => numbe
 				n: stripeIndex,
 				rangeDelta: deltaStripeCount,
 				rangeStart: initialStripeCount,
-			}) * from.StripePosition(constants.PERIMETER_SCALAR)
+			}) * from.StripePosition(PERIMETER_SCALAR)
 			const [ x, y ]: number[] = from.Address(gridAddress)
 			if (stripePosition > x + y) {
 				return stripeIndex

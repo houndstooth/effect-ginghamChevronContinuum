@@ -1,17 +1,16 @@
 import {
-	constants,
+	BLACK,
 	Effect,
 	executeSelectedEffects,
 	from,
 	patternState,
 	to,
+	TRANSPARENT,
 	Unit,
 } from '../../../../../src/indexForTest'
 import { sectionCenterIsColor, setAppStateForEffectTests } from '../../../../../test'
 import { ginghamChevronContinuumEffect } from '../../../effects'
 import { expectStripedTile } from '../helpers'
-
-const { BLACK, TRANSPARENT } = constants
 
 describe('gingham chevron continuum effect', () => {
 	beforeEach(() => {

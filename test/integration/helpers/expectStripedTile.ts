@@ -1,8 +1,6 @@
-import { codeUtilities, constants, from, patternState, to, Unit } from '../../../../../src/indexForTest'
+import { BLACK, codeUtilities, from, patternState, to, TRANSPARENT, Unit } from '../../../../../src/indexForTest'
 import { sectionCenterIsColor } from '../../../../../test'
 import { ExpectStripedTile } from './types'
-
-const { BLACK, TRANSPARENT } = constants
 
 const expectStripedTile: (_: ExpectStripedTile) => void =
 	({ diagonalAddress, firstColor, stripeCount }: ExpectStripedTile): void => {

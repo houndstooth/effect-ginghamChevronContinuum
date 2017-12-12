@@ -2,11 +2,11 @@
 
 import {
 	Address,
-	constants,
 	from,
 	GetStripePositions,
 	mathUtilities,
 	patternState,
+	PERIMETER_SCALAR,
 	StripePosition,
 	to,
 } from '../../../../src'
@@ -32,14 +32,14 @@ const getStripePositions: (_: GetStripePositionsParams) => StripePosition[] =
 				n,
 				rangeDelta: deltaStripeCount,
 				rangeStart: initialStripeCount,
-			}) * from.StripePosition(constants.PERIMETER_SCALAR)
+			}) * from.StripePosition(PERIMETER_SCALAR)
 
-			if (rawStripePositionValue >= distanceFromHomeAddress + from.StripePosition(constants.PERIMETER_SCALAR)) {
+			if (rawStripePositionValue >= distanceFromHomeAddress + from.StripePosition(PERIMETER_SCALAR)) {
 				return stripePositions
 			}
 			if (rawStripePositionValue > distanceFromHomeAddress) {
 				const positionWithinTile: number = rawStripePositionValue - distanceFromHomeAddress
-				const stripePositionValue: number = positionWithinTile % from.StripePosition(constants.PERIMETER_SCALAR)
+				const stripePositionValue: number = positionWithinTile % from.StripePosition(PERIMETER_SCALAR)
 				stripePositions.push(to.StripePosition(stripePositionValue))
 			}
 		}
