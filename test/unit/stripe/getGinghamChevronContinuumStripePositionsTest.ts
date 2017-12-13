@@ -24,7 +24,7 @@ describe('get gingham chevron continuum stripe positions returns an array of num
 	it('edge case', () => {
 		spyOn(neededStripeCountToCoverGrid, 'default').and.returnValue(0)
 
-		const actual: StripePosition[] = subject({ gridAddress: to.Address([ 1, 5 ]) })
+		const actual: StripePosition[] = subject({ address: to.Address([ 1, 5 ]) })
 		expect(actual).toEqual(to.StripePositions([ 0 ]))
 	})
 })
@@ -37,15 +37,15 @@ const expectGccStripeCounts: (_: number, __: number) => void =
 		}
 
 		expect(subject({
-			gridAddress: to.Address([ 0, 0 ]),
+			address: to.Address([ 0, 0 ]),
 		}).length).toEqual(initialStripeCount)
 		expect(subject({
-			gridAddress: to.Address([ 1, 1 ]),
+			address: to.Address([ 1, 1 ]),
 		}).length).toEqual(initialStripeCount + deltaStripeCount * 1)
 		expect(subject({
-			gridAddress: to.Address([ 2, 2 ]),
+			address: to.Address([ 2, 2 ]),
 		}).length).toEqual(initialStripeCount + deltaStripeCount * 2)
 		expect(subject({
-			gridAddress: to.Address([ 3, 3 ]),
+			address: to.Address([ 3, 3 ]),
 		}).length).toEqual(initialStripeCount + deltaStripeCount * 3)
 	}

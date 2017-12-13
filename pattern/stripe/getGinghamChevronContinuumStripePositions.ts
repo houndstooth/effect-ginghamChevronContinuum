@@ -14,11 +14,11 @@ import { getDistanceFromHomeAddress, neededStripeCountToCoverGrid } from '../gri
 import { GetStripePositionsParams } from './types'
 
 const getGinghamChevronContinuumStripePositions: GetStripePositions =
-	({ gridAddress }: { gridAddress: Address }): StripePosition[] => {
+	({ address }: { address: Address }): StripePosition[] => {
 		const initialStripeCount: number = patternState.stripeSettings.stripePositionSettings.stripeCountContinuumSettings.initialStripeCount
 		const deltaStripeCount: number = patternState.stripeSettings.stripePositionSettings.stripeCountContinuumSettings.deltaStripeCount
 
-		const distanceFromHomeAddress: number = getDistanceFromHomeAddress.default({ gridAddress })
+		const distanceFromHomeAddress: number = getDistanceFromHomeAddress.default({ address })
 
 		return getStripePositions({ initialStripeCount, distanceFromHomeAddress, deltaStripeCount })
 	}

@@ -3,8 +3,8 @@
 import { Address, from, mathUtilities, patternState, PERIMETER_SCALAR } from '../../../../src'
 import { neededStripeCountToCoverGrid } from '../grid'
 
-const indexOfFirstStripeCrossingThisTile: (_: { gridAddress: Address }) => number =
-	({ gridAddress }: { gridAddress: Address }): number => {
+const indexOfFirstStripeCrossingThisTile: (_: { address: Address }) => number =
+	({ address }: { address: Address }): number => {
 		const initialStripeCount: number = patternState.stripeSettings.stripePositionSettings.stripeCountContinuumSettings.initialStripeCount
 		const deltaStripeCount: number = patternState.stripeSettings.stripePositionSettings.stripeCountContinuumSettings.deltaStripeCount
 
@@ -14,7 +14,7 @@ const indexOfFirstStripeCrossingThisTile: (_: { gridAddress: Address }) => numbe
 				rangeDelta: deltaStripeCount,
 				rangeStart: initialStripeCount,
 			}) * from.StripePosition(PERIMETER_SCALAR)
-			const [ x, y ]: number[] = from.Address(gridAddress)
+			const [ x, y ]: number[] = from.Address(address)
 			if (stripePosition > x + y) {
 				return stripeIndex
 			}

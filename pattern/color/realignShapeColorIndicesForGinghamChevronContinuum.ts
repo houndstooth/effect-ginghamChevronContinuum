@@ -9,8 +9,8 @@ import {
 import indexOfFirstStripeCrossingThisTile from './indexOfFirstStripeCrossingThisTile'
 
 const realignShapeColorIndicesForGinghamChevronContinuum: TransformShapeColorIndices =
-	({ gridAddress, shapeColorIndices }: TransformShapeColorIndicesParams): ShapeColorIndex[] => {
-		const stripeIndex: number = indexOfFirstStripeCrossingThisTile({ gridAddress })
+	({ address, shapeColorIndices }: TransformShapeColorIndicesParams): ShapeColorIndex[] => {
+		const stripeIndex: number = indexOfFirstStripeCrossingThisTile({ address })
 
 		const realignedShapeColorIndices: ShapeColorIndex[] = mathUtilities.isOdd(stripeIndex)
 			? codeUtilities.reversed(shapeColorIndices)
