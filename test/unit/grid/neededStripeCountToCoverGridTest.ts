@@ -1,10 +1,9 @@
 import { patternState } from '../../../../../src/pattern/patternState'
 import { neededStripeCountToCoverGrid } from '../../../pattern'
 
-const subject: () => number = neededStripeCountToCoverGrid.default
-
 describe('needed stripe count to cover grid', () => {
 	it('makes sure just enough gcc stripes are calculated to make it across the grid', () => {
+		const subject: () => number = neededStripeCountToCoverGrid.default
 		const initialStripeCount: number = 400
 		const deltaStripeCount: number = 67
 		const tileResolution: number = 5

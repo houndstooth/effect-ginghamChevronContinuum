@@ -1,9 +1,12 @@
 import { Address, patternState, to } from '../../../../../src/indexForTest'
 import { indexOfFirstStripeCrossingThisTile, neededStripeCountToCoverGrid } from '../../../pattern'
 
-const subject: (_: { address: Address }) => number = indexOfFirstStripeCrossingThisTile.default
-
 describe('index of first grid stripe crossing this tile', () => {
+	let subject: (_: { address: Address }) => number
+	beforeEach(() => {
+		subject = indexOfFirstStripeCrossingThisTile.default
+	})
+
 	it('an example', () => {
 		patternState.stripeSettings.stripePositionSettings.stripeCountContinuumSettings = {
 			deltaStripeCount: 1,

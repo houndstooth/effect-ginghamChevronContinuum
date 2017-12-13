@@ -3,22 +3,25 @@
 import { GetStripePositions, patternState, StripePosition, to } from '../../../../../src/indexForTest'
 import { getGinghamChevronContinuumStripePositions, neededStripeCountToCoverGrid } from '../../../pattern'
 
-const subject: GetStripePositions = getGinghamChevronContinuumStripePositions.default
-
 describe('get gingham chevron continuum stripe positions returns an array of numbers representing the positions of the stripes for a given tile in terms of its perimeter (2 is the max) based on where on the grid it is', () => {
+	let subject: GetStripePositions
+	beforeEach(() => {
+		subject = getGinghamChevronContinuumStripePositions.default
+	})
+
 	it('expecting this units ability to start the stripe count at the right amount and grow it by the right amount each diagonal', () => {
-		expectGccStripeCounts(4, 2)
-		expectGccStripeCounts(4, 3)
-		expectGccStripeCounts(3, 2)
-		// If the delta is more than twice the initial, it breaks a bit: expectGccStripeCounts(1, 3)
-		// If the delta is more than twice the initial, it breaks a bit: expectGccStripeCounts(2, 5)
-		expectGccStripeCounts(5, 3)
-		expectGccStripeCounts(3, 3)
-		expectGccStripeCounts(2, 1)
-		expectGccStripeCounts(3, 1)
-		expectGccStripeCounts(1, 1)
-		expectGccStripeCounts(2, 3)
-		expectGccStripeCounts(1, 2)
+		expectGccStripeCounts(4, 2, subject)
+		expectGccStripeCounts(4, 3, subject)
+		expectGccStripeCounts(3, 2, subject)
+		// If the delta is more than twice the initial, it breaks a bit: expectGccStripeCounts(1, 3, subject)
+		// If the delta is more than twice the initial, it breaks a bit: expectGccStripeCounts(2, 5, subject)
+		expectGccStripeCounts(5, 3, subject)
+		expectGccStripeCounts(3, 3, subject)
+		expectGccStripeCounts(2, 1, subject)
+		expectGccStripeCounts(3, 1, subject)
+		expectGccStripeCounts(1, 1, subject)
+		expectGccStripeCounts(2, 3, subject)
+		expectGccStripeCounts(1, 2, subject)
 	})
 
 	it('edge case', () => {
@@ -29,8 +32,8 @@ describe('get gingham chevron continuum stripe positions returns an array of num
 	})
 })
 
-const expectGccStripeCounts: (_: number, __: number) => void =
-	(initialStripeCount: number, deltaStripeCount: number): void => {
+const expectGccStripeCounts: (_: number, __: number, ___: GetStripePositions) => void =
+	(initialStripeCount: number, deltaStripeCount: number, subject: GetStripePositions): void => {
 		patternState.stripeSettings.stripePositionSettings.stripeCountContinuumSettings = {
 			deltaStripeCount,
 			initialStripeCount,

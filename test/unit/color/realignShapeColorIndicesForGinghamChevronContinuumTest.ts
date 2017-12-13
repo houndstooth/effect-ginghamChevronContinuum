@@ -5,13 +5,14 @@ import {
 	realignShapeColorIndicesForGinghamChevronContinuum,
 } from '../../../pattern'
 
-const subject: TransformShapeColorIndices = realignShapeColorIndicesForGinghamChevronContinuum.default
-
 // tslint:disable-next-line:max-line-length
 describe('realign tile color indices to maintain gingham chevron continuum across grid, because the information about alternation of the colorSet has been lost from individual tiles, we have to check the modulus of the overall grid stripes instead', () => {
 	const shapeColorIndices: ShapeColorIndex[] = to.ShapeColorIndices([ 9, 88 ])
 	const address: Address = to.Address([ 4, 7 ])
+	let subject: TransformShapeColorIndices
 	beforeEach(() => {
+		subject = realignShapeColorIndicesForGinghamChevronContinuum.default
+
 		patternState.stripeSettings.stripePositionSettings.stripeCountContinuumSettings = {
 			deltaStripeCount: 67,
 			initialStripeCount: 400,

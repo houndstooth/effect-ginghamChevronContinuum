@@ -1,9 +1,12 @@
 import { Address, to } from '../../../../../src/indexForTest'
 import { getDistanceFromHomeAddress } from '../../../pattern'
 
-const subject: (_: { address: Address }) => number = getDistanceFromHomeAddress.default
-
 describe('get distance from home address', () => {
+	let subject: (_: { address: Address }) => number
+	beforeEach(() => {
+		subject = getDistanceFromHomeAddress.default
+	})
+
 	it('gives the distance, in address positions, from grid address 0, 0', () => {
 		expect(subject({ address: to.Address([ 0, 0 ]) })).toBe(0)
 		expect(subject({ address: to.Address([ 3, 0 ]) })).toBe(3)
