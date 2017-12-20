@@ -13,7 +13,8 @@ import { expectStripedTile } from '../helpers'
 
 describe('gingham chevron continuum effect', () => {
 	beforeEach(() => {
-		setAppStateForEffectTests.setSelectedEffects([ ginghamChevronContinuumEffect ])
+		setAppStateForEffectTests.setAvailableEffects({ 'gingham-chevron-continuum': ginghamChevronContinuumEffect })
+		setAppStateForEffectTests.setSelectedEffects([ 'gingham-chevron-continuum' ])
 	})
 
 	it('each new diagonal row has an extra stripe', async (done: DoneFn) => {
