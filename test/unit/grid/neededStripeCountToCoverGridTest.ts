@@ -1,4 +1,4 @@
-import { patternState } from '../../../../../src/pattern/patternState'
+import { patternState } from '../../../../../src/indexForTest'
 import { neededStripeCountToCoverGrid } from '../../../pattern'
 
 describe('needed stripe count to cover grid', () => {
