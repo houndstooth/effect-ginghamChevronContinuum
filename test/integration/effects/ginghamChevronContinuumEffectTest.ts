@@ -1,6 +1,6 @@
 import {
 	BLACK,
-	executePattern,
+	executeEffect,
 	from,
 	patternState,
 	to,
@@ -21,7 +21,7 @@ describe('gingham chevron continuum effect', () => {
 		const areaSize: Unit = patternState.tileSettings.tileSize
 		setAppStateForEffectTests.setOverrides({ basePattern: { gridSettings: { tileResolution: 8 } } })
 
-		executePattern.default()
+		executeEffect.default()
 
 		setTimeout(() => {
 			expect(sectionCenterIsColor({
@@ -115,7 +115,7 @@ describe('gingham chevron continuum effect', () => {
 		it('frame 0 looks just like the normal pattern', async (done: DoneFn) => {
 			setAppStateForEffectTests.setCurrentFrame(to.Frame(0))
 
-			executePattern.default()
+			executeEffect.default()
 
 			setTimeout(() => {
 				expectStripedTile({ diagonalAddress: 0, stripeCount: 1, firstColor: BLACK })
@@ -130,7 +130,7 @@ describe('gingham chevron continuum effect', () => {
 		it('around frame 720 each tile has twice its original stripe count', async (done: DoneFn) => {
 			setAppStateForEffectTests.setCurrentFrame(to.Frame(720))
 
-			executePattern.default()
+			executeEffect.default()
 
 			setTimeout(() => {
 				expectStripedTile({ diagonalAddress: 0, stripeCount: 2, firstColor: BLACK })
@@ -145,7 +145,7 @@ describe('gingham chevron continuum effect', () => {
 		it('around frame 1111 each tile has thrice its original stripe count', async (done: DoneFn) => {
 			setAppStateForEffectTests.setCurrentFrame(to.Frame(1111))
 
-			executePattern.default()
+			executeEffect.default()
 
 			setTimeout(() => {
 				expectStripedTile({ diagonalAddress: 0, stripeCount: 3, firstColor: BLACK })
