@@ -13,7 +13,7 @@ import { expectStripedTile } from '../helpers'
 
 describe('gingham chevron continuum effect', () => {
 	beforeEach(() => {
-		setAppStateForEffectTests.setAvailableEffects({ 'ginghamChevronContinuum': ginghamChevronContinuumEffect })
+		setAppStateForEffectTests.setAvailableEffects({ ginghamChevronContinuum: ginghamChevronContinuumEffect })
 		setAppStateForEffectTests.setSelectedEffects([ 'ginghamChevronContinuum' ])
 	})
 
