@@ -6,6 +6,7 @@ import {
 	TransformShapeColorIndices,
 	TransformShapeColorIndicesParams,
 } from '../../../../src'
+
 import indexOfFirstStripeCrossingThisTile from './indexOfFirstStripeCrossingThisTile'
 
 const realignShapeColorIndicesForGinghamChevronContinuum: TransformShapeColorIndices =

@@ -1,5 +1,6 @@
 import { BLACK, codeUtilities, from, patternState, to, TRANSPARENT, Unit } from '../../../../../src/indexForTest'
 import { sectionCenterIsColor } from '../../../../../test'
+
 import { ExpectStripedTile } from './types'
 
 const expectStripedTile: (_: ExpectStripedTile) => void =

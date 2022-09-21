@@ -17,7 +17,7 @@ describe('gingham chevron continuum effect', () => {
 		setAppStateForEffectTests.setSelectedEffects([ 'ginghamChevronContinuum' ])
 	})
 
-	it('each new diagonal row has an extra stripe', async (done: DoneFn) => {
+	it('each new diagonal row has an extra stripe', (done: DoneFn) => {
 		const areaSize: Unit = patternState.tileSettings.tileSize
 		setAppStateForEffectTests.setOverrides({ basePattern: { gridSettings: { tileResolution: 8 } } })
 
@@ -112,7 +112,7 @@ describe('gingham chevron continuum effect', () => {
 			})
 		})
 
-		it('frame 0 looks just like the normal pattern', async (done: DoneFn) => {
+		it('frame 0 looks just like the normal pattern', (done: DoneFn) => {
 			setAppStateForEffectTests.setCurrentFrame(to.Frame(0))
 
 			executeEffect.default()
@@ -127,7 +127,7 @@ describe('gingham chevron continuum effect', () => {
 			},         0)
 		})
 
-		it('around frame 720 each tile has twice its original stripe count', async (done: DoneFn) => {
+		it('around frame 720 each tile has twice its original stripe count', (done: DoneFn) => {
 			setAppStateForEffectTests.setCurrentFrame(to.Frame(720))
 
 			executeEffect.default()
@@ -142,7 +142,7 @@ describe('gingham chevron continuum effect', () => {
 			},         0)
 		})
 
-		it('around frame 1111 each tile has thrice its original stripe count', async (done: DoneFn) => {
+		it('around frame 1111 each tile has thrice its original stripe count', (done: DoneFn) => {
 			setAppStateForEffectTests.setCurrentFrame(to.Frame(1111))
 
 			executeEffect.default()

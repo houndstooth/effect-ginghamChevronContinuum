@@ -3,6 +3,7 @@ import {
 	getGinghamChevronContinuumStripePositions,
 	realignShapeColorIndicesForGinghamChevronContinuum,
 } from '../pattern'
+
 import GINGHAM_CHEVRON_CONTINUUM_DESCRIPTION from './ginghamChevronContinuumDescription'
 
 const ginghamChevronContinuumEffect: NamedEffect = {

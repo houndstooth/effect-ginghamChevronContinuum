@@ -11,6 +11,7 @@ import {
 	to,
 } from '../../../../src'
 import { getDistanceFromHomeAddress, neededStripeCountToCoverGrid } from '../grid'
+
 import { GetStripePositionsParams } from './types'
 
 const getGinghamChevronContinuumStripePositions: GetStripePositions =
